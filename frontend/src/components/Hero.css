@@ -4,7 +4,6 @@
 
 .hero-section {
   width: 100%;
-
   margin: 0;
   padding: 0;
 
@@ -22,7 +21,6 @@
   position: relative;
 
   width: 100%;
-
   height: 450px;
 
   margin: 0;
@@ -49,7 +47,6 @@
   overflow: hidden;
 
   opacity: 0;
-
   visibility: hidden;
 
   transition:
@@ -60,7 +57,6 @@
 
 .hero-slide.active {
   opacity: 1;
-
   visibility: visible;
 }
 
@@ -81,12 +77,20 @@
   display: block;
 
   object-fit: cover;
-
   object-position: center center;
 
-  transform: none;
+  transform: scale(1);
 
-  transition: opacity 0.8s ease;
+  transition:
+    transform 5s ease,
+    opacity 0.8s ease;
+}
+
+
+/* Slight image movement on active slide */
+
+.hero-slide.active .hero-image {
+  transform: scale(1.02);
 }
 
 
@@ -126,7 +130,6 @@
   left: 50%;
 
   width: 760px;
-
   max-width: 80%;
 
   transform:
@@ -137,7 +140,6 @@
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
@@ -204,7 +206,6 @@
 
 .hero-line {
   width: 60px;
-
   height: 4px;
 
   margin: 16px 0;
@@ -224,7 +225,8 @@
 
   margin: 0 0 20px;
 
-  color: rgba(255, 255, 255, 0.94);
+  color:
+    rgba(255, 255, 255, 0.94);
 
   font-family: "Poppins", sans-serif;
 
@@ -247,7 +249,6 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 10px;
@@ -262,14 +263,13 @@
 
 .hero-primary-btn,
 .hero-secondary-btn {
-  min-height:55px;
+  min-height: 55px;
 
   padding: 0 30px;
 
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   border-radius: 6px;
@@ -349,46 +349,104 @@
 
 
 /* =========================================
-   SLIDE COUNTER
+   SLIDER ARROWS
 ========================================= */
 
-.hero-counter {
+.hero-arrow {
   position: absolute;
 
-  right: 30px;
+  top: 50%;
 
-  bottom: 22px;
+  z-index: 20;
 
-  z-index: 10;
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
 
   display: flex;
 
   align-items: center;
+  justify-content: center;
 
-  gap: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  background:
+    rgba(3, 55, 82, 0.58);
 
   color: #ffffff;
 
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, sans-serif;
 
-  font-size: 10px;
+  font-size: 32px;
 
-  font-weight: 600;
+  font-weight: 300;
 
-  letter-spacing: 1px;
+  line-height: 1;
 
-  text-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+  transform:
+    translateY(-50%);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 
-.counter-line {
-  width: 35px;
+/* =========================================
+   ARROW HOVER
+========================================= */
 
-  height: 1px;
+.hero-arrow:hover {
+  background: #08b9d0;
 
-  background:
-    rgba(255, 255, 255, 0.75);
+  border-color: #08b9d0;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================
+   ARROW ACTIVE
+========================================= */
+
+.hero-arrow:active {
+  transform:
+    translateY(-50%)
+    scale(0.96);
+}
+
+
+/* =========================================
+   LEFT ARROW
+========================================= */
+
+.hero-prev {
+  left: 22px;
+}
+
+
+/* =========================================
+   RIGHT ARROW
+========================================= */
+
+.hero-next {
+  right: 22px;
 }
 
 
@@ -401,20 +459,36 @@
 
   .hero-slider {
     width: 100%;
-
     height: 450px;
   }
 
 
   .hero-content {
     width: 760px;
-
     max-width: 80%;
   }
 
 
   .hero-content h1 {
     font-size: 50px;
+  }
+
+
+  .hero-arrow {
+    width: 46px;
+    height: 46px;
+
+    font-size: 33px;
+  }
+
+
+  .hero-prev {
+    left: 28px;
+  }
+
+
+  .hero-next {
+    right: 28px;
   }
 
 }
@@ -430,14 +504,12 @@ and (max-width: 1250px) {
 
   .hero-slider {
     width: 100%;
-
     height: 420px;
   }
 
 
   .hero-content {
     width: 720px;
-
     max-width: 78%;
   }
 
@@ -490,12 +562,23 @@ and (max-width: 1250px) {
   }
 
 
-  .hero-counter {
-    right: 22px;
+  /* ARROWS */
 
-    bottom: 18px;
+  .hero-arrow {
+    width: 38px;
+    height: 38px;
 
-    font-size: 9px;
+    font-size: 28px;
+  }
+
+
+  .hero-prev {
+    left: 16px;
+  }
+
+
+  .hero-next {
+    right: 16px;
   }
 
 }
@@ -556,12 +639,23 @@ and (max-width: 1000px) {
   }
 
 
-  .hero-counter {
-    right: 18px;
+  /* ARROWS */
 
-    bottom: 15px;
+  .hero-arrow {
+    width: 36px;
+    height: 36px;
 
-    font-size: 9px;
+    font-size: 26px;
+  }
+
+
+  .hero-prev {
+    left: 12px;
+  }
+
+
+  .hero-next {
+    right: 12px;
   }
 
 }
@@ -620,12 +714,23 @@ and (max-width: 768px) {
   }
 
 
-  .hero-counter {
-    right: 15px;
+  /* ARROWS */
 
-    bottom: 13px;
+  .hero-arrow {
+    width: 34px;
+    height: 34px;
 
-    font-size: 8px;
+    font-size: 24px;
+  }
+
+
+  .hero-prev {
+    left: 10px;
+  }
+
+
+  .hero-next {
+    right: 10px;
   }
 
 }
@@ -722,22 +827,27 @@ and (max-width: 768px) {
 
 
   /* =====================================
-     COUNTER
+     MOBILE ARROWS
   ===================================== */
 
-  .hero-counter {
-    right: 13px;
+  .hero-arrow {
+    width: 32px;
+    height: 32px;
 
-    bottom: 12px;
+    font-size: 23px;
 
-    font-size: 8px;
-
-    gap: 6px;
+    background:
+      rgba(3, 55, 82, 0.52);
   }
 
 
-  .counter-line {
-    width: 23px;
+  .hero-prev {
+    left: 8px;
+  }
+
+
+  .hero-next {
+    right: 8px;
   }
 
 }
@@ -745,7 +855,7 @@ and (max-width: 768px) {
 
 /* =========================================
    SMALL MOBILE
-   380px
+   380px AND BELOW
 ========================================= */
 
 @media (max-width: 380px) {
@@ -806,12 +916,23 @@ and (max-width: 768px) {
   }
 
 
-  .hero-counter {
-    right: 10px;
+  /* SMALL MOBILE ARROWS */
 
-    bottom: 10px;
+  .hero-arrow {
+    width: 29px;
+    height: 29px;
 
-    font-size: 7px;
+    font-size: 21px;
+  }
+
+
+  .hero-prev {
+    left: 6px;
+  }
+
+
+  .hero-next {
+    right: 6px;
   }
 
 }

@@ -11,11 +11,6 @@ import stp02 from "../assets/images/stp-02.jpg";
 import stp03 from "../assets/images/stp-03.jpg";
 import ufPlant from "../assets/images/uf-plant.jpg";
 
-
-/* =========================================
-   SLIDER DATA
-========================================= */
-
 const slides = [
   {
     image: hydroPneumatic,
@@ -24,7 +19,6 @@ const slides = [
     description:
       "Reliable and efficient water treatment systems designed for quality water and long-term performance.",
   },
-
   {
     image: ironRemoval,
     smallTitle: "WATER FILTRATION SYSTEMS",
@@ -32,7 +26,6 @@ const slides = [
     description:
       "Effective filtration solutions engineered to improve water quality and deliver dependable results.",
   },
-
   {
     image: owc,
     smallTitle: "WATER PURIFICATION",
@@ -40,7 +33,6 @@ const slides = [
     description:
       "Modern water purification systems designed for efficient and consistent water treatment.",
   },
-
   {
     image: rainwater,
     smallTitle: "RAINWATER HARVESTING",
@@ -48,7 +40,6 @@ const slides = [
     description:
       "Practical rainwater harvesting solutions that support sustainable water management.",
   },
-
   {
     image: roPlant,
     smallTitle: "RO PLANT SOLUTIONS",
@@ -56,7 +47,6 @@ const slides = [
     description:
       "High-performance RO systems designed to provide clean and reliable water for different applications.",
   },
-
   {
     image: stp01,
     smallTitle: "SEWAGE TREATMENT PLANTS",
@@ -64,7 +54,6 @@ const slides = [
     description:
       "Efficient sewage treatment solutions for responsible wastewater management and reuse.",
   },
-
   {
     image: stp02,
     smallTitle: "WASTEWATER TREATMENT",
@@ -72,7 +61,6 @@ const slides = [
     description:
       "Engineered wastewater treatment systems focused on efficiency, reliability and sustainability.",
   },
-
   {
     image: stp03,
     smallTitle: "STP SOLUTIONS",
@@ -80,7 +68,6 @@ const slides = [
     description:
       "Complete sewage treatment solutions designed for dependable and efficient operation.",
   },
-
   {
     image: ufPlant,
     smallTitle: "ULTRAFILTRATION SYSTEMS",
@@ -90,100 +77,67 @@ const slides = [
   },
 ];
 
-
 function Hero() {
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
-
-  /* =========================================
-     AUTO CAROUSEL
-  ========================================= */
-
+  // AUTO SCROLL
   useEffect(() => {
-
     const timer = setInterval(() => {
-
-      setCurrentSlide((prev) => {
-
-        if (prev === slides.length - 1) {
-          return 0;
-        }
-
-        return prev + 1;
-      });
-
+      setCurrentSlide((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      );
     }, 4000);
 
-
-    return () => {
-      clearInterval(timer);
-    };
-
+    return () => clearInterval(timer);
   }, []);
 
+  // NEXT
+  const nextSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === slides.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  // PREVIOUS
+  const prevSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? slides.length - 1 : prev - 1
+    );
+  };
 
   return (
-
-    <section
-      id="home"
-      className="hero-section"
-    >
-
+    <section id="home" className="hero-section">
       <div className="hero-slider">
 
         {slides.map((slide, index) => (
-
           <div
             key={index}
             className={`hero-slide ${
-              index === currentSlide
-                ? "active"
-                : ""
+              index === currentSlide ? "active" : ""
             }`}
           >
-
-            {/* =================================
-                BACKGROUND IMAGE
-            ================================= */}
-
+            {/* BACKGROUND IMAGE */}
             <img
               src={slide.image}
               alt={slide.title}
               className="hero-image"
             />
 
-
-            {/* =================================
-                DARK OVERLAY
-            ================================= */}
-
+            {/* OVERLAY */}
             <div className="hero-overlay"></div>
 
-
-            {/* =================================
-                CENTER CONTENT
-            ================================= */}
-
+            {/* CENTER CONTENT */}
             <div className="hero-content">
 
               <span className="hero-small-title">
                 {slide.smallTitle}
               </span>
 
-
-              <h1>
-                {slide.title}
-              </h1>
-
+              <h1>{slide.title}</h1>
 
               <div className="hero-line"></div>
 
-
-              <p>
-                {slide.description}
-              </p>
-
+              <p>{slide.description}</p>
 
               <div className="hero-buttons">
 
@@ -194,54 +148,42 @@ function Hero() {
                   Our Services
                 </a>
 
-
                 <a
                   href="#contact"
                   className="hero-secondary-btn"
                 >
                   Get a Quote
-
-                  <span>
-                    →
-                  </span>
-
+                  <span>→</span>
                 </a>
 
               </div>
-
             </div>
-
-
-            {/* =================================
-                SLIDE COUNTER
-            ================================= */}
-
-            <div className="hero-counter">
-
-              <span>
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
-
-              <span className="counter-line"></span>
-
-
-              <span>
-                {String(slides.length).padStart(2, "0")}
-              </span>
-
-            </div>
-
           </div>
-
         ))}
 
+        {/* LEFT ARROW */}
+        <button
+          type="button"
+          className="hero-arrow hero-prev"
+          onClick={prevSlide}
+          aria-label="Previous slide"
+        >
+          ‹
+        </button>
+
+        {/* RIGHT ARROW */}
+        <button
+          type="button"
+          className="hero-arrow hero-next"
+          onClick={nextSlide}
+          aria-label="Next slide"
+        >
+          ›
+        </button>
+
       </div>
-
     </section>
-
   );
 }
-
 
 export default Hero;

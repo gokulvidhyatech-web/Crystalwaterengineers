@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const slides = [
   {
-    smallTitle: "Crystal Water Engineers",
+    smallTitle: "Csrystal Water Engineers",
     title: "Reliable Water.\nBetter Solutions.",
     description:
       "Complete water and wastewater engineering solutions designed for reliable performance, efficient operation, and long-term value.",

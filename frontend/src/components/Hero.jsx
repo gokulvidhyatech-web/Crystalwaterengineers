@@ -28,7 +28,7 @@ const slides = [
   {
     image: ironRemoval,
     smallTitle: "WATER FILTRATION SYSTEMS",
-    title: "Pure Water. Better Performance.",
+    title: "Pure Water Better Performance.",
     description:
       "Effective filtration solutions engineered to improve water quality and deliver dependable results.",
   },

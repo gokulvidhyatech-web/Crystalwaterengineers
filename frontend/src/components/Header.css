@@ -1,0 +1,685 @@
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+  z-index: 1000;
+}
+
+
+/* =========================================
+   TOP BAR
+   DARK BLUE → AQUA BLUE
+========================================= */
+
+.top-bar {
+  width: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #06345b 0%,
+    #075b86 45%,
+    #08b9d0 100%
+  );
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.top-bar-container {
+  width: min(1400px, 94%);
+  min-height: 36px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+}
+
+.top-bar-container > span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.top-bar-container > span:first-child {
+  flex: 1;
+}
+
+
+/* =========================================
+   MAIN NAVBAR
+========================================= */
+
+.main-navbar {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #edf2f5;
+
+  box-shadow: 0 4px 18px rgba(0, 72, 110, 0.06);
+}
+
+.navbar-container {
+  width: min(1400px, 94%);
+  min-height: 88px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: inherit;
+
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 62px;
+  height: 62px;
+
+  object-fit: contain;
+
+  margin-right: 12px;
+}
+
+.brand-text h1 {
+  margin: 0;
+
+  color: #075b86;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.brand-text p {
+  margin: 4px 0 0;
+
+  color: #526775;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   DESKTOP MENU
+========================================= */
+
+.desktop-menu {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+}
+
+.menu-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px 13px;
+
+  color: #425667;
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.menu-link:hover {
+  color: #08aeca;
+}
+
+
+/* =========================================
+   ACTIVE MENU
+========================================= */
+
+.menu-link.active {
+  color: #0879a8;
+}
+
+.menu-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 13px;
+  right: 13px;
+
+  bottom: 20px;
+
+  height: 2px;
+
+  background: #08b9d0;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   GET QUOTE
+========================================= */
+
+.quote-button {
+  margin-left: 20px;
+
+  min-width: 145px;
+
+  padding: 13px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #0876a7,
+    #08b9d0
+  );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 8px 20px rgba(0, 160, 190, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.quote-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 160, 190, 0.28);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  margin-left: auto;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  border: 1px solid #dcecf1;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.mobile-menu-button:hover {
+  background: #f2fcfe;
+
+  border-color: #08b9d0;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 22px;
+  height: 2px;
+
+  background: #0876a7;
+
+  border-radius: 5px;
+
+  transition: all 0.25s ease;
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================
+   LARGE LAPTOP
+========================================= */
+
+@media (max-width: 1250px) {
+
+  .top-bar-container {
+    width: 95%;
+    gap: 12px;
+  }
+
+  .top-bar-container > span {
+    font-size: 10px;
+  }
+
+  .navbar-container {
+    width: 95%;
+  }
+
+  .brand-logo {
+    width: 58px;
+    height: 58px;
+
+    margin-right: 10px;
+  }
+
+  .brand-text h1 {
+    font-size: 19px;
+  }
+
+  .brand-text p {
+    font-size: 9px;
+  }
+
+  .desktop-menu {
+    gap: 0;
+  }
+
+  .menu-link {
+    padding-left: 9px;
+    padding-right: 9px;
+
+    font-size: 13px;
+  }
+
+  .menu-link.active::after {
+    left: 9px;
+    right: 9px;
+  }
+
+  .quote-button {
+    margin-left: 10px;
+
+    min-width: 125px;
+
+    padding: 12px 18px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+   1000px
+========================================= */
+
+@media (max-width: 1000px) {
+
+  /* TOP BAR */
+
+  .top-bar-container {
+    width: 94%;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .top-bar-container > span:first-child {
+    display: none;
+  }
+
+  .top-bar-container > span {
+    font-size: 10px;
+  }
+
+
+  /* NAVBAR */
+
+  .navbar-container {
+    width: 94%;
+
+    min-height: 76px;
+  }
+
+
+  /* HIDE DESKTOP */
+
+  .desktop-menu,
+  .quote-button {
+    display: none;
+  }
+
+
+  /* BRAND */
+
+  .brand-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-text h1 {
+    font-size: 17px;
+  }
+
+  .brand-text p {
+    font-size: 8px;
+  }
+
+
+  /* HAMBURGER */
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+
+  /* =====================================
+     MOBILE MENU
+  ===================================== */
+
+  .mobile-menu {
+    display: flex;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border-top: 1px solid #edf2f5;
+
+    box-shadow:
+      0 15px 35px rgba(0, 70, 100, 0.15);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+
+  /* OPEN MOBILE MENU */
+
+  .mobile-menu.open {
+    max-height: 600px;
+
+    opacity: 1;
+
+    visibility: visible;
+  }
+
+
+  /* MOBILE LINKS */
+
+  .mobile-menu > a {
+    width: 100%;
+
+    padding: 15px 6%;
+
+    border-bottom: 1px solid #eef4f6;
+
+    background: #ffffff;
+
+    color: #314c5e;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .mobile-menu > a:hover {
+    color: #08aeca;
+
+    background: #f4fcfe;
+  }
+
+
+  /* MOBILE QUOTE */
+
+  .mobile-menu .mobile-quote {
+    margin: 15px 6% 20px;
+
+    width: auto;
+
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    background: linear-gradient(
+      135deg,
+      #0876a7,
+      #08b9d0
+    );
+
+    color: #ffffff;
+
+    border: none;
+  }
+
+  .mobile-menu .mobile-quote:hover {
+    color: #ffffff;
+
+    background: linear-gradient(
+      135deg,
+      #0876a7,
+      #08b9d0
+    );
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   600px
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* HIDE TOP BAR */
+
+  .top-bar {
+    display: none;
+  }
+
+
+  /* NAVBAR */
+
+  .navbar-container {
+    width: 92%;
+
+    min-height: 70px;
+  }
+
+
+  /* LOGO */
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+
+    margin-right: 8px;
+  }
+
+
+  /* BRAND TEXT */
+
+  .brand-text h1 {
+    font-size: 15px;
+
+    line-height: 1.15;
+  }
+
+  .brand-text p {
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2px;
+  }
+
+
+  /* HAMBURGER */
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-menu-button span {
+    width: 21px;
+  }
+
+
+  /* MOBILE LINKS */
+
+  .mobile-menu > a {
+    padding: 15px 7%;
+
+    font-size: 14px;
+  }
+
+  .mobile-menu .mobile-quote {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .navbar-container {
+    width: 94%;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+
+    margin-right: 7px;
+  }
+
+  .brand-text h1 {
+    font-size: 12px;
+  }
+
+  .brand-text p {
+    font-size: 6px;
+
+    letter-spacing: 0;
+  }
+
+  .mobile-menu-button {
+    width: 37px;
+    height: 37px;
+
+    padding: 7px;
+  }
+
+  .mobile-menu-button span {
+    width: 19px;
+    height: 2px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutSection.css";
-
+import waterSoftener from "../assets/images/water-softener.jpg";
 const AboutSection = () => {
   return (
     <section className="about-section">
@@ -9,7 +9,7 @@ const AboutSection = () => {
         {/* LEFT IMAGE */}
         <div className="about-image-wrap">
           <img
-            src="/src/assets/images/water-softener.jpg"
+           src={waterSoftener}
             alt="Water Softener Plant - Crystal Water Engineers"
             className="about-image"
           />

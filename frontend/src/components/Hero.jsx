@@ -1,77 +1,169 @@
 import { useEffect, useState } from "react";
 import "./Hero.css";
 
+import hydroPneumatic from "../assets/images/hydro-pneumatic.jpg";
+import ironRemoval from "../assets/images/iron-removal-wtp.jpg";
+import owc from "../assets/images/owc.jpg";
+import rainwater from "../assets/images/rainwater-harvesting.jpg";
+import roPlant from "../assets/images/ro-plant.jpg";
+import stp01 from "../assets/images/stp-01.jpg";
+import stp02 from "../assets/images/stp-02.jpg";
+import stp03 from "../assets/images/stp-03.jpg";
+import ufPlant from "../assets/images/uf-plant.jpg";
+
+
+/* =========================================
+   SLIDER DATA
+========================================= */
+
 const slides = [
   {
-    smallTitle: "Crystal Water Engineers",
-    title: "Reliable Water.\nBetter Solutions.",
+    image: hydroPneumatic,
+    smallTitle: "WATER TREATMENT SOLUTIONS",
+    title: "Advanced Water Treatment Solutions",
     description:
-      "Complete water and wastewater engineering solutions designed for reliable performance, efficient operation, and long-term value.",
-    primaryButton: "Our Services",
-    secondaryButton: "Get a Quote",
-    image: "",
+      "Reliable and efficient water treatment systems designed for quality water and long-term performance.",
   },
 
   {
-    smallTitle: "Water Treatment Solutions",
-    title: "Pure Water.\nPowerful Technology.",
+    image: ironRemoval,
+    smallTitle: "WATER FILTRATION SYSTEMS",
+    title: "Pure Water. Better Performance.",
     description:
-      "Advanced water treatment solutions for industrial and commercial requirements, designed with quality, efficiency, and performance in mind.",
-    primaryButton: "View Products",
-    secondaryButton: "Get a Quote",
-    image: "",
+      "Effective filtration solutions engineered to improve water quality and deliver dependable results.",
   },
 
   {
-    smallTitle: "Wastewater Engineering",
-    title: "Treat Better.\nProtect Tomorrow.",
+    image: owc,
+    smallTitle: "WATER PURIFICATION",
+    title: "Clean Water Starts Here.",
     description:
-      "Reliable wastewater treatment systems engineered to support cleaner operations and responsible water management.",
-    primaryButton: "Explore Services",
-    secondaryButton: "Contact Us",
-    image: "",
+      "Modern water purification systems designed for efficient and consistent water treatment.",
+  },
+
+  {
+    image: rainwater,
+    smallTitle: "RAINWATER HARVESTING",
+    title: "Save Water. Secure Tomorrow.",
+    description:
+      "Practical rainwater harvesting solutions that support sustainable water management.",
+  },
+
+  {
+    image: roPlant,
+    smallTitle: "RO PLANT SOLUTIONS",
+    title: "Advanced RO Water Treatment.",
+    description:
+      "High-performance RO systems designed to provide clean and reliable water for different applications.",
+  },
+
+  {
+    image: stp01,
+    smallTitle: "SEWAGE TREATMENT PLANTS",
+    title: "Treat Wastewater. Protect Tomorrow.",
+    description:
+      "Efficient sewage treatment solutions for responsible wastewater management and reuse.",
+  },
+
+  {
+    image: stp02,
+    smallTitle: "WASTEWATER TREATMENT",
+    title: "Smarter Wastewater Management.",
+    description:
+      "Engineered wastewater treatment systems focused on efficiency, reliability and sustainability.",
+  },
+
+  {
+    image: stp03,
+    smallTitle: "STP SOLUTIONS",
+    title: "Powerful Treatment Technology.",
+    description:
+      "Complete sewage treatment solutions designed for dependable and efficient operation.",
+  },
+
+  {
+    image: ufPlant,
+    smallTitle: "ULTRAFILTRATION SYSTEMS",
+    title: "Advanced Filtration Technology.",
+    description:
+      "Ultrafiltration systems designed to deliver consistent water quality and efficient operation.",
   },
 ];
 
+
 function Hero() {
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) =>
-        prev === slides.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
 
-    return () => clearInterval(timer);
+  /* =========================================
+     AUTO CAROUSEL
+  ========================================= */
+
+  useEffect(() => {
+
+    const timer = setInterval(() => {
+
+      setCurrentSlide((prev) => {
+
+        if (prev === slides.length - 1) {
+          return 0;
+        }
+
+        return prev + 1;
+      });
+
+    }, 4000);
+
+
+    return () => {
+      clearInterval(timer);
+    };
+
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === slides.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const previousSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
-  };
 
   return (
-    <section className="hero-section" id="home">
+
+    <section
+      id="home"
+      className="hero-section"
+    >
 
       <div className="hero-slider">
 
         {slides.map((slide, index) => (
+
           <div
-            className={`hero-slide ${
-              index === currentSlide ? "active" : ""
-            }`}
             key={index}
+            className={`hero-slide ${
+              index === currentSlide
+                ? "active"
+                : ""
+            }`}
           >
 
-            {/* ================= LEFT CONTENT ================= */}
+            {/* =================================
+                BACKGROUND IMAGE
+            ================================= */}
+
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="hero-image"
+            />
+
+
+            {/* =================================
+                DARK OVERLAY
+            ================================= */}
+
+            <div className="hero-overlay"></div>
+
+
+            {/* =================================
+                CENTER CONTENT
+            ================================= */}
 
             <div className="hero-content">
 
@@ -79,22 +171,19 @@ function Hero() {
                 {slide.smallTitle}
               </span>
 
-              <h2>
-                {slide.title.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < slide.title.split("\n").length - 1 && (
-                      <br />
-                    )}
-                  </span>
-                ))}
-              </h2>
+
+              <h1>
+                {slide.title}
+              </h1>
+
 
               <div className="hero-line"></div>
+
 
               <p>
                 {slide.description}
               </p>
+
 
               <div className="hero-buttons">
 
@@ -102,15 +191,20 @@ function Hero() {
                   href="#services"
                   className="hero-primary-btn"
                 >
-                  {slide.primaryButton}
+                  Our Services
                 </a>
+
 
                 <a
                   href="#contact"
                   className="hero-secondary-btn"
                 >
-                  {slide.secondaryButton}
-                  <span>→</span>
+                  Get a Quote
+
+                  <span>
+                    →
+                  </span>
+
                 </a>
 
               </div>
@@ -118,87 +212,36 @@ function Hero() {
             </div>
 
 
-            {/* ================= RIGHT IMAGE ================= */}
+            {/* =================================
+                SLIDE COUNTER
+            ================================= */}
 
-            <div className="hero-image-wrapper">
+            <div className="hero-counter">
 
-              {slide.image ? (
-                <img
-                  src={slide.image}
-                  alt={slide.smallTitle}
-                  className="hero-image"
-                />
-              ) : (
-                <div className="hero-image-placeholder">
+              <span>
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-                  <div className="placeholder-content">
 
-                    <span className="placeholder-water">
-                      WATER
-                    </span>
+              <span className="counter-line"></span>
 
-                    <strong>
-                      IMAGE
-                    </strong>
 
-                    <small>
-                      Add your banner image here
-                    </small>
-
-                  </div>
-
-                </div>
-              )}
+              <span>
+                {String(slides.length).padStart(2, "0")}
+              </span>
 
             </div>
 
           </div>
+
         ))}
-
-
-        {/* ================= ARROWS ================= */}
-
-        <button
-          type="button"
-          className="hero-arrow hero-prev"
-          onClick={previousSlide}
-          aria-label="Previous slide"
-        >
-          ‹
-        </button>
-
-        <button
-          type="button"
-          className="hero-arrow hero-next"
-          onClick={nextSlide}
-          aria-label="Next slide"
-        >
-          ›
-        </button>
-
-
-        {/* ================= DOTS ================= */}
-
-        <div className="hero-dots">
-
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              className={`hero-dot ${
-                index === currentSlide ? "active" : ""
-              }`}
-              onClick={() => setCurrentSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            ></button>
-          ))}
-
-        </div>
 
       </div>
 
     </section>
+
   );
 }
+
 
 export default Hero;

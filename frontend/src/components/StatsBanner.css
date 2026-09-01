@@ -1,0 +1,611 @@
+/* =========================================
+   STATS SECTION
+========================================= */
+
+.stats-section {
+  width: 100%;
+
+  background: #ffffff;
+
+  /* Hero-ku close-a irukka */
+  padding: 0 0 55px;
+
+  font-family: "Poppins", sans-serif;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   MAIN BANNER
+========================================= */
+
+.stats-banner {
+  position: relative;
+
+  width: min(1180px, 84%);
+
+  min-height: 300px;
+
+  /*
+    Hero section mela konjam overlap
+    unnecessary top gap remove
+  */
+  margin: -35px auto 0;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #063b63 0%,
+      #086c91 45%,
+      #08b9d0 100%
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 70, 100, 0.14);
+}
+
+
+/* =========================================
+   WAVE IMAGE
+========================================= */
+
+.stats-wave {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height: 155px;
+
+  background-image:
+    url("../assets/images/Waves.webp");
+
+  background-repeat: no-repeat;
+
+  background-position:
+    center bottom;
+
+  background-size:
+    100% auto;
+
+  opacity: 0.72;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.stats-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  padding:
+    42px 46px 38px;
+}
+
+
+/* =========================================
+   TOP AREA
+========================================= */
+
+.stats-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 70px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.stats-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #50e1e8;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.stats-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+  line-height: 1.17;
+
+  letter-spacing: -0.6px;
+}
+
+.stats-heading h2 span {
+  color: #4de1e8;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.stats-description {
+  width: 400px;
+
+  flex-shrink: 0;
+
+  padding-top: 4px;
+}
+
+.stats-description p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.92);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   STATS GRID
+========================================= */
+
+.stats-grid {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 42px;
+
+  margin-top: 42px;
+}
+
+
+/* =========================================
+   STAT ITEM
+========================================= */
+
+.stat-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  min-width: 0;
+}
+
+
+/* =========================================
+   ICON BOX
+========================================= */
+
+.stat-icon {
+  width: 56px;
+
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #ffffff;
+
+  border-radius: 9px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 40, 70, 0.16);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.stat-icon span {
+  color: #075187;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.stat-content strong {
+  display: block;
+
+  margin: 0;
+
+  color: #50e1e8;
+
+  font-size: 31px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.stat-content h3 {
+  margin:
+    5px 0 2px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.stat-content p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   LARGE LAPTOP
+   1250px
+========================================= */
+
+@media (max-width: 1250px) {
+
+  .stats-banner {
+    width: 86%;
+
+    margin-top: -30px;
+  }
+
+  .stats-container {
+    padding:
+      40px 40px 36px;
+  }
+
+  .stats-top {
+    gap: 45px;
+  }
+
+  .stats-heading h2 {
+    font-size: 29px;
+  }
+
+  .stats-description {
+    width: 350px;
+  }
+
+  .stats-grid {
+    gap: 25px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+   900px
+========================================= */
+
+@media (max-width: 900px) {
+
+  .stats-section {
+    padding:
+      0 0 40px;
+  }
+
+  .stats-banner {
+    width: 90%;
+
+    min-height: 390px;
+
+    margin-top: -20px;
+
+    border-radius: 18px;
+  }
+
+  .stats-container {
+    padding:
+      35px 35px 35px;
+  }
+
+
+  /* TOP */
+
+  .stats-top {
+    display: block;
+  }
+
+
+  .stats-description {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin-top: 14px;
+  }
+
+
+  /* GRID */
+
+  .stats-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      28px 35px;
+
+    margin-top: 32px;
+  }
+
+
+  /* WAVE */
+
+  .stats-wave {
+    height: 180px;
+
+    background-size:
+      auto 180px;
+
+    background-position:
+      center bottom;
+
+    opacity: 0.65;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   600px
+========================================= */
+
+@media (max-width: 600px) {
+
+  .stats-section {
+    padding:
+      0 0 30px;
+  }
+
+
+  .stats-banner {
+    width: 94%;
+
+    min-height: auto;
+
+    margin-top: -12px;
+
+    border-radius: 15px;
+  }
+
+
+  .stats-container {
+    padding:
+      30px 23px 32px;
+  }
+
+
+  /* LABEL */
+
+  .stats-label {
+    font-size: 8px;
+
+    letter-spacing: 1.1px;
+  }
+
+
+  /* HEADING */
+
+  .stats-heading h2 {
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.3px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .stats-description {
+    margin-top: 13px;
+  }
+
+  .stats-description p {
+    font-size: 8px;
+
+    line-height: 1.65;
+  }
+
+
+  /* GRID */
+
+  .stats-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 18px;
+
+    margin-top: 29px;
+  }
+
+
+  /* ITEM */
+
+  .stat-item {
+    gap: 12px;
+  }
+
+
+  /* ICON */
+
+  .stat-icon {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 7px;
+  }
+
+  .stat-icon span {
+    font-size: 18px;
+  }
+
+
+  /* NUMBER */
+
+  .stat-content strong {
+    font-size: 24px;
+  }
+
+
+  /* TITLE */
+
+  .stat-content h3 {
+    margin-top: 4px;
+
+    font-size: 9px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .stat-content p {
+    font-size: 7px;
+  }
+
+
+  /* WAVE */
+
+  .stats-wave {
+    height: 145px;
+
+    background-size:
+      auto 145px;
+
+    background-position:
+      center bottom;
+
+    opacity: 0.62;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   380px
+========================================= */
+
+@media (max-width: 380px) {
+
+  .stats-banner {
+    width: 94%;
+
+    margin-top: -10px;
+
+    border-radius: 13px;
+  }
+
+
+  .stats-container {
+    padding:
+      28px 20px 30px;
+  }
+
+
+  .stats-heading h2 {
+    font-size: 21px;
+  }
+
+
+  .stats-grid {
+    gap: 15px;
+  }
+
+
+  .stat-icon {
+    width: 42px;
+
+    height: 42px;
+  }
+
+
+  .stat-content strong {
+    font-size: 22px;
+  }
+}

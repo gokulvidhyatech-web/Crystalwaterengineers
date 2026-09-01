@@ -1,4 +1,6 @@
 import Header from "../components/Header";
+import Hero from "../components/Hero";
+import  StatsBanner from"../components/StatsBanner"
 
 function Home() {
   return (
@@ -6,8 +8,12 @@ function Home() {
       <Header />
 
       <main>
-        {/* Section 2 will come here */}
-        {/* <Hero /> */}
+
+        {/* SECTION 2 */}
+        <Hero />
+
+        {/* SECTION 3 WILL COME HERE */}
+         <StatsBanner />
       </main>
     </>
   );

@@ -4,8 +4,11 @@
 
 .about-section {
   width: 100%;
-  padding: 80px 0;
+
+  padding: 85px 0;
+
   background: #ffffff;
+
   font-family: "Poppins", sans-serif;
 }
 
@@ -15,39 +18,37 @@
 ========================================= */
 
 .about-container {
-  width: min(1180px, 88%);
-  margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
+
+  grid-template-columns: 44% 1fr;
 
   align-items: center;
-  gap: 58px;
-}
 
-
-/* =========================================
-   IMAGE AREA
-========================================= */
-
-.about-image-wrap {
-  width: 100%;
-  height: 490px;
-
-  overflow: hidden;
-
-  border-radius: 18px;
-
-  background: #f3f9fb;
-
-  box-shadow:
-    0 18px 45px rgba(0, 72, 105, 0.10);
+  gap: 46px;
 }
 
 
 /* =========================================
    IMAGE
 ========================================= */
+
+.about-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 510px;
+
+  overflow: hidden;
+
+  border-radius: 0 18px 18px 18px;
+
+  background: #edf6f8;
+
+  box-shadow:
+    0 12px 35px rgba(5, 70, 100, 0.08);
+}
+
 
 .about-image {
   width: 100%;
@@ -56,13 +57,36 @@
   display: block;
 
   object-fit: cover;
+
   object-position: center;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
-.about-image-wrap:hover .about-image {
-  transform: scale(1.025);
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   IMAGE SOFT OVERLAY
+========================================= */
+
+.about-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04),
+      transparent 45%,
+      rgba(0, 55, 85, 0.10)
+    );
+
+  pointer-events: none;
 }
 
 
@@ -71,8 +95,9 @@
 ========================================= */
 
 .about-content {
-  width: 100%;
-  max-width: 620px;
+  min-width: 0;
+
+  padding-right: 8px;
 }
 
 
@@ -82,69 +107,89 @@
 
 .about-label {
   display: flex;
+
   align-items: center;
+
   gap: 9px;
 
   margin-bottom: 13px;
 
-  color: #0bb8d0;
+  color: #17688d;
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 1.5px;
 
-  text-transform: uppercase;
+  line-height: 1.2;
 }
 
+
 .about-label span {
-  width: 22px;
+  width: 17px;
   height: 2px;
 
   display: inline-block;
 
-  background: #0bb8d0;
+  border-radius: 5px;
 
-  border-radius: 10px;
+  background: #159bb5;
 }
 
 
 /* =========================================
-   HEADING
+   TITLE
 ========================================= */
 
-.about-content h2 {
-  margin: 0 0 19px;
+.about-title {
+  max-width: 620px;
 
-  color: #073f66;
+  margin: 0;
+
+  color: #063a5e;
 
   font-size: 38px;
+
   font-weight: 700;
 
-  line-height: 1.18;
+  line-height: 1.15;
 
-  letter-spacing: -0.8px;
+  letter-spacing: -1px;
 }
 
 
 /* =========================================
-   PARAGRAPHS
+   DESCRIPTION
 ========================================= */
 
-.about-content > p {
-  margin: 0 0 15px;
+.about-description {
+  margin-top: 22px;
 
-  color: #637789;
+  max-width: 650px;
+}
 
-  font-size: 12px;
+
+.about-description p {
+  margin: 0 0 13px;
+
+  color: #667987;
+
+  font-size: 13px;
+
   font-weight: 400;
 
-  line-height: 1.8;
+  line-height: 1.75;
+}
+
+
+.about-description p:last-child {
+  margin-bottom: 0;
 }
 
 
 /* =========================================
-   FEATURES GRID
+   FEATURE GRID
 ========================================= */
 
 .about-features {
@@ -152,9 +197,9 @@
 
   grid-template-columns: repeat(2, 1fr);
 
-  gap: 12px;
+  gap: 14px;
 
-  margin-top: 25px;
+  margin-top: 22px;
 }
 
 
@@ -163,29 +208,35 @@
 ========================================= */
 
 .about-feature {
-  min-height: 70px;
+  min-height: 72px;
 
-  padding: 14px 16px;
+  padding: 14px 15px;
 
-  border: 1px solid #dcecf1;
+  border: 1px solid #dce9ee;
 
-  border-radius: 9px;
+  border-radius: 8px;
 
-  background: #f6fbfd;
+  background:
+    linear-gradient(
+      135deg,
+      #f8fcfd 0%,
+      #f2f8fa 100%
+    );
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
 
 .about-feature:hover {
   transform: translateY(-3px);
 
-  border-color: #9edee7;
+  border-color: #9bd9e4;
 
   box-shadow:
-    0 10px 25px rgba(0, 130, 160, 0.09);
+    0 8px 20px rgba(0, 100, 130, 0.08);
 }
 
 
@@ -194,11 +245,12 @@
 ========================================= */
 
 .about-feature h3 {
-  margin: 0 0 4px;
+  margin: 0 0 3px;
 
-  color: #08466d;
+  color: #123f5c;
 
   font-size: 11px;
+
   font-weight: 700;
 
   line-height: 1.4;
@@ -206,15 +258,16 @@
 
 
 /* =========================================
-   FEATURE DESCRIPTION
+   FEATURE TEXT
 ========================================= */
 
-.about-feature span {
-  display: block;
+.about-feature p {
+  margin: 0;
 
-  color: #78909f;
+  color: #7b8c96;
 
-  font-size: 8px;
+  font-size: 11px;
+
   font-weight: 400;
 
   line-height: 1.5;
@@ -226,52 +279,66 @@
 ========================================= */
 
 .about-button {
-  width: fit-content;
-
-  margin-top: 25px;
-
-  padding: 11px 18px;
-
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
-  gap: 13px;
+  gap: 10px;
 
-  border: 1.5px solid #0a7da5;
+  margin-top: 24px;
 
-  border-radius: 30px;
+  padding: 10px 20px;
+
+  min-height: 40px;
+
+  border: 1.5px solid #2085a8;
+
+  border-radius: 25px;
 
   background: #ffffff;
 
-  color: #08648b;
+  color: #07577c;
 
   text-decoration: none;
 
-  font-size: 10px;
+  font-size: 11px;
+
   font-weight: 600;
 
+  line-height: 1;
+
   transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.about-button span {
-  font-size: 16px;
-  line-height: 1;
+
+.about-button svg {
+  width: 17px;
+  height: 17px;
+
+  transition: transform 0.3s ease;
 }
+
 
 .about-button:hover {
-  background: #087da5;
+  transform: translateY(-2px);
+
+  background: #075b86;
 
   color: #ffffff;
 
-  transform: translateY(-2px);
-
   box-shadow:
-    0 8px 20px rgba(0, 120, 155, 0.18);
+    0 8px 20px rgba(7, 91, 134, 0.20);
+}
+
+
+.about-button:hover svg {
+  transform: translateX(4px);
 }
 
 
@@ -279,76 +346,73 @@
    LARGE LAPTOP
 ========================================= */
 
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
 
   .about-section {
-    padding: 70px 0;
+    padding: 75px 0;
   }
 
   .about-container {
-    width: 88%;
-    gap: 45px;
+    grid-template-columns: 43% 1fr;
+
+    gap: 38px;
   }
 
-  .about-image-wrap {
-    height: 450px;
+  .about-image-wrapper {
+    height: 470px;
   }
 
-  .about-content h2 {
+  .about-title {
     font-size: 34px;
   }
-
 }
 
 
 /* =========================================
-   LAPTOP / TABLET
+   LAPTOP
 ========================================= */
 
 @media (max-width: 1000px) {
 
   .about-section {
-    padding: 60px 0;
+    padding: 65px 0;
   }
 
   .about-container {
-    width: 90%;
+    grid-template-columns: 42% 1fr;
 
-    grid-template-columns: 0.9fr 1.1fr;
-
-    gap: 32px;
+    gap: 30px;
   }
 
-  .about-image-wrap {
-    height: 410px;
-
-    border-radius: 15px;
+  .about-image-wrapper {
+    height: 430px;
   }
 
-  .about-content h2 {
-    font-size: 29px;
-
-    letter-spacing: -0.5px;
+  .about-title {
+    font-size: 30px;
   }
 
-  .about-content > p {
-    font-size: 10px;
+  .about-description {
+    margin-top: 18px;
+  }
 
-    line-height: 1.7;
+  .about-description p {
+    font-size: 12px;
+
+    line-height: 1.65;
   }
 
   .about-features {
-    gap: 9px;
+    gap: 10px;
 
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   .about-feature {
-    min-height: 65px;
+    min-height: 68px;
 
-    padding: 12px 13px;
+    padding: 12px;
   }
-
 }
 
 
@@ -359,34 +423,30 @@
 @media (max-width: 800px) {
 
   .about-section {
-    padding: 50px 0;
+    padding: 55px 0;
   }
 
   .about-container {
-    width: 88%;
-
     grid-template-columns: 1fr;
 
     gap: 35px;
   }
 
-  .about-image-wrap {
-    width: 100%;
-    height: 420px;
+  .about-image-wrapper {
+    height: 430px;
   }
 
   .about-content {
-    max-width: 100%;
+    padding-right: 0;
   }
 
-  .about-content h2 {
-    font-size: 31px;
+  .about-title {
+    font-size: 32px;
   }
 
-  .about-content > p {
-    font-size: 10px;
+  .about-description {
+    max-width: 750px;
   }
-
 }
 
 
@@ -401,66 +461,53 @@
   }
 
   .about-container {
-    width: 92%;
-
-    display: flex;
-    flex-direction: column;
-
     gap: 28px;
   }
 
 
   /* IMAGE */
 
-  .about-image-wrap {
-    width: 100%;
+  .about-image-wrapper {
     height: 330px;
 
-    border-radius: 14px;
-  }
-
-  .about-image {
-    object-fit: cover;
+    border-radius: 0 14px 14px 14px;
   }
 
 
   /* LABEL */
 
   .about-label {
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
     margin-bottom: 10px;
-
-    font-size: 8px;
-
-    letter-spacing: 1.1px;
-  }
-
-  .about-label span {
-    width: 18px;
-    height: 2px;
   }
 
 
-  /* HEADING */
+  /* TITLE */
 
-  .about-content h2 {
-    margin-bottom: 15px;
-
+  .about-title {
     font-size: 25px;
 
-    line-height: 1.22;
+    line-height: 1.2;
 
-    letter-spacing: -0.4px;
+    letter-spacing: -0.5px;
   }
 
 
-  /* TEXT */
+  /* DESCRIPTION */
 
-  .about-content > p {
-    margin-bottom: 12px;
+  .about-description {
+    margin-top: 17px;
+  }
 
-    font-size: 8px;
+  .about-description p {
+    font-size: 11px;
 
     line-height: 1.7;
+
+    margin-bottom: 11px;
   }
 
 
@@ -471,25 +518,21 @@
 
     gap: 9px;
 
-    margin-top: 20px;
+    margin-top: 19px;
   }
 
   .about-feature {
-    min-height: 58px;
+    min-height: auto;
 
-    padding: 11px 13px;
-
-    border-radius: 8px;
+    padding: 12px 13px;
   }
 
   .about-feature h3 {
-    font-size: 9px;
-
-    margin-bottom: 3px;
+    font-size: 10px;
   }
 
-  .about-feature span {
-    font-size: 7px;
+  .about-feature p {
+    font-size: 8px;
   }
 
 
@@ -498,17 +541,10 @@
   .about-button {
     margin-top: 20px;
 
-    padding: 10px 16px;
+    padding: 10px 17px;
 
-    font-size: 8px;
-
-    gap: 10px;
+    font-size: 10px;
   }
-
-  .about-button span {
-    font-size: 14px;
-  }
-
 }
 
 
@@ -522,36 +558,19 @@
     padding: 38px 0;
   }
 
-  .about-container {
-    width: 92%;
-
-    gap: 24px;
+  .about-image-wrapper {
+    height: 285px;
   }
 
-  .about-image-wrap {
-    height: 290px;
-
-    border-radius: 12px;
+  .about-title {
+    font-size: 23px;
   }
 
-  .about-content h2 {
-    font-size: 22px;
-  }
-
-  .about-content > p {
-    font-size: 7px;
-  }
-
-  .about-feature {
-    min-height: 55px;
-
-    padding: 10px 12px;
+  .about-description p {
+    font-size: 10px;
   }
 
   .about-button {
-    font-size: 7px;
-
-    padding: 9px 14px;
+    width: 100%;
   }
-
 }

@@ -1,0 +1,835 @@
+/* =========================================
+   PROCESS SECTION
+========================================= */
+
+.process-section {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 900px;
+
+  padding: 70px 0 85px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 38, 82, 0.88) 0%,
+      rgba(5, 76, 116, 0.78) 48%,
+      rgba(8, 174, 198, 0.62) 100%
+    ),
+    url("../assets/images/Water fall-2.png");
+
+  background-size: cover;
+
+  background-position: right;
+
+  background-repeat: no-repeat;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   DARK BLUE OVERLAY
+========================================= */
+
+.process-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(0, 188, 220, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 65%,
+      rgba(0, 220, 235, 0.10),
+      transparent 35%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.process-container {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.process-header {
+  width: 100%;
+
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.process-label {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+
+  color: #16e0e8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+
+.process-label span {
+  width: 78px;
+
+  height: 1px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #16dce5
+    );
+}
+
+
+.process-label span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #16dce5,
+      transparent
+    );
+}
+
+
+/* =========================================
+   HEADER TITLE
+========================================= */
+
+.process-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 48px;
+
+  font-weight: 700;
+
+  line-height: 1.16;
+
+  letter-spacing: -1.2px;
+}
+
+
+/* =========================================
+   HEADER DESCRIPTION
+========================================= */
+
+.process-header p {
+  max-width: 650px;
+
+  margin: 24px auto 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   PROCESS FLOW
+========================================= */
+
+.process-flow {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 520px;
+
+  margin-top: 50px;
+}
+
+
+/* =========================================
+   PROCESS GRID
+========================================= */
+
+.process-grid {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 5%;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   PROCESS CARD
+========================================= */
+
+.process-card {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 405px;
+
+  padding: 30px 33px;
+
+  border: 1px solid rgba(89, 190, 235, 0.72);
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(5, 62, 111, 0.72),
+      rgba(8, 87, 129, 0.56)
+    );
+
+  box-shadow:
+    0 18px 40px rgba(0, 25, 60, 0.16);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================
+   STAGGER
+========================================= */
+
+.process-card-01,
+.process-card-03 {
+  transform: translateY(0);
+}
+
+.process-card-02,
+.process-card-04 {
+  transform: translateY(100px);
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.process-card-01:hover,
+.process-card-03:hover {
+  transform: translateY(-7px);
+}
+
+.process-card-02:hover,
+.process-card-04:hover {
+  transform: translateY(93px);
+}
+
+
+.process-card:hover {
+  border-color: rgba(29, 230, 235, 0.95);
+
+  box-shadow:
+    0 22px 50px rgba(0, 30, 70, 0.28);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.process-card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.process-icon {
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+
+.process-icon svg {
+  width: 48px;
+
+  height: 48px;
+
+  display: block;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.process-number {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1.5px solid #16dce5;
+
+  border-radius: 50%;
+
+  color: #25dfe7;
+
+  font-size: 17px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.process-card-content {
+  margin-top: 18px;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.process-card-content h3 {
+  margin: 0;
+
+  max-width: 290px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   SMALL CYAN LINE
+========================================= */
+
+.process-card-line {
+  display: block;
+
+  width: 38px;
+
+  height: 4px;
+
+  margin-top: 18px;
+
+  border-radius: 10px;
+
+  background: #11dce5;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.process-card-content p {
+  margin: 20px 0 0;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   CONNECTORS
+========================================= */
+
+.process-connector {
+  position: absolute;
+
+  z-index: 2;
+
+  border-style: dashed;
+
+  border-color: rgba(220, 238, 255, 0.70);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONNECTOR ONE
+========================================= */
+
+.connector-one {
+  left: 17%;
+
+  top: -22px;
+
+  width: 18%;
+
+  height: 105px;
+
+  border-width: 1px 1px 0 0;
+
+  border-radius: 0 7px 0 0;
+}
+
+
+/* =========================================
+   CONNECTOR TWO
+========================================= */
+
+.connector-two {
+  left: 17%;
+
+  top: 405px;
+
+  width: 23%;
+
+  height: 105px;
+
+  border-width: 0 0 1px 1px;
+
+  border-radius: 0 0 0 7px;
+}
+
+
+/* =========================================
+   CONNECTOR THREE
+========================================= */
+
+.connector-three {
+  left: 67%;
+
+  top: -22px;
+
+  width: 18%;
+
+  height: 105px;
+
+  border-width: 1px 1px 0 0;
+
+  border-radius: 0 7px 0 0;
+}
+
+
+/* =========================================
+   CONNECTOR FOUR
+========================================= */
+
+.connector-four {
+  left: 67%;
+
+  top: 405px;
+
+  width: 23%;
+
+  height: 105px;
+
+  border-width: 0 0 1px 1px;
+
+  border-radius: 0 0 0 7px;
+}
+
+
+/* =========================================
+   CONNECTOR DOT
+========================================= */
+
+.connector-dot {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #13dce6;
+
+  box-shadow:
+    0 0 12px rgba(19, 220, 230, 0.95);
+}
+
+
+/* TOP DOT */
+
+.connector-one .connector-dot,
+.connector-three .connector-dot {
+  left: -4px;
+
+  top: -4px;
+}
+
+
+/* BOTTOM DOT */
+
+.connector-two .connector-dot,
+.connector-four .connector-dot {
+  left: -4px;
+
+  bottom: -4px;
+}
+
+
+/* =========================================
+   CONNECTOR ARROW
+========================================= */
+
+.connector-arrow {
+  position: absolute;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+/* TOP */
+
+.connector-one .connector-arrow,
+.connector-three .connector-arrow {
+  right: -6px;
+
+  bottom: -8px;
+}
+
+
+/* BOTTOM */
+
+.connector-two .connector-arrow,
+.connector-four .connector-arrow {
+  right: -6px;
+
+  top: -8px;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   LARGE LAPTOP
+========================================= */
+
+@media (max-width: 1250px) {
+
+  .process-section {
+    min-height: 820px;
+
+    padding: 65px 0 75px;
+  }
+
+  .process-header h2 {
+    font-size: 42px;
+  }
+
+  .process-header p {
+    font-size: 13px;
+  }
+
+  .process-grid {
+    gap: 3%;
+  }
+
+  .process-card {
+    min-height: 370px;
+
+    padding: 26px 23px;
+  }
+
+  .process-card-content {
+    margin-top: 55px;
+  }
+
+  .process-card-content h3 {
+    font-size: 15px;
+  }
+
+  .process-card-content p {
+    font-size: 11px;
+  }
+
+  .connector-two,
+  .connector-four {
+    top: 370px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .process-section {
+    min-height: auto;
+
+    padding: 60px 0 70px;
+  }
+
+  .process-header h2 {
+    font-size: 34px;
+  }
+
+  .process-flow {
+    min-height: auto;
+
+    margin-top: 40px;
+  }
+
+  .process-connector {
+    display: none;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+  }
+
+  .process-card {
+    min-height: 320px;
+  }
+
+  .process-card-01,
+  .process-card-02,
+  .process-card-03,
+  .process-card-04 {
+    transform: none;
+  }
+
+  .process-card-01:hover,
+  .process-card-02:hover,
+  .process-card-03:hover,
+  .process-card-04:hover {
+    transform: translateY(-5px);
+  }
+
+  .process-card-content {
+    margin-top: 45px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .process-section {
+    padding: 48px 0 55px;
+
+    background-position: center;
+  }
+
+  .process-label {
+    gap: 10px;
+
+    margin-bottom: 17px;
+
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .process-label span {
+    width: 35px;
+  }
+
+  .process-header h2 {
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+  }
+
+  .process-header p {
+    margin-top: 15px;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+  }
+
+  .process-flow {
+    margin-top: 30px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .process-card {
+    min-height: 250px;
+
+    padding: 22px 20px;
+  }
+
+  .process-icon {
+    width: 45px;
+
+    height: 45px;
+  }
+
+  .process-icon svg {
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .process-number {
+    width: 37px;
+
+    height: 37px;
+
+    font-size: 12px;
+  }
+
+  .process-card-content {
+    margin-top: 35px;
+  }
+
+  .process-card-content h3 {
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .process-card-line {
+    width: 32px;
+
+    height: 3px;
+
+    margin-top: 13px;
+  }
+
+  .process-card-content p {
+    margin-top: 13px;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .process-section {
+    padding: 42px 0 48px;
+  }
+
+  .process-header h2 {
+    font-size: 22px;
+  }
+
+  .process-header p {
+    font-size: 9px;
+  }
+
+  .process-card {
+    min-height: 235px;
+
+    padding: 20px 17px;
+  }
+
+  .process-card-content {
+    margin-top: 30px;
+  }
+
+  .process-card-content h3 {
+    font-size: 13px;
+  }
+
+  .process-card-content p {
+    font-size: 8px;
+  }
+}

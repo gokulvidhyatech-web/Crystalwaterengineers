@@ -30,10 +30,6 @@ function ProcessSection() {
 
   const renderIcon = (type) => {
     switch (type) {
-      /* =========================================
-         01 - CONSULTATION
-      ========================================= */
-
       case "consultation":
         return (
           <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -58,10 +54,6 @@ function ProcessSection() {
             />
           </svg>
         );
-
-      /* =========================================
-         02 - DESIGN
-      ========================================= */
 
       case "design":
         return (
@@ -107,10 +99,6 @@ function ProcessSection() {
           </svg>
         );
 
-      /* =========================================
-         03 - INSTALLATION
-      ========================================= */
-
       case "installation":
         return (
           <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -139,10 +127,6 @@ function ProcessSection() {
             />
           </svg>
         );
-
-      /* =========================================
-         04 - SUPPORT
-      ========================================= */
 
       case "support":
         return (
@@ -207,7 +191,6 @@ function ProcessSection() {
           <div className="process-label">
             <span></span>
             OUR PROCESS
-            <span></span>
           </div>
 
           <h2>
@@ -231,28 +214,90 @@ function ProcessSection() {
         <div className="process-flow">
 
           {/* =========================================
-              CONNECTING PATH
+              CONNECTOR 01 → 02
           ========================================= */}
 
-          <div className="process-connector connector-one">
-            <span className="connector-dot"></span>
-            <span className="connector-arrow">↓</span>
-          </div>
+          <svg
+            className="connector-svg connector-svg-one"
+            viewBox="0 0 300 150"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              className="connector-path"
+              d="M10 10 H270 Q290 10 290 30 V135"
+            />
 
-          <div className="process-connector connector-two">
-            <span className="connector-dot"></span>
-            <span className="connector-arrow">↓</span>
-          </div>
+            <circle
+              className="connector-dot"
+              cx="10"
+              cy="10"
+              r="5"
+            />
 
-          <div className="process-connector connector-three">
-            <span className="connector-dot"></span>
-            <span className="connector-arrow">↓</span>
-          </div>
+            <path
+              className="connector-arrow"
+              d="M284 127 L290 139 L296 127"
+            />
+          </svg>
 
-          <div className="process-connector connector-four">
-            <span className="connector-dot"></span>
-            <span className="connector-arrow">↓</span>
-          </div>
+
+          {/* =========================================
+              CONNECTOR 02 → 03
+          ========================================= */}
+
+          <svg
+            className="connector-svg connector-svg-two"
+            viewBox="0 0 300 150"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              className="connector-path"
+              d="M10 140 H270 Q290 140 290 120 V15"
+            />
+
+            <circle
+              className="connector-dot"
+              cx="10"
+              cy="140"
+              r="5"
+            />
+
+            <path
+              className="connector-arrow connector-arrow-up"
+              d="M284 23 L290 11 L296 23"
+            />
+          </svg>
+
+
+          {/* =========================================
+              CONNECTOR 03 → 04
+          ========================================= */}
+
+          <svg
+            className="connector-svg connector-svg-three"
+            viewBox="0 0 300 150"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              className="connector-path"
+              d="M10 10 H270 Q290 10 290 30 V135"
+            />
+
+            <circle
+              className="connector-dot"
+              cx="10"
+              cy="10"
+              r="5"
+            />
+
+            <path
+              className="connector-arrow"
+              d="M284 127 L290 139 L296 127"
+            />
+          </svg>
 
 
           {/* =========================================
@@ -267,8 +312,6 @@ function ProcessSection() {
                 key={step.number}
               >
 
-                {/* CARD TOP */}
-
                 <div className="process-card-top">
 
                   <div className="process-icon">
@@ -281,8 +324,6 @@ function ProcessSection() {
 
                 </div>
 
-
-                {/* CARD CONTENT */}
 
                 <div className="process-card-content">
 

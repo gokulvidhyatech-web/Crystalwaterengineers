@@ -7,18 +7,23 @@
 
   width: 100%;
 
-  min-height: 900px;
+  min-height: 950px;
 
-  padding: 70px 0 85px;
+  padding: 40px 0 90px;
 
   overflow: hidden;
+
+  /*
+    WATER IMAGE = MAIN FOCUS
+    BLUE/CYAN = LIGHT THEME OVERLAY
+  */
 
   background:
     linear-gradient(
       90deg,
-      rgba(3, 38, 82, 0.88) 0%,
-      rgba(5, 76, 116, 0.78) 48%,
-      rgba(8, 174, 198, 0.62) 100%
+      rgba(2, 34, 78, 0.42) 0%,
+      rgba(4, 67, 112, 0.28) 50%,
+      rgba(8, 161, 194, 0.18) 100%
     ),
     url("../assets/images/Water fall-2.png");
 
@@ -29,35 +34,6 @@
   background-repeat: no-repeat;
 
   font-family: "Poppins", sans-serif;
-}
-
-
-/* =========================================
-   DARK BLUE OVERLAY
-========================================= */
-
-.process-section::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 15% 30%,
-      rgba(0, 188, 220, 0.10),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 65%,
-      rgba(0, 220, 235, 0.10),
-      transparent 35%
-    );
-
-  pointer-events: none;
-
-  z-index: 1;
 }
 
 
@@ -79,7 +55,7 @@
 .process-header {
   width: 100%;
 
-  max-width: 800px;
+  max-width: 900px;
 
   margin: 0 auto;
 
@@ -98,13 +74,13 @@
 
   justify-content: center;
 
-  gap: 18px;
+  gap: 12px;
 
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 
-  color: #16e0e8;
+  color: #12dce7;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 
@@ -112,34 +88,28 @@
 }
 
 
-.process-label span {
-  width: 78px;
+/* =========================================
+   PREMIUM SINGLE LINE
+========================================= */
 
-  height: 1px;
+.process-label span {
+  width: 42px;
+
+  height: 2px;
 
   display: block;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #16dce5
-    );
-}
+  border-radius: 10px;
 
+  background: #12dce7;
 
-.process-label span:last-child {
-  background:
-    linear-gradient(
-      90deg,
-      #16dce5,
-      transparent
-    );
+  box-shadow:
+    0 0 8px rgba(18, 220, 231, 0.25);
 }
 
 
 /* =========================================
-   HEADER TITLE
+   HEADING
 ========================================= */
 
 .process-header h2 {
@@ -147,32 +117,35 @@
 
   color: #ffffff;
 
-  font-size: 48px;
+  font-size: 50px;
 
   font-weight: 700;
 
-  line-height: 1.16;
+  line-height: 1.15;
 
-  letter-spacing: -1.2px;
+  letter-spacing: -1.5px;
 }
 
 
 /* =========================================
-   HEADER DESCRIPTION
+   DESCRIPTION
 ========================================= */
 
 .process-header p {
-  max-width: 650px;
+  max-width: 670px;
 
-  margin: 24px auto 0;
+  margin: 25px auto 0;
 
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
 
   font-size: 15px;
 
   font-weight: 400;
 
   line-height: 1.8;
+
+  text-shadow:
+    0 1px 3px rgba(0, 20, 50, 0.35);
 }
 
 
@@ -185,9 +158,121 @@
 
   width: 100%;
 
-  min-height: 520px;
+  height: 650px;
 
-  margin-top: 50px;
+  margin-top: 45px;
+}
+
+
+/* =========================================
+   CONNECTOR SVG
+========================================= */
+
+.connector-svg {
+  position: absolute;
+
+  z-index: 2;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONNECTOR 01 → 02
+========================================= */
+
+.connector-svg-one {
+  left: 14%;
+
+  top: -5px;
+
+  width: 27%;
+
+  height: 160px;
+}
+
+
+/* =========================================
+   CONNECTOR 02 → 03
+========================================= */
+
+.connector-svg-two {
+  left: 37%;
+
+  top: 395px;
+
+  width: 26%;
+
+  height: 160px;
+}
+
+
+/* =========================================
+   CONNECTOR 03 → 04
+========================================= */
+
+.connector-svg-three {
+  left: 64%;
+
+  top: -5px;
+
+  width: 27%;
+
+  height: 160px;
+}
+
+
+/* =========================================
+   CONNECTOR PATH
+========================================= */
+
+.connector-path {
+  fill: none;
+
+  stroke: rgba(255, 255, 255, 0.82);
+
+  stroke-width: 1.5;
+
+  stroke-dasharray: 6 6;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================
+   CONNECTOR DOT
+========================================= */
+
+.connector-dot {
+  fill: #12dce7;
+
+  filter:
+    drop-shadow(0 0 4px rgba(18, 220, 231, 1))
+    drop-shadow(0 0 9px rgba(18, 220, 231, 0.7));
+}
+
+
+/* =========================================
+   CONNECTOR ARROW
+========================================= */
+
+.connector-arrow {
+  fill: none;
+
+  stroke: #ffffff;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
 }
 
 
@@ -219,23 +304,32 @@
 
   width: 100%;
 
-  min-height: 405px;
+  min-height: 320px;
 
   padding: 30px 33px;
 
-  border: 1px solid rgba(89, 190, 235, 0.72);
+  border: 1px solid rgba(105, 207, 239, 0.78);
 
   border-radius: 9px;
+
+  /*
+    More transparent so the real
+    water image remains visible.
+  */
 
   background:
     linear-gradient(
       145deg,
-      rgba(5, 62, 111, 0.72),
-      rgba(8, 87, 129, 0.56)
+      rgba(3, 54, 101, 0.58),
+      rgba(5, 83, 125, 0.40)
     );
 
   box-shadow:
-    0 18px 40px rgba(0, 25, 60, 0.16);
+    0 20px 45px rgba(0, 20, 55, 0.18);
+
+  -webkit-backdrop-filter: blur(2px);
+
+  backdrop-filter: blur(2px);
 
   transition:
     transform 0.35s ease,
@@ -268,17 +362,19 @@
   transform: translateY(-7px);
 }
 
-.process-card-02:hover,
-.process-card-04:hover {
+.process-card-02:hover {
   transform: translateY(93px);
 }
 
+.process-card-04:hover {
+  transform: translateY(113px);
+}
 
 .process-card:hover {
-  border-color: rgba(29, 230, 235, 0.95);
+  border-color: rgba(24, 226, 236, 0.98);
 
   box-shadow:
-    0 22px 50px rgba(0, 30, 70, 0.28);
+    0 24px 55px rgba(0, 25, 65, 0.30);
 }
 
 
@@ -315,9 +411,9 @@
 
 
 .process-icon svg {
-  width: 48px;
+  width: 49px;
 
-  height: 48px;
+  height: 49px;
 
   display: block;
 }
@@ -338,15 +434,20 @@
 
   justify-content: center;
 
-  border: 1.5px solid #16dce5;
+  border: 1.5px solid #13dce6;
 
   border-radius: 50%;
 
-  color: #25dfe7;
+  color: #19e0e8;
 
   font-size: 17px;
 
   font-weight: 500;
+
+  background: rgba(2, 45, 80, 0.18);
+
+  box-shadow:
+    0 0 10px rgba(19, 220, 230, 0.08);
 }
 
 
@@ -355,7 +456,7 @@
 ========================================= */
 
 .process-card-content {
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 
@@ -375,17 +476,20 @@
   font-weight: 600;
 
   line-height: 1.55;
+
+  text-shadow:
+    0 1px 3px rgba(0, 20, 50, 0.35);
 }
 
 
 /* =========================================
-   SMALL CYAN LINE
+   CYAN LINE
 ========================================= */
 
 .process-card-line {
   display: block;
 
-  width: 38px;
+  width: 39px;
 
   height: 4px;
 
@@ -394,6 +498,9 @@
   border-radius: 10px;
 
   background: #11dce5;
+
+  box-shadow:
+    0 0 8px rgba(17, 220, 229, 0.30);
 }
 
 
@@ -404,185 +511,16 @@
 .process-card-content p {
   margin: 20px 0 0;
 
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.90);
 
   font-size: 13px;
 
   font-weight: 400;
 
   line-height: 1.75;
-}
 
-
-/* =========================================
-   CONNECTORS
-========================================= */
-
-.process-connector {
-  position: absolute;
-
-  z-index: 2;
-
-  border-style: dashed;
-
-  border-color: rgba(220, 238, 255, 0.70);
-
-  pointer-events: none;
-}
-
-
-/* =========================================
-   CONNECTOR ONE
-========================================= */
-
-.connector-one {
-  left: 17%;
-
-  top: -22px;
-
-  width: 18%;
-
-  height: 105px;
-
-  border-width: 1px 1px 0 0;
-
-  border-radius: 0 7px 0 0;
-}
-
-
-/* =========================================
-   CONNECTOR TWO
-========================================= */
-
-.connector-two {
-  left: 17%;
-
-  top: 405px;
-
-  width: 23%;
-
-  height: 105px;
-
-  border-width: 0 0 1px 1px;
-
-  border-radius: 0 0 0 7px;
-}
-
-
-/* =========================================
-   CONNECTOR THREE
-========================================= */
-
-.connector-three {
-  left: 67%;
-
-  top: -22px;
-
-  width: 18%;
-
-  height: 105px;
-
-  border-width: 1px 1px 0 0;
-
-  border-radius: 0 7px 0 0;
-}
-
-
-/* =========================================
-   CONNECTOR FOUR
-========================================= */
-
-.connector-four {
-  left: 67%;
-
-  top: 405px;
-
-  width: 23%;
-
-  height: 105px;
-
-  border-width: 0 0 1px 1px;
-
-  border-radius: 0 0 0 7px;
-}
-
-
-/* =========================================
-   CONNECTOR DOT
-========================================= */
-
-.connector-dot {
-  position: absolute;
-
-  width: 7px;
-
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: #13dce6;
-
-  box-shadow:
-    0 0 12px rgba(19, 220, 230, 0.95);
-}
-
-
-/* TOP DOT */
-
-.connector-one .connector-dot,
-.connector-three .connector-dot {
-  left: -4px;
-
-  top: -4px;
-}
-
-
-/* BOTTOM DOT */
-
-.connector-two .connector-dot,
-.connector-four .connector-dot {
-  left: -4px;
-
-  bottom: -4px;
-}
-
-
-/* =========================================
-   CONNECTOR ARROW
-========================================= */
-
-.connector-arrow {
-  position: absolute;
-
-  color: #ffffff;
-
-  font-size: 17px;
-
-  font-weight: 400;
-
-  line-height: 1;
-}
-
-
-/* TOP */
-
-.connector-one .connector-arrow,
-.connector-three .connector-arrow {
-  right: -6px;
-
-  bottom: -8px;
-}
-
-
-/* BOTTOM */
-
-.connector-two .connector-arrow,
-.connector-four .connector-arrow {
-  right: -6px;
-
-  top: -8px;
-
-  transform: rotate(180deg);
+  text-shadow:
+    0 1px 3px rgba(0, 20, 50, 0.30);
 }
 
 
@@ -593,9 +531,9 @@
 @media (max-width: 1250px) {
 
   .process-section {
-    min-height: 820px;
+    min-height: 850px;
 
-    padding: 65px 0 75px;
+    padding: 60px 0 75px;
   }
 
   .process-header h2 {
@@ -606,8 +544,8 @@
     font-size: 13px;
   }
 
-  .process-grid {
-    gap: 3%;
+  .process-flow {
+    height: 580px;
   }
 
   .process-card {
@@ -617,7 +555,7 @@
   }
 
   .process-card-content {
-    margin-top: 55px;
+    margin-top: 48px;
   }
 
   .process-card-content h3 {
@@ -628,9 +566,31 @@
     font-size: 11px;
   }
 
-  .connector-two,
-  .connector-four {
-    top: 370px;
+  .process-card-02 {
+    transform: translateY(85px);
+  }
+
+  .process-card-04 {
+    transform: translateY(100px);
+  }
+
+  .process-card-02:hover {
+    transform: translateY(78px);
+  }
+
+  .process-card-04:hover {
+    transform: translateY(93px);
+  }
+
+  .connector-svg-one,
+  .connector-svg-three {
+    height: 140px;
+  }
+
+  .connector-svg-two {
+    top: 360px;
+
+    height: 140px;
   }
 }
 
@@ -642,7 +602,7 @@
 @media (max-width: 900px) {
 
   .process-section {
-    min-height: auto;
+    min-height: 0;
 
     padding: 60px 0 70px;
   }
@@ -652,12 +612,12 @@
   }
 
   .process-flow {
-    min-height: auto;
+    height: auto;
 
     margin-top: 40px;
   }
 
-  .process-connector {
+  .connector-svg {
     display: none;
   }
 
@@ -667,10 +627,7 @@
     gap: 25px;
   }
 
-  .process-card {
-    min-height: 320px;
-  }
-
+  .process-card,
   .process-card-01,
   .process-card-02,
   .process-card-03,
@@ -700,11 +657,11 @@
   .process-section {
     padding: 48px 0 55px;
 
-    background-position: center;
+    background-position: right;
   }
 
   .process-label {
-    gap: 10px;
+    gap: 9px;
 
     margin-bottom: 17px;
 
@@ -714,7 +671,9 @@
   }
 
   .process-label span {
-    width: 35px;
+    width: 28px;
+
+    height: 1.5px;
   }
 
   .process-header h2 {
@@ -833,3 +792,6 @@
     font-size: 8px;
   }
 }
+
+
+

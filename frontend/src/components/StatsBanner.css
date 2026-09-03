@@ -28,19 +28,17 @@
 
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      300deg,
-      #063b63 0%,
-      #07577e 35%,
-      #078da8 68%,
-      #11b8ca 100%
-    );
+  background: linear-gradient(
+    232deg,
+    #06345b 0%,
+    #075b86 45%,
+    #08b9d0 100%
+  );
 }
 
 
 /* =========================================
-   WAVE BACKGROUND
+   WATER BACKGROUND
 ========================================= */
 
 .stats-wave {
@@ -55,8 +53,10 @@
   background-image: url("../assets/images/Water\ fall.png");
 
   background-repeat: no-repeat;
-  background-position:center ;
-  background-size: cover;
+
+  background-size: 100% auto;
+
+  background-position: center bottom;
 
   opacity: 0.42;
 
@@ -69,46 +69,7 @@
 
 
 /* =========================================
-   DECORATIVE GLOW
-========================================= */
-
-.stats-glow {
-  position: absolute;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  filter: blur(70px);
-
-  opacity: 0.18;
-
-  z-index: 1;
-}
-
-.stats-glow-one {
-  width: 320px;
-  height: 320px;
-
-  right: 8%;
-  top: -180px;
-
-  background: #5be7ef;
-}
-
-.stats-glow-two {
-  width: 280px;
-  height: 280px;
-
-  left: 25%;
-  bottom: -200px;
-
-  background: #1687e8;
-}
-
-
-/* =========================================
-   CONTAINER
+   CONTENT CONTAINER
 ========================================= */
 
 .stats-container {
@@ -172,6 +133,10 @@
   letter-spacing: -0.9px;
 }
 
+
+/* =========================================
+   HEADING LINE
+========================================= */
 
 .stats-heading-line {
   display: block;
@@ -287,6 +252,8 @@
 .stat-icon svg {
   width: 27px;
   height: 27px;
+
+  display: block;
 
   color: #076096;
 }
@@ -513,6 +480,9 @@
     padding: 14px 20px;
   }
 
+
+  /* Vertical divider */
+
   .stat-item:nth-child(2)::after {
     display: none;
   }
@@ -521,14 +491,25 @@
     display: block;
   }
 
+
+  /* Horizontal divider */
+
   .stat-item:nth-child(-n + 2) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   }
 
-  .stats-wave {
-    background-size: auto 220px;
 
-    opacity: 0.32;
+  /* Tablet water */
+
+  .stats-wave {
+    width: 100%;
+    height: 100%;
+
+    background-size: auto 100%;
+
+    background-position: 72% bottom;
+
+    opacity: 0.30;
   }
 }
 
@@ -539,9 +520,19 @@
 
 @media (max-width: 600px) {
 
+  .stats-banner {
+    min-height: auto;
+  }
+
+
+  /* Container */
+
   .stats-container {
     padding: 34px 0 38px;
   }
+
+
+  /* Heading */
 
   .stats-label {
     font-size: 8px;
@@ -566,11 +557,17 @@
     margin-top: 14px;
   }
 
+
+  /* Stats */
+
   .stats-grid {
     grid-template-columns: 1fr;
 
     margin-top: 28px;
   }
+
+
+  /* Stat item */
 
   .stat-item {
     min-height: 64px;
@@ -586,9 +583,15 @@
     border-bottom: none;
   }
 
+
+  /* Remove vertical divider */
+
   .stat-item::after {
     display: none !important;
   }
+
+
+  /* Icon */
 
   .stat-icon {
     width: 46px;
@@ -604,6 +607,9 @@
     height: 20px;
   }
 
+
+  /* Content */
+
   .stat-content strong {
     font-size: 24px;
   }
@@ -618,24 +624,23 @@
     font-size: 7px;
   }
 
+
+  /* Mobile water */
+
   .stats-wave {
-    height: 180px;
+    left: 0;
+    bottom: 0;
 
-    background-size: auto 180px;
+    width: 100%;
+    height: 100%;
 
-    background-position: center bottom;
+    background-size: auto 100%;
 
-    opacity: 0.24;
-  }
+    background-position: 82% bottom;
 
-  .stats-glow-one {
-    width: 220px;
-    height: 220px;
-  }
+    opacity: 0.22;
 
-  .stats-glow-two {
-    width: 200px;
-    height: 200px;
+    mix-blend-mode: screen;
   }
 }
 
@@ -672,5 +677,16 @@
 
   .stat-content strong {
     font-size: 22px;
+  }
+
+
+  /* Small mobile water */
+
+  .stats-wave {
+    background-size: auto 100%;
+
+    background-position: 85% bottom;
+
+    opacity: 0.20;
   }
 }

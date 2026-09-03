@@ -133,12 +133,8 @@ function StatsBanner() {
     <section className="stats-section">
       <div className="stats-banner">
 
-        {/* WAVE BACKGROUND */}
+        {/* WATER BACKGROUND */}
         <div className="stats-wave"></div>
-
-        {/* DECORATIVE GLOW */}
-        <div className="stats-glow stats-glow-one"></div>
-        <div className="stats-glow stats-glow-two"></div>
 
         <div className="container stats-container">
 
@@ -157,7 +153,7 @@ function StatsBanner() {
             <span className="stats-heading-line"></span>
           </div>
 
-          {/* RIGHT STATS */}
+          {/* STATS */}
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div className="stat-item" key={index}>

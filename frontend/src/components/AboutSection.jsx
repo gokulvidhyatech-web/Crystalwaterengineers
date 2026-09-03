@@ -60,7 +60,7 @@ function AboutSection() {
           {/* HEADING */}
 
           <h2 className="about-title">
-            Engineering trust,
+            Engineering trust
             <br />
             one plant at a time
           </h2>

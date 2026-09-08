@@ -1,0 +1,424 @@
+/* =========================================
+   CUSTOMER SATISFACTION SECTION
+   Crystal Water Engineers
+========================================= */
+
+.cwe-customer-satisfaction {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: transparent;
+}
+
+.cwe-customer-satisfaction *,
+.cwe-customer-satisfaction *::before,
+.cwe-customer-satisfaction *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.cwe-customer-inner {
+  width: 100%;
+  height: 150px;
+  min-height: 150px;
+
+  margin: 0;
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    90deg,
+    #06345b 0%,
+    #075b86 45%,
+    #08b9d0 100%
+  );
+
+  border-radius: 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.cwe-customer-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  flex-shrink: 0;
+
+  height: 100%;
+}
+
+
+/* =========================================
+   CUSTOMER ICON
+========================================= */
+
+.cwe-customer-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  min-width: 42px !important;
+  min-height: 42px !important;
+
+  max-width: 42px !important;
+  max-height: 42px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.cwe-customer-icon svg {
+  width: 38px !important;
+  height: 38px !important;
+
+  min-width: 38px !important;
+  min-height: 38px !important;
+
+  max-width: 38px !important;
+  max-height: 38px !important;
+
+  fill: none;
+
+  stroke: #08d5e7;
+  stroke-width: 2.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  display: block;
+}
+
+
+/* =========================================
+   HEADING TEXT
+========================================= */
+
+.cwe-customer-heading h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #ffffff !important;
+
+  font-family: inherit;
+
+  font-size: 20px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.35 !important;
+
+  letter-spacing: 0;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CLIENT SLIDER
+========================================= */
+
+.cwe-client-slider {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-left: 30px;
+
+  min-width: 0;
+}
+
+
+/* =========================================
+   CLIENT LOGOS CONTAINER
+========================================= */
+
+.cwe-client-logos {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CLIENT LOGO BOX
+========================================= */
+
+.cwe-client-logo-box {
+  width: 140px !important;
+  height: 52px !important;
+
+  min-width: 140px !important;
+  max-width: 140px !important;
+
+  min-height: 52px !important;
+  max-height: 52px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 12px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  border-radius: 3px;
+
+  overflow: hidden;
+
+  transition: background 0.25s ease;
+}
+
+.cwe-client-logo-box:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+
+/* =========================================
+   CLIENT IMAGE
+========================================= */
+
+.cwe-client-logo-box img {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 110px !important;
+  max-height: 38px !important;
+
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.cwe-client-arrow {
+  width: 34px !important;
+  height: 34px !important;
+
+  min-width: 34px !important;
+  min-height: 34px !important;
+
+  max-width: 34px !important;
+  max-height: 34px !important;
+
+  padding: 0 !important;
+  margin: 0;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex-shrink: 0;
+
+  border: 1px solid #08d5e7 !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+
+  color: #08d5e7 !important;
+
+  cursor: pointer;
+
+  outline: none;
+
+  font-family: Arial, sans-serif;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cwe-client-arrow span {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  color: inherit;
+
+  font-size: 19px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.cwe-client-arrow:hover {
+  background: #08d5e7 !important;
+
+  color: #06345b !important;
+
+  transform: scale(1.08);
+}
+
+.cwe-client-arrow:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .cwe-customer-inner {
+    height: 110px;
+    min-height: 110px;
+
+    padding: 0 3%;
+  }
+
+  .cwe-customer-heading h2 {
+    font-size: 17px !important;
+  }
+
+  .cwe-client-logo-box {
+    width: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+  }
+
+  .cwe-client-logo-box img {
+    max-width: 95px !important;
+    max-height: 34px !important;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .cwe-customer-inner {
+    height: auto;
+    min-height: 0;
+
+    padding: 22px 18px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .cwe-customer-heading {
+    height: auto;
+
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .cwe-customer-heading h2 {
+    font-size: 17px !important;
+
+    white-space: normal;
+
+    text-align: left;
+  }
+
+  .cwe-client-slider {
+    width: 100%;
+
+    margin-left: 0;
+
+    justify-content: center;
+  }
+
+  .cwe-client-logos {
+    max-width: calc(100% - 80px);
+  }
+
+  .cwe-client-logo-box {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .cwe-customer-heading {
+    gap: 10px;
+  }
+
+  .cwe-customer-icon {
+    width: 34px !important;
+    height: 34px !important;
+
+    min-width: 34px !important;
+    min-height: 34px !important;
+
+    max-width: 34px !important;
+    max-height: 34px !important;
+  }
+
+  .cwe-customer-icon svg {
+    width: 32px !important;
+    height: 32px !important;
+
+    min-width: 32px !important;
+    min-height: 32px !important;
+
+    max-width: 32px !important;
+    max-height: 32px !important;
+  }
+
+  .cwe-customer-heading h2 {
+    font-size: 15px !important;
+  }
+
+  .cwe-client-logo-box {
+    width: 100px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
+  }
+}

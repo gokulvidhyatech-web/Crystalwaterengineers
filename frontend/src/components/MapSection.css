@@ -1,98 +1,51 @@
-/* =========================================
-   MAP SECTION
-========================================= */
-
 .map-section {
   width: 100%;
-  padding: 80px 0;
-  background: #ffffff;
+  padding: 0px 0;
+  background: #f7faf9;
 }
-
-/* =========================================
-   DEFAULT WEBSITE WIDTH
-========================================= */
 
 .map-container {
-  width: min(1200px, 90%);
+  width: calc(100% - 130px);
   margin: 0 auto;
-}
-
-/* =========================================
-   MAP
-========================================= */
-
-.map-wrapper {
-  position: relative;
-  width: 100%;
-  height: 550px;
-
   overflow: hidden;
-
   border-radius: 20px;
-  background: #e8eeee;
+  box-shadow: 0 15px 45px rgba(18, 60, 53, 0.12);
 }
 
-/* Google Map */
-
-.map-wrapper iframe {
-  width: 100%;
-  height: 100%;
-
+.map-container iframe {
   display: block;
-
+  width: 100%;
+  height: 500px;
   border: 0;
 }
 
-/* =========================================
-   CLICKABLE MAP
-========================================= */
-
-.map-click-area {
-  position: absolute;
-  inset: 0;
-
-  z-index: 5;
-
-  display: block;
-
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* =========================================
-   TABLET
-========================================= */
-
+/* Tablet */
 @media (max-width: 900px) {
   .map-section {
-    padding: 65px 0;
-  }
-
-  .map-container {
-    width: 90%;
-  }
-
-  .map-wrapper {
-    height: 480px;
-    border-radius: 18px;
-  }
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-  .map-section {
-    padding: 55px 0;
+    padding: 60px 0;
   }
 
   .map-container {
     width: 92%;
   }
 
-  .map-wrapper {
-    height: 380px;
+  .map-container iframe {
+    height: 450px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .map-section {
+    padding: 50px 0;
+  }
+
+  .map-container {
+    width: 92%;
     border-radius: 14px;
+  }
+
+  .map-container iframe {
+    height: 380px;
   }
 }

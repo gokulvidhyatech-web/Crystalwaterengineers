@@ -1,11 +1,11 @@
 /* =========================================
-   CUSTOMER SATISFACTION SECTION
+   CUSTOMER SATISFACTION
    Crystal Water Engineers
 ========================================= */
 
 .cwe-customer-satisfaction {
   width: 100%;
-  margin: 0 0 10px 0;
+  margin: 0 0 80px;
   padding: 0;
   background: transparent;
   box-sizing: border-box;
@@ -24,10 +24,8 @@
 
 .cwe-customer-inner {
   width: 100%;
-  height: 180px;
   min-height: 180px;
 
-  margin: 0 0 80px 0;
   padding: 0 5%;
 
   display: flex;
@@ -56,8 +54,6 @@
   gap: 16px;
 
   flex-shrink: 0;
-
-  height: 100%;
 }
 
 
@@ -66,42 +62,34 @@
 ========================================= */
 
 .cwe-customer-icon {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
-  min-width: 150px;
-  min-height: 150px;
+
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
-
+  background: transparent;
   overflow: hidden;
 }
 
+.cwe-customer-icon img {
+  width: 200px;
+  height: 200px;
 
-/* SVG */
-
-.cwe-customer-icon svg {
-  width: 44px;
-  height: 44px;
+  object-fit: contain;
 
   display: block;
 
-  fill: none;
-
-  stroke: #08d5e7;
-  stroke-width: 2.4;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  margin: 0;
+  padding: 0;
 }
 
 
 /* =========================================
-   HEADING TEXT
+   HEADING
 ========================================= */
 
 .cwe-customer-heading h2 {
@@ -110,13 +98,12 @@
 
   color: #ffffff;
 
-  font-family: inherit;
+  font-family: "Poppins", sans-serif;
 
   font-size: 20px;
   font-weight: 700;
 
   line-height: 1.35;
-
   letter-spacing: 0;
 
   white-space: nowrap;
@@ -133,80 +120,61 @@
 
   gap: 14px;
 
-  margin-left: 30px;
+  margin-left: 40px;
 
   min-width: 0;
-
-  flex-shrink: 1;
 }
 
 
 /* =========================================
-   CLIENT LOGOS CONTAINER
+   CLIENT LOGOS
 ========================================= */
 
 .cwe-client-logos {
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap: 20px;
 
   overflow: hidden;
-
-  min-width: 0;
 }
 
 
 /* =========================================
    CLIENT LOGO BOX
+   No background
 ========================================= */
 
 .cwe-client-logo-box {
   width: 140px;
-  height: 52px;
+  height: 65px;
 
   min-width: 140px;
-  max-width: 140px;
-
-  min-height: 52px;
-  max-height: 52px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 8px 12px;
+  padding: 5px;
 
-  background: rgba(255, 255, 255, 0.18);
-
-  border-radius: 3px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 
   overflow: hidden;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-.cwe-client-logo-box:hover {
-  background: rgba(255, 255, 255, 0.28);
 }
 
 
 /* =========================================
-   CLIENT IMAGE
+   CLIENT LOGO IMAGE
 ========================================= */
 
 .cwe-client-logo-box img {
   width: auto;
   height: auto;
 
-  max-width: 110px;
-  max-height: 38px;
-
-  min-width: 0;
-  min-height: 0;
+  max-width: 125px;
+  max-height: 50px;
 
   object-fit: contain;
 
@@ -218,7 +186,7 @@
 
 
 /* =========================================
-   SLIDER ARROWS
+   ARROWS
 ========================================= */
 
 .cwe-client-arrow {
@@ -226,10 +194,6 @@
   height: 34px;
 
   min-width: 34px;
-  min-height: 34px;
-
-  max-width: 34px;
-  max-height: 34px;
 
   padding: 0;
   margin: 0;
@@ -251,16 +215,11 @@
 
   outline: none;
 
-  font-family: Arial, sans-serif;
-
   transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
-
-
-/* Arrow */
 
 .cwe-client-arrow span {
   display: block;
@@ -270,7 +229,9 @@
 
   color: inherit;
 
-  font-size: 19px;
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
   font-weight: 400;
 
   line-height: 1;
@@ -278,48 +239,48 @@
   pointer-events: none;
 }
 
-
-/* Hover */
-
 .cwe-client-arrow:hover {
   background: #08d5e7;
-
   color: #06345b;
 
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
-
-
-/* Active */
 
 .cwe-client-arrow:active {
   transform: scale(0.95);
 }
 
 
-/* Focus */
-
-.cwe-client-arrow:focus-visible {
-  box-shadow: 0 0 0 3px rgba(8, 213, 231, 0.25);
-}
-
-
 /* =========================================
-   LARGE LAPTOP
+   TABLET
 ========================================= */
 
-@media (max-width: 1250px) {
+@media (max-width: 1100px) {
 
   .cwe-customer-inner {
-    padding: 0 4%;
+    min-height: 150px;
+
+    padding: 0 3%;
   }
 
   .cwe-customer-heading {
-    gap: 13px;
+    gap: 12px;
+  }
+
+  .cwe-customer-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+  }
+
+  .cwe-customer-icon img {
+    width: 40px;
+    height: 40px;
   }
 
   .cwe-customer-heading h2 {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .cwe-client-slider {
@@ -328,156 +289,18 @@
   }
 
   .cwe-client-logos {
-    gap: 9px;
+    gap: 12px;
   }
 
   .cwe-client-logo-box {
-    width: 125px;
-    min-width: 125px;
-    max-width: 125px;
-
-    height: 50px;
-    min-height: 50px;
-    max-height: 50px;
+    width: 115px;
+    min-width: 115px;
+    height: 55px;
   }
 
   .cwe-client-logo-box img {
     max-width: 100px;
-    max-height: 36px;
-  }
-}
-
-
-/* =========================================
-   TABLET / SMALL LAPTOP
-========================================= */
-
-@media (max-width: 1100px) {
-
-  .cwe-customer-inner {
-    height: 120px;
-    min-height: 120px;
-
-    padding: 0 3%;
-  }
-
-  .cwe-customer-icon {
-    width: 42px;
-    height: 42px;
-
-    min-width: 42px;
-    min-height: 42px;
-  }
-
-  .cwe-customer-icon svg {
-    width: 38px;
-    height: 38px;
-  }
-
-  .cwe-customer-heading {
-    gap: 11px;
-  }
-
-  .cwe-customer-heading h2 {
-    font-size: 16px;
-  }
-
-  .cwe-client-slider {
-    gap: 9px;
-
-    margin-left: 15px;
-  }
-
-  .cwe-client-logos {
-    gap: 8px;
-  }
-
-  .cwe-client-logo-box {
-    width: 115px;
-    min-width: 115px;
-    max-width: 115px;
-
-    height: 46px;
-    min-height: 46px;
-    max-height: 46px;
-
-    padding: 7px 9px;
-  }
-
-  .cwe-client-logo-box img {
-    max-width: 92px;
-    max-height: 32px;
-  }
-
-  .cwe-client-arrow {
-    width: 32px;
-    height: 32px;
-
-    min-width: 32px;
-    min-height: 32px;
-
-    max-width: 32px;
-    max-height: 32px;
-  }
-
-  .cwe-client-arrow span {
-    font-size: 17px;
-  }
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-  .cwe-customer-inner {
-    height: auto;
-    min-height: 150px;
-
-    padding: 25px 4%;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    justify-content: center;
-
-    gap: 20px;
-  }
-
-  .cwe-customer-heading {
-    width: 100%;
-    height: auto;
-
-    justify-content: center;
-  }
-
-  .cwe-customer-heading h2 {
-    font-size: 18px;
-
-    white-space: normal;
-
-    text-align: center;
-  }
-
-  .cwe-client-slider {
-    width: 100%;
-
-    margin-left: 0;
-
-    justify-content: center;
-  }
-
-  .cwe-client-logos {
-    max-width: calc(100% - 90px);
-  }
-
-  .cwe-client-logo-box {
-    width: 115px;
-    min-width: 115px;
-    max-width: 115px;
+    max-height: 42px;
   }
 }
 
@@ -489,28 +312,26 @@
 @media (max-width: 768px) {
 
   .cwe-customer-satisfaction {
-    margin-bottom: 10px;
+    margin-bottom: 50px;
   }
 
   .cwe-customer-inner {
-    height: auto;
-    min-height: 0;
+    min-height: auto;
 
-    padding: 24px 18px 26px;
+    padding: 25px 18px;
 
-    gap: 20px;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 24px;
   }
 
-  /* LEFT CONTENT */
+
+  /* LEFT */
 
   .cwe-customer-heading {
     width: 100%;
-
-    height: auto;
-
-    display: flex;
-
-    align-items: center;
 
     justify-content: center;
 
@@ -521,23 +342,20 @@
     width: 40px;
     height: 40px;
 
-    min-width: 40px;
-    min-height: 40px;
+    flex-basis: 40px;
   }
 
-  .cwe-customer-icon svg {
-    width: 37px;
-    height: 37px;
+  .cwe-customer-icon img {
+    width: 38px;
+    height: 38px;
   }
 
   .cwe-customer-heading h2 {
     font-size: 17px;
 
-    line-height: 1.35;
+    line-height: 1.3;
 
     white-space: normal;
-
-    text-align: left;
   }
 
 
@@ -546,55 +364,35 @@
   .cwe-client-slider {
     width: 100%;
 
-    margin: 0;
-
-    display: flex;
-
-    align-items: center;
+    margin-left: 0;
 
     justify-content: center;
 
-    gap: 9px;
+    gap: 10px;
   }
 
   .cwe-client-logos {
-    width: calc(100% - 78px);
+    width: calc(100% - 88px);
 
-    max-width: none;
+    max-width: 400px;
 
-    gap: 8px;
+    gap: 10px;
+
+    justify-content: flex-start;
   }
 
   .cwe-client-logo-box {
-    width: 110px;
-    min-width: 110px;
-    max-width: 110px;
+    width: 105px;
+    min-width: 105px;
 
-    height: 44px;
-    min-height: 44px;
-    max-height: 44px;
+    height: 50px;
 
-    padding: 6px 8px;
+    padding: 4px;
   }
 
   .cwe-client-logo-box img {
-    max-width: 92px;
-    max-height: 32px;
-  }
-
-  .cwe-client-arrow {
-    width: 32px;
-    height: 32px;
-
-    min-width: 32px;
-    min-height: 32px;
-
-    max-width: 32px;
-    max-height: 32px;
-  }
-
-  .cwe-client-arrow span {
-    font-size: 17px;
+    max-width: 90px;
+    max-height: 38px;
   }
 }
 
@@ -606,34 +404,31 @@
 @media (max-width: 480px) {
 
   .cwe-customer-inner {
-    padding: 22px 14px 24px;
+    padding: 22px 15px;
 
-    gap: 18px;
+    gap: 20px;
   }
 
   .cwe-customer-heading {
-    gap: 10px;
-
     justify-content: flex-start;
+
+    gap: 10px;
   }
 
   .cwe-customer-icon {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
 
-    min-width: 36px;
-    min-height: 36px;
+    flex-basis: 34px;
   }
 
-  .cwe-customer-icon svg {
-    width: 33px;
-    height: 33px;
+  .cwe-customer-icon img {
+    width: 32px;
+    height: 32px;
   }
 
   .cwe-customer-heading h2 {
     font-size: 15px;
-
-    line-height: 1.3;
   }
 
   .cwe-client-slider {
@@ -641,41 +436,32 @@
   }
 
   .cwe-client-logos {
-    width: calc(100% - 72px);
+    width: calc(100% - 76px);
 
     gap: 6px;
   }
 
   .cwe-client-logo-box {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
+    width: 95px;
+    min-width: 95px;
 
-    height: 42px;
-    min-height: 42px;
-    max-height: 42px;
-
-    padding: 5px 7px;
+    height: 45px;
   }
 
   .cwe-client-logo-box img {
-    max-width: 84px;
-    max-height: 30px;
+    max-width: 82px;
+    max-height: 34px;
   }
 
   .cwe-client-arrow {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 
-    min-width: 30px;
-    min-height: 30px;
-
-    max-width: 30px;
-    max-height: 30px;
+    min-width: 32px;
   }
 
   .cwe-client-arrow span {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
@@ -686,34 +472,16 @@
 
 @media (max-width: 380px) {
 
-  .cwe-customer-inner {
-    padding: 20px 12px 22px;
-  }
-
   .cwe-customer-heading h2 {
     font-size: 14px;
   }
 
-  .cwe-customer-icon {
-    width: 34px;
-    height: 34px;
-
-    min-width: 34px;
-    min-height: 34px;
-  }
-
-  .cwe-customer-icon svg {
-    width: 31px;
-    height: 31px;
-  }
-
   .cwe-client-logo-box {
-    width: 92px;
-    min-width: 92px;
-    max-width: 92px;
+    width: 88px;
+    min-width: 88px;
   }
 
   .cwe-client-logo-box img {
-    max-width: 78px;
+    max-width: 76px;
   }
 }

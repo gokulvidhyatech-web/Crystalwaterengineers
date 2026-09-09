@@ -2,657 +2,691 @@
    CRYSTAL WATER ENGINEERS
    PROFESSIONAL DARK FOOTER
 ========================================= */
-
+ 
 .cwe-footer {
   position: relative;
   width: 100%;
-  overflow: visible;
-
+ 
+  overflow: hidden;
+ 
   color: #ffffff;
-
+ 
   font-family: inherit;
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+ 
+  background: #032a43;
 }
-
-
+ 
+ 
 /* =========================================
-   DARK OVERLAY
+   FIXED BACKGROUND IMAGE
+   IMPORTANT:
+   Separate layer prevents background
+   movement / shaking on hover.
 ========================================= */
-
-.footer-overlay {
+ 
+.footer-background {
   position: absolute;
-
+ 
   inset: 0;
-
-  background: rgba(3, 27, 48, 0.88);
-
+ 
+  width: 100%;
+  height: 100%;
+ 
+  background-image: var(--footer-bg-image);
+ 
+  background-position: center;
+ 
+  background-size: cover;
+ 
+  background-repeat: no-repeat;
+ 
   z-index: 0;
-
+ 
   pointer-events: none;
+ 
+  transform: translateZ(0);
+ 
+  will-change: auto;
 }
-
-
+ 
+ 
 /* =========================================
    MAIN FOOTER
 ========================================= */
-
+ 
 .footer-main {
   position: relative;
-
+ 
   z-index: 2;
-
+ 
   width: 100%;
-
+ 
   max-width: 1440px;
-
+ 
   margin: 0 auto;
-
-  padding: 75px 6% 70px;
-
+ 
+  padding: 70px 5% 50px;
+ 
   display: grid;
-
+ 
   grid-template-columns:
     1.7fr
     1.15fr
     0.9fr
     1.35fr;
-
+ 
   gap: 55px;
+ 
+  box-sizing: border-box;
 }
-
-
+ 
+ 
 /* =========================================
    COMPANY
 ========================================= */
-
+ 
 .footer-company {
-  max-width: 430px;
+  max-width: 440px;
 }
-
-
+ 
+ 
+/* =========================================
+   LOGO
+========================================= */
+ 
 .footer-logo {
   display: block;
-
+ 
   width: 230px;
-  max-width:30%;
-
+ 
+  max-width: 24%;
+ 
   height: auto;
-
+ 
   object-fit: contain;
-
-  margin-bottom: 25px;
+ 
+  margin-bottom: 24px;
 }
-
-
+ 
+ 
+/* =========================================
+   DESCRIPTION
+========================================= */
+ 
 .footer-description {
-  max-width: 420px;
-
+  max-width: 430px;
+ 
   margin: 0;
-
+ 
   font-size: 15px;
-
+ 
   line-height: 1.8;
-
-  color: rgba(255, 255, 255, 0.78);
+ 
+  color: rgba(255, 255, 255, 0.88);
 }
-
-
+ 
+ 
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+ 
+.footer-socials {
+  display: flex;
+ 
+  align-items: center;
+ 
+  gap: 13px;
+ 
+  margin-top: 30px;
+}
+ 
+ 
+.footer-socials a {
+  width: 42px;
+ 
+  height: 42px;
+ 
+  display: flex;
+ 
+  align-items: center;
+ 
+  justify-content: center;
+ 
+  border-radius: 50%;
+ 
+  border: 1px solid rgba(255, 255, 255, 0.28);
+ 
+  background: rgba(255, 255, 255, 0.06);
+ 
+  color: #ffffff;
+ 
+  text-decoration: none;
+ 
+  font-size: 16px;
+ 
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+ 
+ 
+.footer-socials a:hover {
+  transform: translateY(-4px);
+ 
+  background-color: #08b9d0;
+ 
+  border-color: #08b9d0;
+ 
+  color: #ffffff;
+}
+ 
+ 
+/* =========================================
+   SLOGAN
+========================================= */
+ 
 .footer-slogan {
   margin-top: 30px;
-
+ 
   font-family:
     "Brush Script MT",
     "Segoe Script",
     cursive;
-
+ 
   font-size: 27px;
-
+ 
+  line-height: 1.3;
+ 
   color: #ffffff;
-
-  opacity: 0.9;
-
+ 
+  opacity: 0.95;
+ 
   transform: rotate(-2deg);
+ 
+  transform-origin: left center;
 }
-
-
+ 
+ 
 /* =========================================
-   SOCIAL ICONS
+   COLUMN
 ========================================= */
-
-.footer-socials {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  margin-top: 30px;
+ 
+.footer-column {
+  min-width: 0;
 }
-
-
-.footer-socials a {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(255, 255, 255, 0.22);
-
-  background: rgba(255, 255, 255, 0.08);
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-
-
-.footer-socials a:hover {
-  transform: translateY(-4px);
-
-  background: #08b9d0;
-
-  border-color: #08b9d0;
-
-  color: #ffffff;
-}
-
-
+ 
+ 
 /* =========================================
-   COLUMNS
+   COLUMN TITLE
 ========================================= */
-
+ 
 .footer-column h3 {
-  margin: 5px 0 12px;
-
-  font-size: 19px;
-
+  margin: 5px 0 13px;
+ 
+  font-size: 20px;
+ 
+  line-height: 1.3;
+ 
   font-weight: 700;
-
+ 
   color: #ffffff;
 }
-
-
+ 
+ 
+/* =========================================
+   TITLE LINE
+========================================= */
+ 
 .footer-line {
   display: block;
-
+ 
   width: 42px;
+ 
   height: 3px;
-
-  margin-bottom: 25px;
-
+ 
+  margin-bottom: 26px;
+ 
   border-radius: 10px;
-
+ 
   background: #08b9d0;
 }
-
-
-.footer-column ul {
+ 
+ 
+/* =========================================
+   LIST
+========================================= */
+ 
+.footer-list {
   list-style: none;
-
+ 
   padding: 0;
-
+ 
   margin: 0;
 }
-
-
-.footer-column li {
-  margin-bottom: 13px;
+ 
+ 
+/* =========================================
+   LIST ITEM
+========================================= */
+ 
+.footer-list li {
+  margin: 0 0 15px;
 }
-
-
-.footer-column li a {
+ 
+ 
+/* =========================================
+   SERVICE / PAGE LINK
+========================================= */
+ 
+.footer-list li a {
   display: flex;
-
+ 
   align-items: center;
-
-  color: rgba(255, 255, 255, 0.72);
-
-  font-size: 14px;
-
+ 
+  width: fit-content;
+ 
+  color: rgba(255, 255, 255, 0.82);
+ 
+  font-size: 15px;
+ 
+  line-height: 1.5;
+ 
   text-decoration: none;
-
+ 
   transition:
-    color 0.2s ease,
-    padding-left 0.2s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
-
-
-.footer-column li a:hover {
-  color: #ffffff;
-
-  padding-left: 4px;
-}
-
-
+ 
+ 
 /* =========================================
-   SERVICE MAIN LINK
+   SAME ARROW FOR SERVICES + PAGES
 ========================================= */
-
-.footer-service-item {
-  position: relative;
-}
-
-
-.service-main-link {
-  display: flex !important;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  width: 100%;
-
-  padding: 2px 0;
-}
-
-
-/* =========================================
-   SERVICE ARROW
-========================================= */
-
-.service-arrow {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 22px;
-  height: 22px;
-
-  margin-left: 10px;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  border-radius: 50%;
-
+ 
+.list-arrow {
+  display: inline-block;
+ 
+  flex-shrink: 0;
+ 
+  margin-right: 10px;
+ 
   color: #08b9d0;
-
-  font-size: 17px;
-
+ 
+  font-size: 20px;
+ 
   line-height: 1;
-
+ 
   transition:
     transform 0.25s ease,
-    background 0.25s ease,
     color 0.25s ease;
 }
-
-
+ 
+ 
 /* =========================================
-   HOVER ARROW
+   LINK HOVER
 ========================================= */
-
-.footer-service-item:hover .service-arrow {
-  transform: rotate(90deg);
-
-  background: #08b9d0;
-
+ 
+.footer-list li a:hover {
   color: #ffffff;
-
-  border-color: #08b9d0;
-}
-
-
-/* =========================================
-   SERVICE SUBMENU
-========================================= */
-
-.footer-submenu {
-  max-height: 0;
-
-  overflow: hidden;
-
-  opacity: 0;
-
-  padding-left: 13px !important;
-
-  margin-top: 0 !important;
-
-  border-left: 1px solid rgba(8, 185, 208, 0.35);
-
-  transition:
-    max-height 0.35s ease,
-    opacity 0.25s ease,
-    margin-top 0.25s ease;
-}
-
-
-/* =========================================
-   SHOW SUBMENU ON HOVER
-========================================= */
-
-.footer-service-item:hover .footer-submenu {
-  max-height: 300px;
-
-  opacity: 1;
-
-  margin-top: 10px !important;
-}
-
-
-/* =========================================
-   SUBMENU ITEMS
-========================================= */
-
-.footer-submenu li {
-  margin-bottom: 9px;
-}
-
-
-.footer-submenu li a {
-  font-size: 12.5px;
-
-  color: rgba(255, 255, 255, 0.55);
-
-  gap: 5px;
-}
-
-
-.footer-submenu li a:hover {
-  color: #08b9d0;
-
-  padding-left: 4px;
-}
-
-
-/* =========================================
-   SUBMENU ARROW
-========================================= */
-
-.submenu-arrow {
-  color: #08b9d0;
-
-  font-size: 15px;
-
-  transition: transform 0.2s ease;
-}
-
-
-.footer-submenu li a:hover .submenu-arrow {
+ 
   transform: translateX(3px);
 }
-
-
+ 
+ 
 /* =========================================
-   PAGE ARROW
+   ARROW HOVER
 ========================================= */
-
-.page-arrow {
-  margin-right: 9px;
-
-  color: #08b9d0;
-
-  font-size: 16px;
-
-  transition: transform 0.2s ease;
-}
-
-
-.footer-column li a:hover .page-arrow {
+ 
+.footer-list li a:hover .list-arrow {
+  color: #20d4e8;
+ 
   transform: translateX(3px);
 }
-
-
+ 
+ 
 /* =========================================
    CONTACT
 ========================================= */
-
+ 
 .footer-contact {
-  max-width: 400px;
+  max-width: 430px;
 }
-
-
+ 
+ 
+/* =========================================
+   CONTACT ITEM
+========================================= */
+ 
 .contact-item {
   display: flex;
-
+ 
   align-items: flex-start;
-
-  gap: 14px;
-
-  margin-bottom: 20px;
-
-  color: rgba(255, 255, 255, 0.72);
-
-  font-size: 14px;
-
+ 
+  gap: 15px;
+ 
+  margin-bottom: 21px;
+ 
+  color: rgba(255, 255, 255, 0.82);
+ 
+  font-size: 15px;
+ 
   line-height: 1.65;
 }
-
-
+ 
+ 
+/* =========================================
+   CONTACT ICON
+========================================= */
+ 
 .contact-item svg {
   flex-shrink: 0;
-
+ 
   margin-top: 4px;
-
+ 
   color: #08b9d0;
-
-  font-size: 17px;
+ 
+  font-size: 18px;
 }
-
-
+ 
+ 
+/* =========================================
+   CONTACT LINK
+========================================= */
+ 
 .contact-item a {
-  color: rgba(255, 255, 255, 0.72);
-
+  color: rgba(255, 255, 255, 0.82);
+ 
   text-decoration: none;
-
-  transition: color 0.2s ease;
+ 
+  transition:
+    color 0.25s ease;
 }
-
-
+ 
+ 
 .contact-item a:hover {
   color: #08b9d0;
 }
-
-
+ 
+ 
 /* =========================================
    BOTTOM BAR
 ========================================= */
-
+ 
 .footer-bottom {
   position: relative;
-
-  z-index: 5;
-
+ 
+  z-index: 3;
+ 
   width: 100%;
-
+ 
   min-height: 70px;
-
-  padding: 20px 5%;
-
-  background: rgba(2, 20, 36, 0.92);
-
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-  color: rgba(255, 255, 255, 0.65);
-
+ 
+  padding: 20px 4%;
+ 
+  box-sizing: border-box;
+ 
+  background: rgba(1, 20, 35, 0.94);
+ 
+ 
+  border-top: 1px solid white;
+  color:white;
+ 
   display: flex;
-
+ 
   align-items: center;
-
+ 
   justify-content: space-between;
-
+ 
   gap: 25px;
-
-  font-size: 12px;
+ 
+  font-size: 13px;
 }
-
-
+ 
+ 
+/* =========================================
+   COPYRIGHT
+========================================= */
+ 
 .copyright {
   white-space: nowrap;
 }
-
-
+ 
+ 
 /* =========================================
    BOTTOM LINKS
 ========================================= */
-
+ 
 .footer-bottom-links {
   display: flex;
-
+ 
   align-items: center;
-
-  gap: 12px;
+ 
+  justify-content: center;
+ 
+  gap: 14px;
 }
-
-
+ 
+ 
 .footer-bottom-links a {
-  color: rgba(255, 255, 255, 0.65);
-
+  color: rgba(255, 255, 255, 0.75);
+ 
   text-decoration: none;
-
+ 
   transition: color 0.2s ease;
 }
-
-
+ 
+ 
 .footer-bottom-links a:hover {
   color: #08b9d0;
 }
-
-
+ 
+ 
 .footer-bottom-links span {
-  opacity: 0.35;
+  color: #08b9d0;
+ 
+  opacity: 0.8;
 }
-
-
+ 
+ 
 /* =========================================
-   MADE IN INDIA
+   DEVELOPED BY
 ========================================= */
-
+ 
 .made-in-india {
   display: flex;
-
+ 
   align-items: center;
-
-  gap: 6px;
-
+ 
+  gap: 5px;
+ 
   white-space: nowrap;
 }
-
-
-.made-in-india svg {
+ 
+ 
+.made-in-india strong {
   color: #08b9d0;
+ 
+  font-weight: 700;
 }
-
-
+ 
+ 
 /* =========================================
    TABLET
 ========================================= */
-
+ 
 @media (max-width: 1100px) {
-
+ 
   .footer-main {
     grid-template-columns:
-      1.5fr
+      1.4fr
       1fr
       1fr;
-
-    padding: 60px 5% 60px;
-
+ 
     gap: 45px;
+ 
+    padding: 60px 5% 90px;
   }
-
+ 
+ 
   .footer-contact {
     grid-column: span 3;
+ 
+    max-width: 600px;
   }
-
+ 
+ 
+  .footer-bottom {
+    flex-wrap: wrap;
+ 
+    justify-content: center;
+ 
+    text-align: center;
+  }
+ 
 }
-
-
+ 
+ 
+/* =========================================
+   SMALL TABLET
+========================================= */
+ 
+@media (max-width: 850px) {
+ 
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+ 
+    gap: 45px 35px;
+  }
+ 
+ 
+  .footer-company {
+    grid-column: span 2;
+  }
+ 
+ 
+  .footer-contact {
+    grid-column: span 2;
+  }
+ 
+}
+ 
+ 
 /* =========================================
    MOBILE
 ========================================= */
-
+ 
 @media (max-width: 700px) {
-
+ 
   .footer-main {
     grid-template-columns: 1fr;
-
-    padding: 50px 25px 45px;
-
+ 
+    padding: 50px 25px 80px;
+ 
     gap: 40px;
   }
-
-
-  .footer-company {
+ 
+ 
+  .footer-company,
+  .footer-contact {
+    grid-column: auto;
+ 
     max-width: 100%;
   }
-
-
+ 
+ 
   .footer-logo {
-    width: 210px;
+    width: 80px;
+ 
+    max-width: 100%;
   }
-
-
+ 
+ 
   .footer-description {
     font-size: 14px;
+ 
+    line-height: 1.75;
   }
-
-
+ 
+ 
   .footer-slogan {
     font-size: 24px;
   }
-
-
-  .footer-contact {
-    grid-column: auto;
+ 
+ 
+  .footer-column h3 {
+    font-size: 19px;
   }
-
-
-  /* On mobile keep submenu usable */
-
-  .footer-submenu {
-    max-height: none;
-
-    opacity: 1;
-
-    margin-top: 8px !important;
+ 
+ 
+  .footer-list li a {
+    font-size: 14px;
   }
-
-
-  .service-arrow {
-    display: none;
+ 
+ 
+  .contact-item {
+    font-size: 14px;
   }
-
-
+ 
+ 
   .footer-bottom {
     flex-direction: column;
-
+ 
     justify-content: center;
-
-    text-align: center;
-
-    padding: 25px 20px;
-
+ 
+    padding: 24px 20px;
+ 
     gap: 14px;
-
+ 
     font-size: 11px;
   }
-
-
+ 
+ 
   .copyright {
     white-space: normal;
+ 
+    text-align: center;
   }
-
-
+ 
+ 
   .footer-bottom-links {
     flex-wrap: wrap;
-
+ 
+    gap: 10px;
+  }
+ 
+ 
+  .made-in-india {
     justify-content: center;
   }
-
+ 
 }
+ 
+ 
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+ 
+@media (max-width: 400px) {
+ 
+  .footer-main {
+    padding-left: 20px;
+ 
+    padding-right: 20px;
+  }
+ 
+ 
+  .footer-socials a {
+    width: 40px;
+ 
+    height: 40px;
+  }
+ 
+ 
+  .footer-slogan {
+    font-size: 21px;
+  }
+ 
+}
+ 

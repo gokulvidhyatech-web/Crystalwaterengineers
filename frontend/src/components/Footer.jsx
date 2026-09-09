@@ -17,11 +17,6 @@ import footerBg from "../assets/images/Footer-bg-.png";
 import mobileFooterBg from "../assets/images/Footer-bg-mobile.png";
 
 const Footer = () => {
-
-  /* =========================================
-     SERVICES
-  ========================================= */
-
   const services = [
     "Water Treatment",
     "Wastewater Treatment",
@@ -29,11 +24,6 @@ const Footer = () => {
     "STP / ETP Solutions",
     "Operation & Maintenance",
   ];
-
-
-  /* =========================================
-     PAGES
-  ========================================= */
 
   const pages = [
     "Home",
@@ -44,14 +34,8 @@ const Footer = () => {
     "Contact Us",
   ];
 
-
-  /* =========================================
-     PAGE URL HELPER
-  ========================================= */
-
   const getPageId = (page) =>
     page.toLowerCase().replace(/\s+/g, "-");
-
 
   return (
     <footer
@@ -61,24 +45,13 @@ const Footer = () => {
         "--footer-mobile-bg-image": `url(${mobileFooterBg})`,
       }}
     >
-
-      {/* =========================================
-          FIXED BACKGROUND
-      ========================================= */}
-
+      {/* BACKGROUND */}
       <div className="footer-background"></div>
 
-
-      {/* =========================================
-          MAIN FOOTER
-      ========================================= */}
-
+      {/* MAIN FOOTER */}
       <div className="footer-main">
 
-        {/* =====================================
-            COMPANY
-        ===================================== */}
-
+        {/* COMPANY */}
         <div className="footer-company">
 
           <img
@@ -92,55 +65,35 @@ const Footer = () => {
             for a cleaner, healthier and brighter tomorrow.
           </p>
 
-
           {/* SOCIAL ICONS */}
-
           <div className="footer-socials">
 
-            <a
-              href="#"
-              aria-label="LinkedIn"
-            >
+            <a href="#" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
 
-            <a
-              href="#"
-              aria-label="Facebook"
-            >
+            <a href="#" aria-label="Facebook">
               <FaFacebookF />
             </a>
 
-            <a
-              href="#"
-              aria-label="Instagram"
-            >
+            <a href="#" aria-label="Instagram">
               <FaInstagram />
             </a>
 
-            <a
-              href="#"
-              aria-label="YouTube"
-            >
+            <a href="#" aria-label="YouTube">
               <FaYoutube />
             </a>
 
           </div>
 
-
           {/* SLOGAN */}
-
           <div className="footer-slogan">
             Cleaner Water. Brighter Tomorrow.
           </div>
 
         </div>
 
-
-        {/* =====================================
-            SERVICES
-        ===================================== */}
-
+        {/* SERVICES */}
         <div className="footer-column">
 
           <h3>Our Services</h3>
@@ -150,9 +103,7 @@ const Footer = () => {
           <ul className="footer-list">
 
             {services.map((service, index) => (
-
               <li key={index}>
-
                 <a href="#services">
 
                   <span className="list-arrow">
@@ -164,20 +115,14 @@ const Footer = () => {
                   </span>
 
                 </a>
-
               </li>
-
             ))}
 
           </ul>
 
         </div>
 
-
-        {/* =====================================
-            PAGES
-        ===================================== */}
-
+        {/* PAGES */}
         <div className="footer-column">
 
           <h3>Pages</h3>
@@ -187,7 +132,6 @@ const Footer = () => {
           <ul className="footer-list">
 
             {pages.map((page, index) => (
-
               <li key={index}>
 
                 <a href={`#${getPageId(page)}`}>
@@ -203,33 +147,27 @@ const Footer = () => {
                 </a>
 
               </li>
-
             ))}
 
           </ul>
 
         </div>
 
-
-        {/* =====================================
-            CONTACT
-        ===================================== */}
-
+        {/* CONTACT */}
         <div className="footer-column footer-contact">
 
           <h3>Contact Us</h3>
 
           <span className="footer-line"></span>
 
-
           {/* ADDRESS */}
-
           <div className="contact-item">
 
             <FaMapMarkerAlt />
 
             <span>
-              Plot No. 5499, M.I.G, <br />
+              Plot No. 5499, M.I.G,
+              <br />
               7th Main Road,
               <br />
               TNHB, Ayyapakkam,
@@ -239,9 +177,7 @@ const Footer = () => {
 
           </div>
 
-
           {/* PHONE */}
-
           <div className="contact-item">
 
             <FaPhoneAlt />
@@ -252,9 +188,7 @@ const Footer = () => {
 
           </div>
 
-
           {/* EMAIL */}
-
           <div className="contact-item">
 
             <FaEnvelope />
@@ -269,18 +203,13 @@ const Footer = () => {
 
       </div>
 
-
-      {/* =========================================
-          BOTTOM BAR
-      ========================================= */}
-
+      {/* BOTTOM BAR */}
       <div className="footer-bottom">
 
         <div className="copyright">
           © {new Date().getFullYear()} Crystal Water Engineers.
           All Rights Reserved.
         </div>
-
 
         <div className="footer-bottom-links">
 
@@ -302,15 +231,9 @@ const Footer = () => {
 
         </div>
 
-
         <div className="made-in-india">
-
           Developed By&nbsp;
-
-          <strong>
-            GV TECHNOLOGIES
-          </strong>
-
+          <strong>GV TECHNOLOGIES</strong>
         </div>
 
       </div>

@@ -1,5 +1,7 @@
-    import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CustomerSatisfaction.css";
+
+import customerSatisfactionIcon from "../assets/images/Customer.png";
 
 const clients = [
   "/assets/clients/client1.png",
@@ -55,24 +57,12 @@ const CustomerSatisfaction = () => {
         {/* LEFT CONTENT */}
         <div className="cwe-customer-heading">
 
+          {/* CUSTOMER SATISFACTION ICON */}
           <div className="cwe-customer-icon">
-            {/* Customer icon */}
-            <svg
-              viewBox="0 0 64 64"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <circle cx="32" cy="18" r="8" />
-              <path d="M17 48c0-9 6-15 15-15s15 6 15 15" />
-              <circle cx="10" cy="27" r="6" />
-              <path d="M2 48c0-7 4-11 9-11 3 0 6 2 8 5" />
-              <circle cx="54" cy="27" r="6" />
-              <path d="M62 48c0-7-4-11-9-11-3 0-6 2-8 5" />
-
-              <path d="M32 3l2.5 5.5L40 11l-5.5 2.5L32 19l-2.5-5.5L24 11l5.5-2.5z" />
-              <path d="M10 13l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" />
-              <path d="M54 13l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" />
-            </svg>
+            <img
+              src={customerSatisfactionIcon}
+              alt="Customer Satisfaction"
+            />
           </div>
 
           <h2>

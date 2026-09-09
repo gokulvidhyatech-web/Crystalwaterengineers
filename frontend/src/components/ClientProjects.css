@@ -1,0 +1,618 @@
+/* =====================================================
+   CLIENT PROJECTS SECTION
+===================================================== */
+
+.client-projects-section {
+  width: 100%;
+  padding: 105px 0 110px;
+  background: #f7fbfd;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.client-projects-container {
+  width: min(1380px, 94%);
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.client-projects-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.client-heading {
+  flex: 1;
+}
+
+.client-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 17px;
+
+  color: #075b86;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.client-label span {
+  width: 32px;
+  height: 3px;
+
+  display: block;
+
+  border-radius: 10px;
+
+  background: #08b9d0;
+}
+
+.client-heading h2 {
+  margin: 0;
+
+  color: #06345b;
+
+  font-size: clamp(36px, 4vw, 58px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+.client-description {
+  width: 350px;
+  padding-top: 35px;
+}
+
+.client-description p {
+  margin: 0;
+
+  color: #537087;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   FEATURED CLIENTS
+===================================================== */
+
+.featured-client-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 38px;
+
+  margin-bottom: 48px;
+}
+
+.featured-client-pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 22px;
+
+  border: 1px solid #d6e7ef;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #174765;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 15px rgba(6, 52, 91, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.featured-client-pill:hover {
+  transform: translateY(-2px);
+
+  border-color: #08b9d0;
+
+  box-shadow:
+    0 8px 22px rgba(6, 52, 91, 0.09);
+}
+
+
+/* =====================================================
+   PROJECT GROUP
+===================================================== */
+
+.project-group {
+  margin-top: 0;
+}
+
+.completed-group {
+  margin-top: 34px;
+}
+
+.project-group-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.project-group-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #075b86;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.project-group-title span {
+  width: 32px;
+  height: 3px;
+
+  display: block;
+
+  border-radius: 10px;
+
+  background: #08b9d0;
+}
+
+.project-count {
+  color: #6b8798;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.project-table-wrap {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #d9e8ee;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(5, 52, 85, 0.05);
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #08749c #e9f3f7;
+}
+
+
+/* ONGOING DOES NOT NEED VERTICAL SCROLL */
+
+.ongoing-table {
+  overflow-y: visible;
+}
+
+
+/* COMPLETED HAS INTERNAL SCROLL */
+
+.completed-table {
+  max-height: 470px;
+
+  overflow-y: auto;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #08749c #e9f3f7;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.completed-table::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.completed-table::-webkit-scrollbar-track {
+  background: #e9f3f7;
+}
+
+.completed-table::-webkit-scrollbar-thumb {
+  background: #08749c;
+
+  border-radius: 20px;
+}
+
+.completed-table::-webkit-scrollbar-thumb:hover {
+  background: #06345b;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.project-table {
+  width: 100%;
+
+  min-width: 1120px;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.col-sno {
+  width: 65px;
+}
+
+.col-client {
+  width: 220px;
+}
+
+.col-project {
+  width: 210px;
+}
+
+.col-year {
+  width: 75px;
+}
+
+.col-location {
+  width: 175px;
+}
+
+.col-product {
+  width: 180px;
+}
+
+.col-capacity {
+  width: 105px;
+}
+
+.col-details {
+  width: 140px;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.project-table thead {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+}
+
+.project-table th {
+  padding: 14px 14px;
+
+  text-align: left;
+
+  /* background:
+    linear-gradient(
+      90deg,
+      #06345b 0%,
+      #075b86 45%,
+      #08b9d0 100%
+    ); */
+    background: linear-gradient(
+  90deg,
+  #174A4A 0%,
+  #39716F 50%,
+  #70A7A0 100%
+);
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+.project-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.project-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.project-table td {
+  padding: 13px 14px;
+
+  border-bottom: 1px solid #e2edf1;
+
+  color: #45667b;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
+  vertical-align: middle;
+}
+
+.project-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.project-table tbody tr:hover {
+  background: #f5fbfd;
+}
+
+.project-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   S.NO
+===================================================== */
+
+.sno-number {
+  color: #075b86;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CLIENT
+===================================================== */
+
+.client-name {
+  color: #174765;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CAPACITY
+===================================================== */
+
+.capacity {
+  color: #075b86;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.project-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 76px;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.status-completed {
+  color: #16815c;
+
+  background: #e5f7ef;
+}
+
+.status-ongoing {
+  color: #946a00;
+
+  background: #fff2c9;
+}
+
+
+/* =====================================================
+   SCROLL HINT
+===================================================== */
+
+.scroll-hint {
+  margin-top: 12px;
+
+  text-align: center;
+
+  color: #78909f;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .client-projects-section {
+    padding: 80px 0 90px;
+  }
+
+  .client-projects-header {
+    gap: 35px;
+  }
+
+  .client-heading h2 {
+    font-size: 42px;
+  }
+
+  .client-description {
+    width: 300px;
+  }
+
+  .featured-client-list {
+    justify-content: flex-start;
+  }
+
+  .completed-table {
+    max-height: 440px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .client-projects-section {
+    padding: 65px 0 75px;
+  }
+
+  .client-projects-container {
+    width: 92%;
+  }
+
+  .client-projects-header {
+    display: block;
+  }
+
+  .client-heading h2 {
+    font-size: 36px;
+
+    letter-spacing: -1px;
+  }
+
+  .client-description {
+    width: 100%;
+
+    padding-top: 20px;
+  }
+
+  .client-description p {
+    font-size: 13px;
+  }
+
+  .featured-client-list {
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    margin-top: 28px;
+
+    margin-bottom: 38px;
+  }
+
+  .featured-client-pill {
+    min-height: 36px;
+
+    padding: 0 14px;
+
+    font-size: 10px;
+
+    white-space: normal;
+
+    text-align: center;
+  }
+
+  .project-group-heading {
+    margin-bottom: 10px;
+  }
+
+  .project-group-title {
+    font-size: 11px;
+  }
+
+  .project-count {
+    font-size: 10px;
+  }
+
+  .completed-group {
+    margin-top: 30px;
+  }
+
+  .completed-table {
+    max-height: 430px;
+  }
+
+  .project-table {
+    min-width: 1120px;
+  }
+}

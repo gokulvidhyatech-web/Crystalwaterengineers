@@ -5,7 +5,7 @@ import AboutSection from "../components/AboutSection";
 import ProcessSection from"../components/ProcessSection";
 import ProjectsSection from"../components/ProjectsSection";
 import CustomerSatisfaction from "../components/CustomerSatisfaction";
-
+import ClientProjects from "../components/ClientProjects";
 import MapSection from "../components/MapSection";
 
 function Home() {
@@ -21,6 +21,7 @@ function Home() {
          <ProjectsSection/>
          <CustomerSatisfaction />
          <MapSection/>
+         <ClientProjects/>
       </main>
     </>
   );

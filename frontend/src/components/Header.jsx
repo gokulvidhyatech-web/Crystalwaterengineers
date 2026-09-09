@@ -203,13 +203,21 @@ function Header() {
           Contact Us
         </a>
 
-        <a
+        {/* <a
           href="#contact"
           className="mobile-quote"
           onClick={closeMenu}
         >
           Get a Quote
-        </a>
+        </a> */}
+        <a
+  href="https://wa.me/918851564950?text=Hi%20Crystal%20Water%20Engineers%2C%20I%20would%20like%20to%20get%20a%20quote."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mobile-quote"
+>
+  Chat On WhatsApp
+</a>
 
       </div>
 

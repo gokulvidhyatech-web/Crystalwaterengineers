@@ -233,7 +233,7 @@ const Footer = () => {
 
         <div className="made-in-india">
           Developed By&nbsp;
-          <strong>GV TECHNOLOGIES</strong>
+          <strong>GV-TECH</strong>
         </div>
 
       </div>

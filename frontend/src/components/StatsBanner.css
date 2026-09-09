@@ -227,6 +227,7 @@
   border-radius: 10px;
 
   background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #5be5ed  ;
 
   box-shadow:
     0 10px 25px rgba(0, 30, 60, 0.20);

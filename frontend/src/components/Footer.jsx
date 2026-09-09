@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FaLinkedinIn,
   FaFacebookF,
@@ -13,8 +14,10 @@ import "./Footer.css";
 
 import logo from "../assets/images/Logo.png";
 import footerBg from "../assets/images/Footer-bg-.png";
+import mobileFooterBg from "../assets/images/Footer-bg-mobile.png";
 
 const Footer = () => {
+
   /* =========================================
      SERVICES
   ========================================= */
@@ -26,6 +29,7 @@ const Footer = () => {
     "STP / ETP Solutions",
     "Operation & Maintenance",
   ];
+
 
   /* =========================================
      PAGES
@@ -40,6 +44,7 @@ const Footer = () => {
     "Contact Us",
   ];
 
+
   /* =========================================
      PAGE URL HELPER
   ========================================= */
@@ -47,18 +52,22 @@ const Footer = () => {
   const getPageId = (page) =>
     page.toLowerCase().replace(/\s+/g, "-");
 
+
   return (
     <footer
       className="cwe-footer"
       style={{
         "--footer-bg-image": `url(${footerBg})`,
+        "--footer-mobile-bg-image": `url(${mobileFooterBg})`,
       }}
     >
+
       {/* =========================================
           FIXED BACKGROUND
       ========================================= */}
 
       <div className="footer-background"></div>
+
 
       {/* =========================================
           MAIN FOOTER
@@ -82,6 +91,7 @@ const Footer = () => {
             Delivering sustainable water treatment solutions
             for a cleaner, healthier and brighter tomorrow.
           </p>
+
 
           {/* SOCIAL ICONS */}
 
@@ -116,6 +126,7 @@ const Footer = () => {
             </a>
 
           </div>
+
 
           {/* SLOGAN */}
 
@@ -218,7 +229,8 @@ const Footer = () => {
             <FaMapMarkerAlt />
 
             <span>
-              Plot No. 5499, M.I.G, <br />7th Main Road,
+              Plot No. 5499, M.I.G, <br />
+              7th Main Road,
               <br />
               TNHB, Ayyapakkam,
               <br />
@@ -228,11 +240,7 @@ const Footer = () => {
           </div>
 
 
-          {/* PHONE 1 */}
-
-
-
-          {/* PHONE 2 */}
+          {/* PHONE */}
 
           <div className="contact-item">
 
@@ -296,8 +304,13 @@ const Footer = () => {
 
 
         <div className="made-in-india">
+
           Developed By&nbsp;
-          <strong>GV TECHNOLOGIES</strong>
+
+          <strong>
+            GV TECHNOLOGIES
+          </strong>
+
         </div>
 
       </div>

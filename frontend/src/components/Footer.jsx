@@ -13,7 +13,7 @@ import {
 import "./Footer.css";
 
 import logo from "../assets/images/Logo.png";
-import footerBg from "../assets/images/Footer-bg-.png";
+import footerBg from "../assets/images/Footer-bg-1.png";
 import mobileFooterBg from "../assets/images/Footer-bg-mobile.png";
 
 const Footer = () => {

@@ -1,32 +1,98 @@
+import { useEffect, useState } from "react";
 import "./StatsBanner.css";
 
 function StatsBanner() {
   const stats = [
     {
       type: "drop",
-      number: "25+",
+      number: 25,
+      suffix: "+",
       title: "Years of Experience",
       text: "Industry expertise",
     },
     {
       type: "check",
-      number: "500+",
+      number: 500,
+      suffix: "+",
       title: "Projects Completed",
       text: "Successful installations",
     },
     {
       type: "gear",
-      number: "100+",
+      number: 100,
+      suffix: "+",
       title: "Water Solutions",
       text: "Treatment technologies",
     },
     {
       type: "support",
-      number: "24/7",
+      number: 24,
+      suffix: "/7",
       title: "Customer Support",
       text: "Dedicated assistance",
     },
   ];
+
+  /* =========================================
+     DYNAMIC COUNTER
+     Smooth 3 Second Animation
+  ========================================= */
+
+  const [counts, setCounts] = useState(
+    stats.map(() => 0)
+  );
+
+  useEffect(() => {
+    const duration = 3000;
+    const startTime = performance.now();
+
+    let animationFrame;
+
+    const animateCounters = (currentTime) => {
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
+
+      /*
+        Smooth ease-out animation.
+        Starts quickly and slows naturally
+        near the final number.
+      */
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
+
+      const newCounts = stats.map((stat) => {
+        return Math.round(stat.number * easedProgress);
+      });
+
+      setCounts(newCounts);
+
+      if (progress < 1) {
+        animationFrame =
+          requestAnimationFrame(animateCounters);
+      } else {
+        /*
+          Force exact final values
+          so nothing gets stuck before completion.
+        */
+        setCounts(
+          stats.map((stat) => stat.number)
+        );
+      }
+    };
+
+    animationFrame =
+      requestAnimationFrame(animateCounters);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
+  /* =========================================
+     ICONS
+  ========================================= */
 
   const renderIcon = (type) => {
     switch (type) {
@@ -75,7 +141,7 @@ function StatsBanner() {
         return (
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
-              d="M9.8 3.2h4.4l.7 2.3c.6.2 1.1.5 1.6.9l2.3-.6 2.2 3.8-1.7 1.7c.1.6.1 1.2 0 1.8l1.7 1.7-2.2 3.8-2.3-.6c-.5.4-1 .7-1.6.9l-.7 2.3H9.8l-.7-2.3c-.6-.2-1.1-.5-1.6-.9l-2.3.6L3 14.8l1.7-1.7a7 7 0 0 1 0-1.8L3 9.6l2.2-3.8 2.3.6c.5-.4 1-.7 1.6-.9l.7-2.3Z"
+              d="M9.8 3.2h4.4l.7 2.3c.6.2 1.1.5 1.6.9l2.3-.6 2.2 3.8-1.7 1.7c.1.6.1 1.2 0 1.8l1.7 1.7-2.2 3.8-2.3-.6c-.5.4-1 .7-1.6.9l-.7 2.3H9.8l-.7-2.3c-.6-.2-1.1-.5-1.6-.9l-2.3.6-2.3.6L3 14.8l1.7-1.7a7 7 0 0 1 0-1.8L3 9.6l2.2-3.8 2.3.6c.5-.4 1-.7 1.6-.9l.7-2.3Z"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
@@ -156,20 +222,24 @@ function StatsBanner() {
           {/* STATS */}
           <div className="stats-grid">
             {stats.map((stat, index) => (
-              <div className="stat-item" key={index}>
-
+              <div
+                className="stat-item"
+                key={index}
+              >
                 <div className="stat-icon">
                   {renderIcon(stat.type)}
                 </div>
 
                 <div className="stat-content">
-                  <strong>{stat.number}</strong>
+                  <strong>
+                    {counts[index]}
+                    {stat.suffix}
+                  </strong>
 
                   <h3>{stat.title}</h3>
 
                   <p>{stat.text}</p>
                 </div>
-
               </div>
             ))}
           </div>

@@ -6,11 +6,8 @@
   width: 100%;
   margin: 0;
   padding: 0;
-
   background: #ffffff;
-
   font-family: "Poppins", sans-serif;
-
   position: relative;
   z-index: 2;
 }
@@ -22,10 +19,8 @@
 
 .stats-banner {
   position: relative;
-
   width: 100%;
   min-height: 300px;
-
   overflow: hidden;
 
   background: linear-gradient(
@@ -227,7 +222,7 @@
   border-radius: 10px;
 
   background: rgba(255, 255, 255, 0.97);
-  border: 1px solid #5be5ed  ;
+  border: 1px solid #5be5ed;
 
   box-shadow:
     0 10px 25px rgba(0, 30, 60, 0.20);
@@ -286,6 +281,9 @@
   line-height: 1;
 
   letter-spacing: -0.7px;
+
+  /* Keeps number area stable during animation */
+  min-width: 70px;
 }
 
 
@@ -334,7 +332,6 @@
 
   .stats-container {
     gap: 35px;
-
     padding: 44px 0;
   }
 
@@ -348,14 +345,12 @@
 
   .stat-item {
     gap: 11px;
-
     padding: 8px 16px;
   }
 
   .stat-icon {
     width: 54px;
     height: 54px;
-
     flex-basis: 54px;
   }
 
@@ -382,9 +377,7 @@
 
   .stats-container {
     min-height: 285px;
-
     gap: 25px;
-
     padding: 40px 0;
   }
 
@@ -394,7 +387,6 @@
 
   .stats-label {
     font-size: 9px;
-
     letter-spacing: 1.4px;
   }
 
@@ -408,16 +400,13 @@
 
   .stat-item {
     gap: 9px;
-
     padding: 6px 11px;
   }
 
   .stat-icon {
     width: 48px;
     height: 48px;
-
     flex-basis: 48px;
-
     border-radius: 8px;
   }
 
@@ -432,7 +421,6 @@
 
   .stat-content h3 {
     font-size: 9px;
-
     margin-top: 5px;
   }
 
@@ -454,9 +442,7 @@
 
   .stats-container {
     min-height: auto;
-
     display: block;
-
     padding: 45px 0 50px;
   }
 
@@ -470,20 +456,14 @@
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-
     margin-top: 38px;
-
     gap: 0;
   }
 
   .stat-item {
     min-height: 78px;
-
     padding: 14px 20px;
   }
-
-
-  /* Vertical divider */
 
   .stat-item:nth-child(2)::after {
     display: none;
@@ -493,15 +473,9 @@
     display: block;
   }
 
-
-  /* Horizontal divider */
-
   .stat-item:nth-child(-n + 2) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   }
-
-
-  /* Tablet water */
 
   .stats-wave {
     width: 100%;
@@ -526,56 +500,36 @@
     min-height: auto;
   }
 
-
-  /* Container */
-
   .stats-container {
     padding: 34px 0 38px;
   }
 
-
-  /* Heading */
-
   .stats-label {
     font-size: 8px;
-
     letter-spacing: 1.2px;
-
     margin-bottom: 9px;
   }
 
   .stats-heading h2 {
     font-size: 23px;
-
     line-height: 1.2;
-
     letter-spacing: -0.4px;
   }
 
   .stats-heading-line {
     width: 35px;
     height: 2px;
-
     margin-top: 14px;
   }
 
-
-  /* Stats */
-
   .stats-grid {
     grid-template-columns: 1fr;
-
     margin-top: 28px;
   }
 
-
-  /* Stat item */
-
   .stat-item {
     min-height: 64px;
-
     padding: 9px 0;
-
     gap: 12px;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
@@ -585,22 +539,14 @@
     border-bottom: none;
   }
 
-
-  /* Remove vertical divider */
-
   .stat-item::after {
     display: none !important;
   }
 
-
-  /* Icon */
-
   .stat-icon {
     width: 46px;
     height: 46px;
-
     flex-basis: 46px;
-
     border-radius: 8px;
   }
 
@@ -609,25 +555,19 @@
     height: 20px;
   }
 
-
-  /* Content */
-
   .stat-content strong {
     font-size: 24px;
+    min-width: 55px;
   }
 
   .stat-content h3 {
     margin-top: 4px;
-
     font-size: 9px;
   }
 
   .stat-content p {
     font-size: 7px;
   }
-
-
-  /* Mobile water */
 
   .stats-wave {
     left: 0;
@@ -668,7 +608,6 @@
   .stat-icon {
     width: 43px;
     height: 43px;
-
     flex-basis: 43px;
   }
 
@@ -681,14 +620,9 @@
     font-size: 22px;
   }
 
-
-  /* Small mobile water */
-
   .stats-wave {
     background-size: auto 100%;
-
     background-position: 85% bottom;
-
     opacity: 0.20;
   }
 }

@@ -162,7 +162,7 @@ function Header() {
         </a>
 
         <a
-          href="#about"
+          href="/about"
           onClick={closeMenu}
         >
           About Us

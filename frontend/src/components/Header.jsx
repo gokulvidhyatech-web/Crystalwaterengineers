@@ -119,12 +119,15 @@ function Header() {
 
 
           {/* ================= DESKTOP QUOTE ================= */}
+        
           <a
-            href="#contact"
-            className="quote-button"
-          >
-            Get a Quote
-          </a>
+  href="https://wa.me/918851564950?text=Hi%20Crystal%20Water%20Engineers%2C%20I%20would%20like%20to%20get%20a%20quote."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="quote-button"
+>
+  Chat on WhatsApp
+</a>
 
 
           {/* ================= MOBILE HAMBURGER ================= */}

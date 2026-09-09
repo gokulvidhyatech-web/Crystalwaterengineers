@@ -1,0 +1,658 @@
+/* =========================================
+   CRYSTAL WATER ENGINEERS
+   PROFESSIONAL DARK FOOTER
+========================================= */
+
+.cwe-footer {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.footer-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(3, 27, 48, 0.88);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   MAIN FOOTER
+========================================= */
+
+.footer-main {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding: 75px 6% 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.7fr
+    1.15fr
+    0.9fr
+    1.35fr;
+
+  gap: 55px;
+}
+
+
+/* =========================================
+   COMPANY
+========================================= */
+
+.footer-company {
+  max-width: 430px;
+}
+
+
+.footer-logo {
+  display: block;
+
+  width: 230px;
+  max-width: 40%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  margin-bottom: 25px;
+}
+
+
+.footer-description {
+  max-width: 420px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+.footer-slogan {
+  margin-top: 30px;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size: 27px;
+
+  color: #ffffff;
+
+  opacity: 0.9;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.footer-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.footer-socials a:hover {
+  transform: translateY(-4px);
+
+  background: #08b9d0;
+
+  border-color: #08b9d0;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   COLUMNS
+========================================= */
+
+.footer-column h3 {
+  margin: 5px 0 12px;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+.footer-line {
+  display: block;
+
+  width: 42px;
+  height: 3px;
+
+  margin-bottom: 25px;
+
+  border-radius: 10px;
+
+  background: #08b9d0;
+}
+
+
+.footer-column ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+
+.footer-column li {
+  margin-bottom: 13px;
+}
+
+
+.footer-column li a {
+  display: flex;
+
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+
+.footer-column li a:hover {
+  color: #ffffff;
+
+  padding-left: 4px;
+}
+
+
+/* =========================================
+   SERVICE MAIN LINK
+========================================= */
+
+.footer-service-item {
+  position: relative;
+}
+
+
+.service-main-link {
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 2px 0;
+}
+
+
+/* =========================================
+   SERVICE ARROW
+========================================= */
+
+.service-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  margin-left: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  color: #08b9d0;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================
+   HOVER ARROW
+========================================= */
+
+.footer-service-item:hover .service-arrow {
+  transform: rotate(90deg);
+
+  background: #08b9d0;
+
+  color: #ffffff;
+
+  border-color: #08b9d0;
+}
+
+
+/* =========================================
+   SERVICE SUBMENU
+========================================= */
+
+.footer-submenu {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  padding-left: 13px !important;
+
+  margin-top: 0 !important;
+
+  border-left: 1px solid rgba(8, 185, 208, 0.35);
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    margin-top 0.25s ease;
+}
+
+
+/* =========================================
+   SHOW SUBMENU ON HOVER
+========================================= */
+
+.footer-service-item:hover .footer-submenu {
+  max-height: 300px;
+
+  opacity: 1;
+
+  margin-top: 10px !important;
+}
+
+
+/* =========================================
+   SUBMENU ITEMS
+========================================= */
+
+.footer-submenu li {
+  margin-bottom: 9px;
+}
+
+
+.footer-submenu li a {
+  font-size: 12.5px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  gap: 5px;
+}
+
+
+.footer-submenu li a:hover {
+  color: #08b9d0;
+
+  padding-left: 4px;
+}
+
+
+/* =========================================
+   SUBMENU ARROW
+========================================= */
+
+.submenu-arrow {
+  color: #08b9d0;
+
+  font-size: 15px;
+
+  transition: transform 0.2s ease;
+}
+
+
+.footer-submenu li a:hover .submenu-arrow {
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   PAGE ARROW
+========================================= */
+
+.page-arrow {
+  margin-right: 9px;
+
+  color: #08b9d0;
+
+  font-size: 16px;
+
+  transition: transform 0.2s ease;
+}
+
+
+.footer-column li a:hover .page-arrow {
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footer-contact {
+  max-width: 400px;
+}
+
+
+.contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+.contact-item svg {
+  flex-shrink: 0;
+
+  margin-top: 4px;
+
+  color: #08b9d0;
+
+  font-size: 17px;
+}
+
+
+.contact-item a {
+  color: rgba(255, 255, 255, 0.72);
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+.contact-item a:hover {
+  color: #08b9d0;
+}
+
+
+/* =========================================
+   BOTTOM BAR
+========================================= */
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  min-height: 70px;
+
+  padding: 20px 5%;
+
+  background: rgba(2, 20, 36, 0.92);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: rgba(255, 255, 255, 0.65);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  font-size: 12px;
+}
+
+
+.copyright {
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   BOTTOM LINKS
+========================================= */
+
+.footer-bottom-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.65);
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+.footer-bottom-links a:hover {
+  color: #08b9d0;
+}
+
+
+.footer-bottom-links span {
+  opacity: 0.35;
+}
+
+
+/* =========================================
+   MADE IN INDIA
+========================================= */
+
+.made-in-india {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+
+.made-in-india svg {
+  color: #08b9d0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .footer-main {
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    padding: 60px 5% 60px;
+
+    gap: 45px;
+  }
+
+  .footer-contact {
+    grid-column: span 3;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    padding: 50px 25px 45px;
+
+    gap: 40px;
+  }
+
+
+  .footer-company {
+    max-width: 100%;
+  }
+
+
+  .footer-logo {
+    width: 210px;
+  }
+
+
+  .footer-description {
+    font-size: 14px;
+  }
+
+
+  .footer-slogan {
+    font-size: 24px;
+  }
+
+
+  .footer-contact {
+    grid-column: auto;
+  }
+
+
+  /* On mobile keep submenu usable */
+
+  .footer-submenu {
+    max-height: none;
+
+    opacity: 1;
+
+    margin-top: 8px !important;
+  }
+
+
+  .service-arrow {
+    display: none;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px 20px;
+
+    gap: 14px;
+
+    font-size: 11px;
+  }
+
+
+  .copyright {
+    white-space: normal;
+  }
+
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+}

@@ -7,6 +7,7 @@ import ProjectsSection from"../components/ProjectsSection";
 import CustomerSatisfaction from "../components/CustomerSatisfaction";
 import ClientProjects from "../components/ClientProjects";
 import MapSection from "../components/MapSection";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function Home() {
          <MapSection/>
          <ClientProjects/>
       </main>
+      <Footer/>
     </>
   );
 }

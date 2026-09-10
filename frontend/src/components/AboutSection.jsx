@@ -1,10 +1,11 @@
+import { useEffect, useRef } from "react";
 import "./AboutSection.css";
 
-// Replace this image with your actual Crystal Water Engineers
-// project / treatment plant image.
 import aboutImage from "../assets/images/Water-Softener-Plant.png";
 
 function AboutSection() {
+  const imageRef = useRef(null);
+
   const features = [
     {
       title: "End-to-End Delivery",
@@ -24,6 +25,35 @@ function AboutSection() {
     },
   ];
 
+  /* =========================================
+     IMAGE SCROLL REVEAL
+  ========================================= */
+
+  useEffect(() => {
+    const element = imageRef.current;
+
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          element.classList.add("about-image-visible");
+
+          observer.unobserve(element);
+        }
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className="about-section">
       <div className="container about-container">
@@ -32,7 +62,10 @@ function AboutSection() {
             LEFT IMAGE
         ========================================= */}
 
-        <div className="about-image-wrapper">
+        <div
+          ref={imageRef}
+          className="about-image-wrapper"
+        >
           <img
             src={aboutImage}
             alt="Crystal Water Engineers water treatment plant"
@@ -90,12 +123,13 @@ function AboutSection() {
           <div className="about-features">
 
             {features.map((feature, index) => (
-              <div className="about-feature" key={index}>
-
+              <div
+                className="about-feature"
+                key={index}
+              >
                 <h3>{feature.title}</h3>
 
                 <p>{feature.text}</p>
-
               </div>
             ))}
 
@@ -104,8 +138,13 @@ function AboutSection() {
 
           {/* CTA */}
 
-          <a href="#projects" className="about-button">
-            <span>See Our Project Track Record</span>
+          <a
+            href="#projects"
+            className="about-button"
+          >
+            <span>
+              See Our Project Track Record
+            </span>
 
             <svg
               viewBox="0 0 24 24"

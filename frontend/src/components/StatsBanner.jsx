@@ -44,6 +44,8 @@ function StatsBanner() {
     stats.map(() => 1)
   );
 
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     const section = statsSectionRef.current;
 
@@ -59,6 +61,9 @@ function StatsBanner() {
         }
 
         hasAnimated = true;
+
+        /* Start reveal animation */
+        setIsVisible(true);
 
         const duration = 2500;
         const startTime = performance.now();
@@ -129,6 +134,7 @@ function StatsBanner() {
 
   const renderIcon = (type) => {
     switch (type) {
+
       /* =====================================
          DROP
       ===================================== */
@@ -260,7 +266,6 @@ function StatsBanner() {
           </svg>
         );
 
-
       default:
         return null;
     }
@@ -269,8 +274,11 @@ function StatsBanner() {
   return (
     <section
       ref={statsSectionRef}
-      className="stats-section"
+      className={`stats-section ${
+        isVisible ? "stats-visible" : ""
+      }`}
     >
+
       <div className="stats-banner">
 
         {/* =====================================
@@ -314,6 +322,9 @@ function StatsBanner() {
               <div
                 className="stat-item"
                 key={index}
+                style={{
+                  "--stat-delay": `${index * 180}ms`,
+                }}
               >
 
                 <div className="stat-icon">
@@ -347,6 +358,7 @@ function StatsBanner() {
         </div>
 
       </div>
+
     </section>
   );
 }

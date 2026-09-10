@@ -261,9 +261,10 @@
 .connector-path {
   fill: none;
 
-  stroke: rgba(255, 255, 255, 0.88);
+  /* stroke: rgba(255, 255, 255, 0.88); */
+  stroke: yellow;
 
-  stroke-width: 1.7;
+  stroke-width: 2.7;
 
   stroke-dasharray: 7 7;
 

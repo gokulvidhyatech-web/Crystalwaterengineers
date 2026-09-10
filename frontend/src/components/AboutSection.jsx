@@ -1,10 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./AboutSection.css";
 
 import aboutImage from "../assets/images/Water-Softener-Plant.png";
 
 function AboutSection() {
-  const imageRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  const [isVisible, setIsVisible] = useState(false);
 
   const features = [
     {
@@ -26,24 +28,25 @@ function AboutSection() {
   ];
 
   /* =========================================
-     IMAGE SCROLL REVEAL
+     SECTION SCROLL REVEAL
   ========================================= */
 
   useEffect(() => {
-    const element = imageRef.current;
+    const element = sectionRef.current;
 
     if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          element.classList.add("about-image-visible");
+          setIsVisible(true);
 
+          /* Animate only once */
           observer.unobserve(element);
         }
       },
       {
-        threshold: 0.25,
+        threshold: 0.18,
       }
     );
 
@@ -55,24 +58,31 @@ function AboutSection() {
   }, []);
 
   return (
-    <section className="about-section">
+    <section
+      ref={sectionRef}
+      className={`about-section ${
+        isVisible ? "about-visible" : ""
+      }`}
+    >
       <div className="container about-container">
 
         {/* =========================================
             LEFT IMAGE
         ========================================= */}
 
-        <div
-          ref={imageRef}
-          className="about-image-wrapper"
-        >
+        <div className="about-image-wrapper">
+
           <img
             src={aboutImage}
             alt="Crystal Water Engineers water treatment plant"
             className="about-image"
           />
 
+          {/* White light sweep */}
+          <span className="about-image-shine"></span>
+
           <div className="about-image-overlay"></div>
+
         </div>
 
 
@@ -85,17 +95,22 @@ function AboutSection() {
           {/* SECTION LABEL */}
 
           <div className="about-label">
+
             <span></span>
+
             ABOUT US
+
           </div>
 
 
           {/* HEADING */}
 
           <h2 className="about-title">
+
             Engineering trust
             <br />
             one plant at a time
+
           </h2>
 
 
@@ -123,14 +138,25 @@ function AboutSection() {
           <div className="about-features">
 
             {features.map((feature, index) => (
+
               <div
                 className="about-feature"
                 key={index}
+                style={{
+                  "--feature-delay": `${index * 120}ms`,
+                }}
               >
-                <h3>{feature.title}</h3>
 
-                <p>{feature.text}</p>
+                <h3>
+                  {feature.title}
+                </h3>
+
+                <p>
+                  {feature.text}
+                </p>
+
               </div>
+
             ))}
 
           </div>
@@ -142,6 +168,7 @@ function AboutSection() {
             href="#projects"
             className="about-button"
           >
+
             <span>
               See Our Project Track Record
             </span>
@@ -150,6 +177,7 @@ function AboutSection() {
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
+
               <path
                 d="M5 12h13"
                 fill="none"
@@ -166,7 +194,9 @@ function AboutSection() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
+
             </svg>
+
           </a>
 
         </div>

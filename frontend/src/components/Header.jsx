@@ -22,7 +22,12 @@ function Header() {
           </span>
 
           <span>
+            <a
+            href="mailto:crystalwater.cwe@gmail.com"
+            className="top-bar-link"
+          >
             crystalwater.cwe@gmail.com
+          </a>
           </span>
 
           <span>
@@ -30,7 +35,12 @@ function Header() {
           </span>
 
           <span>
-           +91 88515 64950
+           <a
+            href="tel:+918851564950"
+            className="top-bar-link"
+          >
+            +91 88515 64950
+          </a>
           </span>
 
         </div>

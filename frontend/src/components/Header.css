@@ -683,3 +683,19 @@
     height: 2px;
   }
 }
+
+.top-bar-link {
+  text-decoration: none;
+  /* color: inherit; */
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.top-bar-link:hover {
+  color: #063b52;
+ 
+  text-shadow:
+    0 0 8px rgba(6, 59, 82, 0.28);
+}

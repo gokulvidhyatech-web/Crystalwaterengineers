@@ -1,6 +1,10 @@
+import React, { useEffect, useRef, useState } from "react";
 import "./ProcessSection.css";
 
 function ProcessSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
   const steps = [
     {
       number: "01",
@@ -27,6 +31,36 @@ function ProcessSection() {
       text: "We provide continued technical support to help maintain reliable and efficient plant performance.",
     },
   ];
+
+  /* =========================================
+     SECTION REVEAL
+  ========================================= */
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.18,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  /* =========================================
+     ICONS
+  ========================================= */
 
   const renderIcon = (type) => {
     switch (type) {
@@ -178,10 +212,13 @@ function ProcessSection() {
   };
 
   return (
-    <section className="process-section">
-
+    <section
+      ref={sectionRef}
+      className={`process-section ${
+        isVisible ? "process-visible" : ""
+      }`}
+    >
       <div className="process-container container">
-        
 
         {/* =========================================
             HEADER
@@ -214,103 +251,160 @@ function ProcessSection() {
 
         <div className="process-flow">
 
-          {/* =========================================
-              CONNECTOR 01 → 02
-          ========================================= */}
+          {/* =====================================
+              CONNECTION 01 → 02
+          ===================================== */}
 
           <svg
             className="connector-svg connector-svg-one"
-            viewBox="0 0 300 150"
+            viewBox="0 0 400 180"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
             <path
               className="connector-path"
-              d="M10 10 H270 Q290 10 290 30 V135"
+              d="
+                M0 15
+                H335
+                Q398 15 398 78
+                V165
+              "
             />
 
             <circle
-              className="connector-dot"
-              cx="10"
-              cy="10"
-              r="5"
+              className="connector-start"
+              cx="0"
+              cy="15"
+              r="4"
             />
 
-            <path
-              className="connector-arrow"
-              d="M284 127 L290 139 L296 127"
-            />
+            <circle
+              className="connector-flow-dot"
+              cx="0"
+              cy="15"
+              r="4"
+            >
+              <animateMotion
+                dur="2.8s"
+                repeatCount="indefinite"
+                path="
+                  M0 0
+                  H335
+                  Q398 0 398 63
+                  V150
+                "
+              />
+            </circle>
           </svg>
 
 
-          {/* =========================================
-              CONNECTOR 02 → 03
-          ========================================= */}
+          {/* =====================================
+              CONNECTION 02 → 03
+          ===================================== */}
 
           <svg
             className="connector-svg connector-svg-two"
-            viewBox="0 0 300 150"
+            viewBox="0 0 400 180"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
             <path
               className="connector-path"
-              d="M10 140 H270 Q290 140 290 120 V15"
+              d="
+                M0 165
+                H335
+                Q398 165 398 102
+                V15
+              "
             />
 
             <circle
-              className="connector-dot"
-              cx="10"
-              cy="140"
-              r="5"
+              className="connector-start"
+              cx="0"
+              cy="165"
+              r="4"
             />
 
-            <path
-              className="connector-arrow connector-arrow-up"
-              d="M284 23 L290 11 L296 23"
-            />
+            <circle
+              className="connector-flow-dot"
+              cx="0"
+              cy="165"
+              r="4"
+            >
+              <animateMotion
+                dur="2.8s"
+                repeatCount="indefinite"
+                path="
+                  M0 0
+                  H335
+                  Q398 0 398 -63
+                  V-150
+                "
+              />
+            </circle>
           </svg>
 
 
-          {/* =========================================
-              CONNECTOR 03 → 04
-          ========================================= */}
+          {/* =====================================
+              CONNECTION 03 → 04
+          ===================================== */}
 
           <svg
             className="connector-svg connector-svg-three"
-            viewBox="0 0 300 150"
+            viewBox="0 0 400 180"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
             <path
               className="connector-path"
-              d="M10 10 H270 Q290 10 290 30 V135"
+              d="
+                M0 15
+                H335
+                Q398 15 398 78
+                V165
+              "
             />
 
             <circle
-              className="connector-dot"
-              cx="10"
-              cy="10"
-              r="5"
+              className="connector-start"
+              cx="0"
+              cy="15"
+              r="4"
             />
 
-            <path
-              className="connector-arrow"
-              d="M284 127 L290 139 L296 127"
-            />
+            <circle
+              className="connector-flow-dot"
+              cx="0"
+              cy="15"
+              r="4"
+            >
+              <animateMotion
+                dur="2.8s"
+                repeatCount="indefinite"
+                path="
+                  M0 0
+                  H335
+                  Q398 0 398 63
+                  V150
+                "
+              />
+            </circle>
           </svg>
 
 
-          {/* =========================================
-              CARDS
-          ========================================= */}
+          {/* =====================================
+              PROCESS CARDS
+          ===================================== */}
 
           <div className="process-grid">
 
-            {steps.map((step) => (
+            {steps.map((step, index) => (
               <article
                 className={`process-card process-card-${step.number}`}
                 key={step.number}
+                style={{
+                  "--card-delay": `${index * 180}ms`,
+                }}
               >
 
                 <div className="process-card-top">
@@ -340,6 +434,9 @@ function ProcessSection() {
 
                 </div>
 
+
+                <span className="process-card-shine"></span>
+
               </article>
             ))}
 
@@ -348,7 +445,6 @@ function ProcessSection() {
         </div>
 
       </div>
-
     </section>
   );
 }

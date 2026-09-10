@@ -2,7 +2,7 @@ import "./AboutSection.css";
 
 // Replace this image with your actual Crystal Water Engineers
 // project / treatment plant image.
-import aboutImage from "../assets/images/water-softener.jpg";
+import aboutImage from "../assets/images/Water-Softener-Plant.png";
 
 function AboutSection() {
   const features = [

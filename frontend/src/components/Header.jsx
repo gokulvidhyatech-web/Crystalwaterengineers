@@ -30,7 +30,7 @@ function Header() {
           </span>
 
           <span>
-            88515 64950
+           +91 88515 64950
           </span>
 
         </div>

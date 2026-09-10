@@ -486,7 +486,7 @@
 
   left: 50%;
 
-  bottom: 23px;
+  bottom: 62px;
 
   z-index: 6;
 
@@ -633,7 +633,7 @@
   .hero-category {
     min-height: 16px;
 
-    font-size: 7px;
+    font-size: 10px;
 
     letter-spacing: 1.8px;
   }
@@ -656,7 +656,7 @@
 
     margin-top: 9px;
 
-    font-size: 11px;
+    font-size: 15px;
 
     line-height: 1.55;
   }
@@ -678,7 +678,7 @@
 
     padding: 0 12px;
 
-    font-size: 10px;
+    font-size: 12px;
   }
 
 
@@ -751,7 +751,7 @@
   }
 
   .hero-category {
-    font-size: 6.5px;
+    font-size: 10px;
 
     letter-spacing: 1.4px;
   }
@@ -767,7 +767,7 @@
   .hero-content p {
     min-height: 43px;
 
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .hero-buttons {
@@ -780,7 +780,7 @@
 
     height: 39px;
 
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .hero-arrow {

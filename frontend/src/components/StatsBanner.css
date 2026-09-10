@@ -4,11 +4,16 @@
 
 .stats-section {
   width: 100%;
+
   margin: 0;
   padding: 0;
+
   background: #ffffff;
+
   font-family: "Poppins", sans-serif;
+
   position: relative;
+
   z-index: 2;
 }
 
@@ -19,16 +24,20 @@
 
 .stats-banner {
   position: relative;
+
   width: 100%;
+
   min-height: 250px;
+
   overflow: hidden;
 
-  background: linear-gradient(
-    232deg,
-    #06345b 0%,
-    #075b86 45%,
-    #08b9d0 100%
-  );
+  background:
+    linear-gradient(
+      232deg,
+      #06345b 0%,
+      #075b86 45%,
+      #08b9d0 100%
+    );
 }
 
 
@@ -45,7 +54,8 @@
   width: 100%;
   height: 100%;
 
-  background-image: url("../assets/images/Water\ fall.png");
+  background-image:
+    url("../assets/images/Water\ fall.png");
 
   background-repeat: no-repeat;
 
@@ -107,6 +117,7 @@
   color: #5be5ed;
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 1.8px;
@@ -121,6 +132,7 @@
   color: #ffffff;
 
   font-size: 35px;
+
   font-weight: 700;
 
   line-height: 1.18;
@@ -137,6 +149,7 @@
   display: block;
 
   width: 42px;
+
   height: 3px;
 
   margin-top: 20px;
@@ -156,7 +169,8 @@
 
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 
   align-items: stretch;
 
@@ -195,12 +209,16 @@
   position: absolute;
 
   top: 8px;
+
   right: 0;
 
   width: 1px;
-  height: calc(100% - 16px);
 
-  background: rgba(255, 255, 255, 0.28);
+  height:
+    calc(100% - 16px);
+
+  background:
+    rgba(255, 255, 255, 0.28);
 }
 
 
@@ -210,6 +228,7 @@
 
 .stat-icon {
   width: 58px;
+
   height: 58px;
 
   flex: 0 0 58px;
@@ -217,15 +236,20 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid #5be5ed;
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  border:
+    1px solid #5be5ed;
 
   box-shadow:
-    0 10px 25px rgba(0, 30, 60, 0.20);
+    0 10px 25px
+    rgba(0, 30, 60, 0.20);
 
   transition:
     transform 0.3s ease,
@@ -234,10 +258,12 @@
 
 
 .stat-item:hover .stat-icon {
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
 
   box-shadow:
-    0 14px 30px rgba(0, 30, 60, 0.28);
+    0 14px 30px
+    rgba(0, 30, 60, 0.28);
 }
 
 
@@ -247,6 +273,7 @@
 
 .stat-icon svg {
   width: 27px;
+
   height: 27px;
 
   display: block;
@@ -276,13 +303,13 @@
   color: #b5fbff;
 
   font-size: 32px;
+
   font-weight: 700;
 
   line-height: 1;
 
   letter-spacing: -0.7px;
 
-  /* Keeps number area stable during animation */
   min-width: 70px;
 }
 
@@ -297,6 +324,7 @@
   color: #ffffff;
 
   font-size: 11px;
+
   font-weight: 600;
 
   line-height: 1.35;
@@ -312,10 +340,10 @@
 .stat-content p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.68);
   color: #b5fbff;
 
   font-size: 11px;
+
   font-weight: 400;
 
   line-height: 1.4;
@@ -332,6 +360,7 @@
 
   .stats-container {
     gap: 35px;
+
     padding: 44px 0;
   }
 
@@ -345,17 +374,21 @@
 
   .stat-item {
     gap: 11px;
+
     padding: 8px 16px;
   }
 
   .stat-icon {
     width: 54px;
+
     height: 54px;
+
     flex-basis: 54px;
   }
 
   .stat-icon svg {
     width: 25px;
+
     height: 25px;
   }
 
@@ -377,7 +410,9 @@
 
   .stats-container {
     min-height: 285px;
+
     gap: 25px;
+
     padding: 40px 0;
   }
 
@@ -387,6 +422,7 @@
 
   .stats-label {
     font-size: 9px;
+
     letter-spacing: 1.4px;
   }
 
@@ -400,18 +436,23 @@
 
   .stat-item {
     gap: 9px;
+
     padding: 6px 11px;
   }
 
   .stat-icon {
     width: 48px;
+
     height: 48px;
+
     flex-basis: 48px;
+
     border-radius: 8px;
   }
 
   .stat-icon svg {
     width: 22px;
+
     height: 22px;
   }
 
@@ -421,6 +462,7 @@
 
   .stat-content h3 {
     font-size: 9px;
+
     margin-top: 5px;
   }
 
@@ -442,7 +484,9 @@
 
   .stats-container {
     min-height: auto;
+
     display: block;
+
     padding: 45px 0 50px;
   }
 
@@ -455,13 +499,17 @@
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
+
     margin-top: 38px;
+
     gap: 0;
   }
 
   .stat-item {
     min-height: 78px;
+
     padding: 14px 20px;
   }
 
@@ -474,11 +522,14 @@
   }
 
   .stat-item:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.22);
   }
 
   .stats-wave {
     width: 100%;
+
     height: 100%;
 
     background-size: auto 100%;
@@ -506,74 +557,132 @@
 
   .stats-label {
     font-size: 8px;
+
     letter-spacing: 1.2px;
+
     margin-bottom: 9px;
   }
 
   .stats-heading h2 {
     font-size: 23px;
+
     line-height: 1.2;
+
     letter-spacing: -0.4px;
   }
 
   .stats-heading-line {
     width: 35px;
+
     height: 2px;
+
     margin-top: 14px;
   }
 
+
+  /* =====================================
+     2 COLUMNS ON MOBILE
+  ===================================== */
+
   .stats-grid {
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
+
     margin-top: 28px;
   }
 
+
   .stat-item {
-  min-height: 72px;
-  padding: 12px 10px;
-  gap: 10px;
+    min-height: 72px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
+    padding: 12px 10px;
 
-  .stat-item:last-child {
-    border-bottom: none;
+    gap: 10px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.18);
   }
+
+
+  /* Remove vertical divider */
 
   .stat-item::after {
     display: none !important;
   }
 
+
+  /* Bottom row */
+
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) {
+    border-bottom: none;
+  }
+
+
+  /* =====================================
+     ICON
+  ===================================== */
+
   .stat-icon {
     width: 46px;
+
     height: 46px;
+
     flex-basis: 46px;
+
     border-radius: 8px;
   }
 
   .stat-icon svg {
     width: 20px;
+
     height: 20px;
   }
 
+
+  /* =====================================
+     NUMBER
+  ===================================== */
+
   .stat-content strong {
     font-size: 24px;
+
     min-width: 55px;
   }
 
+
+  /* =====================================
+     TITLE
+  ===================================== */
+
   .stat-content h3 {
     margin-top: 4px;
+
     font-size: 9px;
   }
+
+
+  /* =====================================
+     DESCRIPTION
+  ===================================== */
 
   .stat-content p {
     font-size: 7px;
   }
 
+
+  /* =====================================
+     WATER
+  ===================================== */
+
   .stats-wave {
     left: 0;
+
     bottom: 0;
 
     width: 100%;
+
     height: 100%;
 
     background-size: auto 100%;
@@ -607,12 +716,15 @@
 
   .stat-icon {
     width: 43px;
+
     height: 43px;
+
     flex-basis: 43px;
   }
 
   .stat-icon svg {
     width: 19px;
+
     height: 19px;
   }
 
@@ -622,7 +734,9 @@
 
   .stats-wave {
     background-size: auto 100%;
+
     background-position: 85% bottom;
+
     opacity: 0.20;
   }
 }

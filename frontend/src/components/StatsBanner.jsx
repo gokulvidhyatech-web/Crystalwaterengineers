@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./StatsBanner.css";
 
 function StatsBanner() {
+  const statsSectionRef = useRef(null);
+
   const stats = [
     {
       type: "drop",
@@ -34,59 +36,90 @@ function StatsBanner() {
   ];
 
   /* =========================================
-     DYNAMIC COUNTER
-     Smooth 3 Second Animation
+     COUNTER
+     Starts only when section enters viewport
   ========================================= */
 
   const [counts, setCounts] = useState(
-    stats.map(() => 0)
+    stats.map(() => 1)
   );
 
   useEffect(() => {
-    const duration = 3000;
-    const startTime = performance.now();
+    const section = statsSectionRef.current;
 
-    let animationFrame;
+    if (!section) return;
 
-    const animateCounters = (currentTime) => {
-      const progress = Math.min(
-        (currentTime - startTime) / duration,
-        1
-      );
+    let animationFrame = null;
+    let hasAnimated = false;
 
-      /*
-        Smooth ease-out animation.
-        Starts quickly and slows naturally
-        near the final number.
-      */
-      const easedProgress =
-        1 - Math.pow(1 - progress, 3);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasAnimated) {
+          return;
+        }
 
-      const newCounts = stats.map((stat) => {
-        return Math.round(stat.number * easedProgress);
-      });
+        hasAnimated = true;
 
-      setCounts(newCounts);
+        const duration = 2500;
+        const startTime = performance.now();
 
-      if (progress < 1) {
+        const animateCounters = (currentTime) => {
+          const progress = Math.min(
+            (currentTime - startTime) / duration,
+            1
+          );
+
+          /* Smooth ease-out */
+          const easedProgress =
+            1 - Math.pow(1 - progress, 3);
+
+          const newCounts = stats.map((stat) => {
+            const value =
+              1 +
+              (stat.number - 1) *
+                easedProgress;
+
+            return Math.round(value);
+          });
+
+          setCounts(newCounts);
+
+          if (progress < 1) {
+            animationFrame =
+              requestAnimationFrame(
+                animateCounters
+              );
+          } else {
+            /* Make sure final values are exact */
+            setCounts(
+              stats.map(
+                (stat) => stat.number
+              )
+            );
+          }
+        };
+
         animationFrame =
-          requestAnimationFrame(animateCounters);
-      } else {
-        /*
-          Force exact final values
-          so nothing gets stuck before completion.
-        */
-        setCounts(
-          stats.map((stat) => stat.number)
-        );
-      }
-    };
+          requestAnimationFrame(
+            animateCounters
+          );
 
-    animationFrame =
-      requestAnimationFrame(animateCounters);
+        /* Animate only once */
+        observer.unobserve(section);
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(section);
 
     return () => {
-      cancelAnimationFrame(animationFrame);
+      observer.disconnect();
+
+      if (animationFrame !== null) {
+        cancelAnimationFrame(animationFrame);
+      }
     };
   }, []);
 
@@ -96,15 +129,23 @@ function StatsBanner() {
 
   const renderIcon = (type) => {
     switch (type) {
+      /* =====================================
+         DROP
+      ===================================== */
+
       case "drop":
         return (
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               d="M12 2.8C12 2.8 5.5 10.1 5.5 15.1C5.5 18.9 8.4 21.5 12 21.5C15.6 21.5 18.5 18.9 18.5 15.1C18.5 10.1 12 2.8 12 2.8Z"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.8"
             />
+
             <path
               d="M8.7 16.4C9.1 18.1 10.3 19 12 19.2"
               fill="none"
@@ -115,9 +156,17 @@ function StatsBanner() {
           </svg>
         );
 
+
+      /* =====================================
+         CHECK
+      ===================================== */
+
       case "check":
         return (
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <circle
               cx="12"
               cy="12"
@@ -126,6 +175,7 @@ function StatsBanner() {
               stroke="currentColor"
               strokeWidth="1.8"
             />
+
             <path
               d="M8 12.2L10.7 15L16.2 9.2"
               fill="none"
@@ -137,9 +187,17 @@ function StatsBanner() {
           </svg>
         );
 
+
+      /* =====================================
+         GEAR
+      ===================================== */
+
       case "gear":
         return (
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               d="M9.8 3.2h4.4l.7 2.3c.6.2 1.1.5 1.6.9l2.3-.6 2.2 3.8-1.7 1.7c.1.6.1 1.2 0 1.8l1.7 1.7-2.2 3.8-2.3-.6c-.5.4-1 .7-1.6.9l-.7 2.3H9.8l-.7-2.3c-.6-.2-1.1-.5-1.6-.9l-2.3.6-2.3.6L3 14.8l1.7-1.7a7 7 0 0 1 0-1.8L3 9.6l2.2-3.8 2.3.6c.5-.4 1-.7 1.6-.9l.7-2.3Z"
               fill="none"
@@ -147,6 +205,7 @@ function StatsBanner() {
               strokeWidth="1.5"
               strokeLinejoin="round"
             />
+
             <circle
               cx="12"
               cy="12"
@@ -158,9 +217,17 @@ function StatsBanner() {
           </svg>
         );
 
+
+      /* =====================================
+         SUPPORT
+      ===================================== */
+
       case "support":
         return (
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               d="M5 13.5V11a7 7 0 0 1 14 0v2.5"
               fill="none"
@@ -168,18 +235,21 @@ function StatsBanner() {
               strokeWidth="1.8"
               strokeLinecap="round"
             />
+
             <path
               d="M5 12.5H3.8c-.7 0-1.3.6-1.3 1.3v2.4c0 .7.6 1.3 1.3 1.3H5v-5Z"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.6"
             />
+
             <path
               d="M19 12.5h1.2c.7 0 1.3.6 1.3 1.3v2.4c0 .7-.6 1.3-1.3 1.3H19v-5Z"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.6"
             />
+
             <path
               d="M19 17.5c-.4 2-1.8 3-4.2 3H13"
               fill="none"
@@ -190,22 +260,34 @@ function StatsBanner() {
           </svg>
         );
 
+
       default:
         return null;
     }
   };
 
   return (
-    <section className="stats-section">
+    <section
+      ref={statsSectionRef}
+      className="stats-section"
+    >
       <div className="stats-banner">
 
-        {/* WATER BACKGROUND */}
+        {/* =====================================
+            WATER BACKGROUND
+        ===================================== */}
+
         <div className="stats-wave"></div>
+
 
         <div className="container stats-container">
 
-          {/* LEFT CONTENT */}
+          {/* ===================================
+              LEFT CONTENT
+          =================================== */}
+
           <div className="stats-heading">
+
             <span className="stats-label">
               CRYSTAL WATER ENGINEERS
             </span>
@@ -217,34 +299,53 @@ function StatsBanner() {
             </h2>
 
             <span className="stats-heading-line"></span>
+
           </div>
 
-          {/* STATS */}
+
+          {/* ===================================
+              STATS
+          =================================== */}
+
           <div className="stats-grid">
+
             {stats.map((stat, index) => (
+
               <div
                 className="stat-item"
                 key={index}
               >
+
                 <div className="stat-icon">
                   {renderIcon(stat.type)}
                 </div>
 
+
                 <div className="stat-content">
+
                   <strong>
                     {counts[index]}
                     {stat.suffix}
                   </strong>
 
-                  <h3>{stat.title}</h3>
+                  <h3>
+                    {stat.title}
+                  </h3>
 
-                  <p>{stat.text}</p>
+                  <p>
+                    {stat.text}
+                  </p>
+
                 </div>
+
               </div>
+
             ))}
+
           </div>
 
         </div>
+
       </div>
     </section>
   );

@@ -23,6 +23,8 @@
 ========================================= */
 
 .cwe-customer-inner {
+  position: relative;
+
   width: 100%;
   min-height: 180px;
 
@@ -30,16 +32,82 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  background: linear-gradient(
-    90deg,
-    #06345b 0%,
-    #075b86 45%,
-    #08b9d0 100%
-  );
 
   overflow: hidden;
+
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   PREMIUM OVERLAY
+   Keeps original blue/teal feel
+   while allowing background image to show
+========================================= */
+
+.cwe-customer-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 52, 91, 0.88) 0%,
+      rgba(7, 91, 134, 0.72) 48%,
+      rgba(8, 185, 208, 0.62) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SUBTLE PREMIUM LIGHT
+========================================= */
+
+.cwe-customer-inner::after {
+  content: "";
+
+  position: absolute;
+
+  top: -100px;
+  right: 8%;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  filter: blur(2px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   CONTENT WRAPPER
+========================================= */
+
+.cwe-customer-content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -54,6 +122,9 @@
   gap: 16px;
 
   flex-shrink: 0;
+
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -65,14 +136,15 @@
   width: 200px;
   height: 200px;
 
-
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   background: transparent;
+
   overflow: hidden;
+
+  flex-shrink: 0;
 }
 
 .cwe-customer-icon img {
@@ -85,6 +157,10 @@
 
   margin: 0;
   padding: 0;
+
+  /* subtle premium appearance */
+  filter:
+    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
 }
 
 
@@ -94,7 +170,6 @@
 
 .cwe-customer-heading h2 {
   margin: 0;
-
   padding: 0;
 
   color: #ffffff;
@@ -108,6 +183,9 @@
   letter-spacing: 0;
 
   white-space: nowrap;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -124,6 +202,9 @@
   margin-left: 40px;
 
   min-width: 0;
+
+  position: relative;
+  z-index: 3;
 }
 
 
@@ -143,7 +224,7 @@
 
 /* =========================================
    CLIENT LOGO BOX
-   No background
+   Transparent / Premium
 ========================================= */
 
 .cwe-client-logo-box {
@@ -158,11 +239,31 @@
 
   padding: 5px;
 
-  background: transparent;
-  border: none;
-  border-radius: 0;
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 8px;
 
   overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================
+   LOGO HOVER
+========================================= */
+
+.cwe-client-logo-box:hover {
+  background: rgba(255, 255, 255, 0.07);
+
+  border-color: rgba(255, 255, 255, 0.16);
+
+  transform: translateY(-2px);
 }
 
 
@@ -183,18 +284,24 @@
 
   margin: 0;
   padding: 0;
+
+  transition: transform 0.3s ease;
+}
+
+.cwe-client-logo-box:hover img {
+  transform: scale(1.03);
 }
 
 
 /* =========================================
-   ARROWS
+   PREMIUM ARROWS
 ========================================= */
 
 .cwe-client-arrow {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
 
-  min-width: 34px;
+  min-width: 38px;
 
   padding: 0;
   margin: 0;
@@ -205,10 +312,11 @@
 
   flex-shrink: 0;
 
-  border: 1px solid #08d5e7;
+  border: 1px solid rgba(8, 213, 231, 0.75);
+
   border-radius: 50%;
 
-  background: transparent;
+  background: rgba(255, 255, 255, 0.025);
 
   color: #08d5e7;
 
@@ -216,39 +324,155 @@
 
   outline: none;
 
+  position: relative;
+
+  overflow: hidden;
+
   transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.cwe-client-arrow span {
-  display: block;
 
-  margin: 0;
-  padding: 0;
+/* =========================================
+   ARROW SHINE
+========================================= */
 
-  color: inherit;
+.cwe-client-arrow::before {
+  content: "";
 
-  font-family: Arial, sans-serif;
+  position: absolute;
 
-  font-size: 18px;
-  font-weight: 400;
+  inset: 2px;
 
-  line-height: 1;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(255, 255, 255, 0.16),
+      transparent 45%
+    );
+
+  opacity: 0.7;
 
   pointer-events: none;
 }
 
-.cwe-client-arrow:hover {
-  background: #08d5e7;
-  color: #06345b;
 
-  transform: scale(1.05);
+/* =========================================
+   PREMIUM ARROW ICON
+========================================= */
+
+.arrow-icon {
+  width: 9px;
+  height: 9px;
+
+  display: block;
+
+  position: relative;
+
+  z-index: 2;
 }
 
+
+/* =========================================
+   ARROW SHAFT
+========================================= */
+
+.arrow-icon::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 11px;
+  height: 1.5px;
+
+  background: currentColor;
+
+  transform: translateY(-50%);
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   ARROW HEAD
+========================================= */
+
+.arrow-icon i {
+  position: absolute;
+
+  top: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  display: block;
+}
+
+
+/* RIGHT ARROW */
+
+.arrow-right i {
+  right: -1px;
+}
+
+
+/* LEFT ARROW */
+
+.arrow-left {
+  transform: rotate(180deg);
+}
+
+.arrow-left i {
+  right: -1px;
+}
+
+
+/* =========================================
+   ARROW HOVER
+========================================= */
+
+.cwe-client-arrow:hover {
+  background: rgba(8, 213, 231, 0.12);
+
+  border-color: #08d5e7;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.18),
+    0 0 15px rgba(8, 213, 231, 0.12);
+}
+
+
+/* Keep left arrow rotation while hovering */
+
+.cwe-client-arrow:first-child:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ACTIVE
+========================================= */
+
 .cwe-client-arrow:active {
-  transform: scale(0.95);
+  transform: translateY(0) scale(0.94);
 }
 
 
@@ -286,6 +510,7 @@
 
   .cwe-client-slider {
     gap: 10px;
+
     margin-left: 20px;
   }
 
@@ -296,12 +521,20 @@
   .cwe-client-logo-box {
     width: 115px;
     min-width: 115px;
+
     height: 55px;
   }
 
   .cwe-client-logo-box img {
     max-width: 100px;
     max-height: 42px;
+  }
+
+  .cwe-client-arrow {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
   }
 }
 
@@ -321,6 +554,14 @@
 
     padding: 25px 18px;
 
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 24px;
+  }
+
+  .cwe-customer-content {
     flex-direction: column;
 
     align-items: stretch;
@@ -389,11 +630,20 @@
     height: 50px;
 
     padding: 4px;
+
+    border-radius: 7px;
   }
 
   .cwe-client-logo-box img {
     max-width: 90px;
     max-height: 38px;
+  }
+
+  .cwe-client-arrow {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
   }
 }
 
@@ -407,6 +657,10 @@
   .cwe-customer-inner {
     padding: 22px 15px;
 
+    gap: 20px;
+  }
+
+  .cwe-customer-content {
     gap: 20px;
   }
 
@@ -447,6 +701,8 @@
     min-width: 95px;
 
     height: 45px;
+
+    border-radius: 6px;
   }
 
   .cwe-client-logo-box img {
@@ -459,10 +715,6 @@
     height: 32px;
 
     min-width: 32px;
-  }
-
-  .cwe-client-arrow span {
-    font-size: 17px;
   }
 }
 

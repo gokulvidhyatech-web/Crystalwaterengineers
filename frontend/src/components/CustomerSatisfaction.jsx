@@ -2,20 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./CustomerSatisfaction.css";
 
 import customerSatisfactionIcon from "../assets/images/Customer.png";
+import customerSatisfactionBg from "../assets/images/Water falls.png";
 
 /* =========================================
    CLIENT LOGOS
-   =========================================
-   To ADD a client:
-   1. Put image inside:
-      src/assets/images/Clients/
-
-   2. Add one import below
-
-   3. Add it to the clients array
-
-   To DELETE a client:
-   Remove its import + array entry.
 ========================================= */
 
 import client1 from "../assets/images/Clients/client1.jpg";
@@ -32,7 +22,6 @@ const clients = [
   // client5,
 ];
 
-
 /* =========================================
    CUSTOMER SATISFACTION
 ========================================= */
@@ -40,18 +29,23 @@ const clients = [
 const CustomerSatisfaction = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  /* NEXT */
+  /* =========================================
+     NEXT CLIENT
+  ========================================= */
+
   const nextClient = () => {
     setCurrentIndex((prev) => (prev + 1) % clients.length);
   };
 
-  /* PREVIOUS */
+  /* =========================================
+     PREVIOUS CLIENT
+  ========================================= */
+
   const previousClient = () => {
     setCurrentIndex(
       (prev) => (prev - 1 + clients.length) % clients.length
     );
   };
-
 
   /* =========================================
      AUTO SLIDER
@@ -67,7 +61,6 @@ const CustomerSatisfaction = () => {
     return () => clearInterval(timer);
   }, []);
 
-
   /* =========================================
      VISIBLE CLIENTS
   ========================================= */
@@ -80,78 +73,104 @@ const CustomerSatisfaction = () => {
     );
   }
 
-
   return (
     <section className="cwe-customer-satisfaction">
 
-      <div className="cwe-customer-inner">
+      <div
+        className="cwe-customer-inner"
+        style={{
+          backgroundImage: `url(${customerSatisfactionBg})`,
+        }}
+      >
 
         {/* =====================================
-            LEFT SIDE
+            BACKGROUND OVERLAY
         ===================================== */}
 
-        <div className="cwe-customer-heading">
-
-          <div className="cwe-customer-icon">
-            <img
-              src={customerSatisfactionIcon}
-              alt="Customer Satisfaction"
-            />
-          </div>
-
-          <h2>
-            Customer Satisfaction Is Our
-            <br />
-            Working Motivation!
-          </h2>
-
-        </div>
+        <div className="cwe-customer-overlay"></div>
 
 
         {/* =====================================
-            RIGHT SIDE - CLIENT LOGOS
+            CONTENT
         ===================================== */}
 
-        <div className="cwe-client-slider">
+        <div className="cwe-customer-content">
 
-          {/* PREVIOUS */}
-          <button
-            type="button"
-            className="cwe-client-arrow"
-            onClick={previousClient}
-            aria-label="Previous clients"
-          >
-            ←
-          </button>
+          {/* =====================================
+              LEFT SIDE
+          ===================================== */}
 
+          <div className="cwe-customer-heading">
 
-          {/* LOGOS */}
-          <div className="cwe-client-logos">
+            <div className="cwe-customer-icon">
+              <img
+                src={customerSatisfactionIcon}
+                alt="Customer Satisfaction"
+              />
+            </div>
 
-            {visibleClients.map((logo, index) => (
-              <div
-                className="cwe-client-logo-box"
-                key={`${currentIndex}-${index}`}
-              >
-                <img
-                  src={logo}
-                  alt={`Client ${currentIndex + index + 1}`}
-                />
-              </div>
-            ))}
+            <h2>
+              Customer Satisfaction Is Our
+              <br />
+              Working Motivation!
+            </h2>
 
           </div>
 
 
-          {/* NEXT */}
-          <button
-            type="button"
-            className="cwe-client-arrow"
-            onClick={nextClient}
-            aria-label="Next clients"
-          >
-            →
-          </button>
+          {/* =====================================
+              RIGHT SIDE - CLIENT LOGOS
+          ===================================== */}
+
+          <div className="cwe-client-slider">
+
+            {/* PREVIOUS */}
+
+            <button
+              type="button"
+              className="cwe-client-arrow"
+              onClick={previousClient}
+              aria-label="Previous clients"
+            >
+              <span className="arrow-icon arrow-left">
+                <i></i>
+              </span>
+            </button>
+
+
+            {/* LOGOS */}
+
+            <div className="cwe-client-logos">
+
+              {visibleClients.map((logo, index) => (
+                <div
+                  className="cwe-client-logo-box"
+                  key={`${currentIndex}-${index}`}
+                >
+                  <img
+                    src={logo}
+                    alt={`Client ${currentIndex + index + 1}`}
+                  />
+                </div>
+              ))}
+
+            </div>
+
+
+            {/* NEXT */}
+
+            <button
+              type="button"
+              className="cwe-client-arrow"
+              onClick={nextClient}
+              aria-label="Next clients"
+            >
+              <span className="arrow-icon arrow-right">
+                <i></i>
+              </span>
+            </button>
+
+          </div>
 
         </div>
 

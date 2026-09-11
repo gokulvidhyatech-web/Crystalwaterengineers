@@ -396,9 +396,9 @@
 ========================================= */
 
 .stat-icon svg {
-  width: 27px;
+  width: 40px;
 
-  height: 27px;
+  height: 35px;
 
   display: block;
 
@@ -450,7 +450,7 @@
 
   margin: 0;
 
-  color: #b5fbff;
+  color: white;
 
   font-size: 32px;
 

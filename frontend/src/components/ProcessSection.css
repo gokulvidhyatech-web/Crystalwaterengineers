@@ -1148,3 +1148,11 @@
     transform: none !important;
   }
 }
+.connector-flow-dot {
+  fill: #8ff8ff;
+  stroke: #d9ffff;
+  stroke-width: 1;
+  filter:
+    drop-shadow(0 0 3px #8ff8ff)
+    drop-shadow(0 0 8px rgba(80, 230, 255, 0.8));
+}

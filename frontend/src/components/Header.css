@@ -252,6 +252,7 @@
   box-shadow:
     0 12px 25px rgba(0, 160, 190, 0.28);
 } */
+
 /* =========================================
    GET QUOTE BUTTON
 ========================================= */
@@ -259,6 +260,7 @@
 .quote-button {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 
   margin-left: 20px;
 
@@ -298,8 +300,8 @@
 
 
 /* =========================================
-   TOP GRADIENT LINE
-   DARK BLUE → BLUE → CYAN → WHITE
+   TOP LINE
+   LEFT → RIGHT
 ========================================= */
 
 .quote-button::before {
@@ -309,8 +311,8 @@
 
   top: 0;
   left: 0;
-  right: 0;
 
+  width: 100%;
   height: 3px;
 
   background: linear-gradient(
@@ -325,8 +327,39 @@
 
   transform-origin: left center;
 
-  transition:
-    transform 0.4s ease;
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   BOTTOM LINE
+   RIGHT → LEFT
+========================================= */
+
+.quote-button::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  right: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    270deg,
+    #06345b 0%,
+    #0876a7 40%,
+    #08b9d0 65%,
+    #ffffff 100%
+  );
+
+  transform: scaleX(0);
+
+  transform-origin: right center;
 
   z-index: 2;
 
@@ -335,62 +368,53 @@
 
 
 /* =========================================
-   SOFT GRADIENT GLOW
-========================================= */
-
-.quote-button::after {
-  content: "";
-
-  position: absolute;
-
-  top: -4px;
-  left: 0;
-
-  width: 100%;
-  height: 10px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(6, 52, 91, 0.35),
-    rgba(8, 118, 167, 0.35),
-    rgba(8, 185, 208, 0.35),
-    rgba(255, 255, 255, 0.45)
-  );
-
-  filter: blur(5px);
-
-  opacity: 0;
-
-  transform: scaleX(0);
-
-  transform-origin: left center;
-
-  transition:
-    transform 0.4s ease,
-    opacity 0.25s ease;
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-
-/* =========================================
-   HOVER — LINE LEFT → RIGHT
+   HOVER
+   BOTH DIRECTIONS AT SAME TIME
 ========================================= */
 
 .quote-button:hover::before {
-  transform: scaleX(1);
+  animation: topLineLeftToRight 0.5s ease-out forwards;
 }
 
 .quote-button:hover::after {
-  transform: scaleX(1);
-  opacity: 1;
+  animation: bottomLineRightToLeft 0.5s ease-out forwards;
 }
 
 
 /* =========================================
-   HOVER BUTTON
+   TOP LINE ANIMATION
+========================================= */
+
+@keyframes topLineLeftToRight {
+
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+/* =========================================
+   BOTTOM LINE ANIMATION
+========================================= */
+
+@keyframes bottomLineRightToLeft {
+
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+/* =========================================
+   BUTTON HOVER
 ========================================= */
 
 .quote-button:hover {
@@ -399,7 +423,6 @@
   box-shadow:
     0 12px 25px rgba(0, 160, 190, 0.28);
 }
-
 /* =========================================
    MOBILE MENU BUTTON
 ========================================= */

@@ -136,7 +136,7 @@ function Header() {
   rel="noopener noreferrer"
   className="quote-button"
 >
-  Chat on WhatsApp
+  Chat on WhatsApps
 </a>
 
 

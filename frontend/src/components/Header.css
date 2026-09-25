@@ -209,7 +209,7 @@
    GET QUOTE
 ========================================= */
 
-.quote-button {
+/* .quote-button {
   margin-left: 20px;
 
   min-width: 145px;
@@ -225,12 +225,11 @@
     #0876a7,
     #08b9d0
   );
-
   color: #ffffff;
 
   text-decoration: none;
 
-  border-radius: 30px;
+  border-radius: 10px;
 
   font-family: "Poppins", sans-serif;
 
@@ -252,8 +251,154 @@
 
   box-shadow:
     0 12px 25px rgba(0, 160, 190, 0.28);
+} */
+/* =========================================
+   GET QUOTE BUTTON
+========================================= */
+
+.quote-button {
+  position: relative;
+  overflow: hidden;
+
+  margin-left: 20px;
+
+  min-width: 145px;
+  padding: 13px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #0876a7,
+    #08b9d0
+  );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 8px 20px rgba(0, 160, 190, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
+
+/* =========================================
+   TOP GRADIENT LINE
+   DARK BLUE → BLUE → CYAN → WHITE
+========================================= */
+
+.quote-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #06345b 0%,
+    #0876a7 40%,
+    #08b9d0 65%,
+    #ffffff 100%
+  );
+
+  transform: scaleX(0);
+
+  transform-origin: left center;
+
+  transition:
+    transform 0.4s ease;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SOFT GRADIENT GLOW
+========================================= */
+
+.quote-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: -4px;
+  left: 0;
+
+  width: 100%;
+  height: 10px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(6, 52, 91, 0.35),
+    rgba(8, 118, 167, 0.35),
+    rgba(8, 185, 208, 0.35),
+    rgba(255, 255, 255, 0.45)
+  );
+
+  filter: blur(5px);
+
+  opacity: 0;
+
+  transform: scaleX(0);
+
+  transform-origin: left center;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.25s ease;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   HOVER — LINE LEFT → RIGHT
+========================================= */
+
+.quote-button:hover::before {
+  transform: scaleX(1);
+}
+
+.quote-button:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+
+/* =========================================
+   HOVER BUTTON
+========================================= */
+
+.quote-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 160, 190, 0.28);
+}
 
 /* =========================================
    MOBILE MENU BUTTON
@@ -699,3 +844,6 @@
   text-shadow:
     0 0 8px rgba(6, 59, 82, 0.28);
 }
+
+
+

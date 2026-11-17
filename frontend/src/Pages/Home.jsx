@@ -5,7 +5,7 @@ import AboutSection from "../components/AboutSection";
 import ProcessSection from"../components/ProcessSection";
 import ProjectsSection from"../components/ProjectsSection";
 import CustomerSatisfaction from "../components/CustomerSatisfaction";
-import ClientProjects from "../components/ClientProjects";
+// import ClientProjects from "../components/ClientProjects";
 import MapSection from "../components/MapSection";
 import Footer from "../components/Footer";
 
@@ -22,7 +22,7 @@ function Home() {
          <ProjectsSection/>
          <CustomerSatisfaction />
          <MapSection/>
-         <ClientProjects/>
+         {/* <ClientProjects/> */}
       </main>
       <Footer/>
     </>

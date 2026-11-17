@@ -1,52 +1,156 @@
+
 .map-section {
   width: 100%;
-  padding: 0px 0;
-  /* background: #f7faf9; */
+  padding: 0;
   margin-bottom: 50px;
 }
 
-.map-container {
+/* Main Map Container */
+.map-section .map-container {
+  position: relative !important;
   width: calc(100% - 130px);
+  height: 600px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
+  isolation: isolate;
   box-shadow: 0 15px 45px rgba(18, 60, 53, 0.12);
 }
 
-.map-container iframe {
+/* Google Map */
+.map-section .map-container iframe.google-map {
+  position: absolute !important;
+  inset: 0;
   display: block;
-  width: 100%;
-  height: 600px;
+  width: 100% !important;
+  height: 100% !important;
   border: 0;
+  margin: 0;
+}
+
+/* Business Information Card */
+.map-section .map-info-card {
+  position: absolute !important;
+  top: 20px !important;
+  left: 20px !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: 10;
+
+  width: 325px;
+  max-width: calc(100% - 40px);
+  box-sizing: border-box;
+
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+
+  font-family: Arial, sans-serif;
+}
+
+/* Business Name */
+.map-section .map-info-card h3 {
+  margin: 0 0 8px;
+  color: #202124;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Address */
+.map-section .map-info-card .map-address {
+  margin: 0 0 12px;
+  color: #70757a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Rating */
+.map-section .map-info-card .map-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 15px;
+  color: #202124;
+  font-size: 14px;
+}
+
+.map-section .map-rating strong {
+  font-weight: 600;
+}
+
+.map-section .map-rating .star {
+  color: #fbbc04;
+  font-size: 19px;
+}
+
+.map-section .map-rating a {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+/* Open in Maps Button */
+.map-section .map-info-card .map-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  background: #1a73e8;
+  color: #ffffff;
+
+  border-radius: 25px;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: background 0.3s ease;
+}
+
+.map-section .map-info-card .map-open-btn:hover {
+  background: #1558b0;
+  color: #ffffff;
 }
 
 /* Tablet */
 @media (max-width: 900px) {
-  .map-section {
-    padding: 60px 0;
-  }
-
-  .map-container {
+  .map-section .map-container {
     width: 92%;
+    height: 450px;
   }
 
-  .map-container iframe {
-    height: 450px;
+  .map-section .map-info-card {
+    top: 15px !important;
+    left: 15px !important;
   }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   .map-section {
-    padding: 50px 0;
+    margin-bottom: 35px;
   }
 
-  .map-container {
+  .map-section .map-container {
     width: 92%;
+    height: 380px;
     border-radius: 14px;
   }
 
-  .map-container iframe {
-    height: 380px;
+  .map-section .map-info-card {
+    top: 12px !important;
+    left: 12px !important;
+    width: 290px;
+    max-width: calc(100% - 24px);
+    padding: 14px;
+  }
+
+  .map-section .map-info-card h3 {
+    font-size: 17px;
   }
 }

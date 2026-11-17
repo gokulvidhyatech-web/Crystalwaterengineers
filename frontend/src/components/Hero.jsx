@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Hero.css";
 
@@ -13,9 +14,11 @@ const Hero = () => {
         muted
         loop
         playsInline
+        controls
         preload="auto"
       >
         <source src={heroVideo} type="video/mp4" />
+        Your browser does not support HTML5 video.
       </video>
 
     </section>

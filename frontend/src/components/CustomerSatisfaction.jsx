@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./CustomerSatisfaction.css";
 
 import customerSatisfactionIcon from "../assets/images/Customer.png";
@@ -6,75 +5,103 @@ import customerSatisfactionBg from "../assets/images/Water falls.png";
 
 /* =========================================
    CLIENT LOGOS
+   CRYSTAL WATER ENGINEERS
 ========================================= */
 
-import client1 from "../assets/images/Clients/client1.jpg";
-import client2 from "../assets/images/Clients/client2.png";
-import client3 from "../assets/images/Clients/client3.png";
-// import client4 from "../assets/images/Clients/client4.png";
-// import client5 from "../assets/images/Clients/client5.png";
+import client1 from "../assets/images/Clients/99km_Coffee_Magic.png";
+import client2 from "../assets/images/Clients/Dhina_Pile_Foundation.png";
+import client3 from "../assets/images/Clients/ELCOT.png";
+import client4 from "../assets/images/Clients/Govt_Hydro_Engineering_College_Bilaspur.png";
+import client5 from "../assets/images/Clients/House_of_Hiranandani.png";
+import client6 from "../assets/images/Clients/IIM_Tiruchirappalli.png";
+import client7 from "../assets/images/Clients/IRWO.png";
+import client8 from "../assets/images/Clients/Mohan_Mutha_Exports.png";
+import client9 from "../assets/images/Clients/MSC_Technology.png";
+import client10 from "../assets/images/Clients/NPCI.png";
+import client11 from "../assets/images/Clients/RPP_Infra_Projects.png";
+import client12 from "../assets/images/Clients/Shapoorji_Pallonji.png";
+import client13 from "../assets/images/Clients/Spectra_Constructions.png";
+import client14 from "../assets/images/Clients/Tata_Projects.png";
+import client15 from "../assets/images/Clients/TIDEL.png";
+import client16 from "../assets/images/Clients/TIEMA.png";
+import client17 from "../assets/images/Clients/Touchstone_Infrastructure.png";
+
+
+/* =========================================
+   CLIENT ARRAY
+========================================= */
 
 const clients = [
   client1,
   client2,
   client3,
-  // client4,
-  // client5,
+  client4,
+  client5,
+  client6,
+  client7,
+  client8,
+  client9,
+  client10,
+  client11,
+  client12,
+  client13,
+  client14,
+  client15,
+  client16,
+  client17,
 ];
 
+
 /* =========================================
-   CUSTOMER SATISFACTION
+   CLIENT LOGO GROUP
+========================================= */
+
+const ClientLogoGroup = ({ duplicate = false }) => {
+
+  return (
+
+    <div
+      className="cwe-client-group"
+      aria-hidden={duplicate}
+    >
+
+      {clients.map((logo, index) => (
+
+        <div
+          className="cwe-client-logo-box"
+          key={`${duplicate ? "duplicate" : "original"}-${index}`}
+        >
+
+          <img
+            src={logo}
+            alt={duplicate ? "" : `Client ${index + 1}`}
+            loading="lazy"
+          />
+
+        </div>
+
+      ))}
+
+    </div>
+
+  );
+
+};
+
+
+/* =========================================
+   CUSTOMER SATISFACTION COMPONENT
 ========================================= */
 
 const CustomerSatisfaction = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  /* =========================================
-     NEXT CLIENT
-  ========================================= */
-
-  const nextClient = () => {
-    setCurrentIndex((prev) => (prev + 1) % clients.length);
-  };
-
-  /* =========================================
-     PREVIOUS CLIENT
-  ========================================= */
-
-  const previousClient = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + clients.length) % clients.length
-    );
-  };
-
-  /* =========================================
-     AUTO SLIDER
-  ========================================= */
-
-  useEffect(() => {
-    if (clients.length <= 3) return;
-
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % clients.length);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  /* =========================================
-     VISIBLE CLIENTS
-  ========================================= */
-
-  const visibleClients = [];
-
-  for (let i = 0; i < Math.min(3, clients.length); i++) {
-    visibleClients.push(
-      clients[(currentIndex + i) % clients.length]
-    );
-  }
 
   return (
+
     <section className="cwe-customer-satisfaction">
+
+      {/* =====================================
+          FULL WATER BACKGROUND
+      ===================================== */}
 
       <div
         className="cwe-customer-inner"
@@ -83,30 +110,31 @@ const CustomerSatisfaction = () => {
         }}
       >
 
-        {/* =====================================
-            BACKGROUND OVERLAY
-        ===================================== */}
+        {/* BLUE OVERLAY */}
 
         <div className="cwe-customer-overlay"></div>
 
 
         {/* =====================================
-            CONTENT
+            MAIN CONTENT
         ===================================== */}
 
         <div className="cwe-customer-content">
 
+
           {/* =====================================
-              LEFT SIDE
+              LEFT SIDE - CUSTOMER SATISFACTION
           ===================================== */}
 
           <div className="cwe-customer-heading">
 
             <div className="cwe-customer-icon">
+
               <img
                 src={customerSatisfactionIcon}
                 alt="Customer Satisfaction"
               />
+
             </div>
 
             <h2>
@@ -119,65 +147,34 @@ const CustomerSatisfaction = () => {
 
 
           {/* =====================================
-              RIGHT SIDE - CLIENT LOGOS
+              RIGHT SIDE - CLIENT LOGO SLIDER
           ===================================== */}
 
           <div className="cwe-client-slider">
 
-            {/* PREVIOUS */}
+            <div className="cwe-client-track">
 
-            <button
-              type="button"
-              className="cwe-client-arrow"
-              onClick={previousClient}
-              aria-label="Previous clients"
-            >
-              <span className="arrow-icon arrow-left">
-                <i></i>
-              </span>
-            </button>
+              {/* ORIGINAL LOGOS */}
 
+              <ClientLogoGroup />
 
-            {/* LOGOS */}
+              {/* DUPLICATE LOGOS FOR INFINITE SCROLL */}
 
-            <div className="cwe-client-logos">
-
-              {visibleClients.map((logo, index) => (
-                <div
-                  className="cwe-client-logo-box"
-                  key={`${currentIndex}-${index}`}
-                >
-                  <img
-                    src={logo}
-                    alt={`Client ${currentIndex + index + 1}`}
-                  />
-                </div>
-              ))}
+              <ClientLogoGroup duplicate />
 
             </div>
 
-
-            {/* NEXT */}
-
-            <button
-              type="button"
-              className="cwe-client-arrow"
-              onClick={nextClient}
-              aria-label="Next clients"
-            >
-              <span className="arrow-icon arrow-right">
-                <i></i>
-              </span>
-            </button>
-
           </div>
+
 
         </div>
 
       </div>
 
     </section>
+
   );
+
 };
 
 export default CustomerSatisfaction;
